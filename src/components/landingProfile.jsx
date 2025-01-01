@@ -7,8 +7,8 @@ const LandingProfile = () => {
     return (
         <>
             <img className="w-full md:w-[700px] lg:w-[570px] mx-auto" src={profile_pic} alt="" />
-            <div className="font-light absolute top-1/2 -translate-y-1/2 md:right-44 text-center flex flex-col gap-3">
-                <p className="relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-3 after:h-1 after:rounded-[10px] after:bg-[#263238]">Oluwawole Johnbeloved Ayomide</p>
+            <div className="cursor-pointer font-light absolute top-1/2 -translate-y-1/2 md:right-44 text-center flex flex-col gap-3 group">
+                <p className="relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-[10px] after:bg-[#263238] group-hover:after:bg-blue group-hover:after:w-3 after:duration-300 duration-300">Oluwawole Johnbeloved Ayomide</p>
                 <AnimatePresence mode="">
                     {pathname === "/" ? (
                         <motion.p
