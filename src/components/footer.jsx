@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
     return (
-        <footer className="md:px-20 px-4 bg-darkbg text-white">
+        <footer className="md:px-32 px-4 bg-darkbg text-white">
             <div className="md:pt-20 p-2">
                 <div className="flex md:flex-nowrap flex-wrap items-end lg:gap-20">
                     <div className="w-fit rounded-3xl overflow-hidden">
                         <img src={tesOne} alt="" className="w-52" />
                     </div>
-                    <h1 className="specify-light2 font-semibold tracking-wide md:w-[476px] w-full text-5xl md:text-6xl text-text_gray">Let&apos;s Work Together</h1>
+                    <h1 className="font-specify_medium tracking-wide md:w-[476px] w-full text-5xl md:text-[64px] md:leading-[76.8px] text-text_gray">Let&apos;s Work Together</h1>
                 </div>
             </div>
 
@@ -20,8 +20,8 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-4 mt-20 px-2 md:px-0">
-                <Button className="border border-text_gray text-text_gray text-[10px] bg-transparent rounded-[35px] md:py-7 px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
-                <Button className="border border-text_gray text-text_gray text-[10px] bg-transparent rounded-[35px] md:py-7 px-6">+234 9063 606 002</Button>
+                <Button className="border border-text_gray text-text_gray text-[10.78px] bg-transparent rounded-[35px] md:py-7 px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
+                <Button className="border border-text_gray text-text_gray text-[12.57px] bg-transparent rounded-[35px] md:py-7 px-6">+234 9063 606 002</Button>
             </div>
 
             <div>

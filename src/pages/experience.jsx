@@ -77,7 +77,7 @@ const Experience = () => {
                         {EXP.map((exp) => 
                         {
                         return (
-                            <motion.div key={exp.id} className="md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
+                            <motion.div key={exp.id} className="overflow-hidden md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
                                 <div className="flex-1 flex flex-col gap-4">
                                     <div className="font-bold text-[15px] flex flex-col">
                                         <p className="uppercase">{exp.date}</p>

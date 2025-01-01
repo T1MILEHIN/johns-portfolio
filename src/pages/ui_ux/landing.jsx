@@ -8,6 +8,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import IconCloud from "@/components/ui/icon-cloud";
+import software from '../../assets/images/software.svg'
 import Work from "./components/work";
 import WorkMobile from "./components/workMobile";
 import tesOne from "../../assets/images/profile.png"
@@ -20,11 +21,15 @@ import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
 import { FactoryIcon } from "lucide-react";
 
-const slugs = [
-    "androidstudio",
-    "figma",
-    <FactoryIcon key={1} />,
-];
+import { FaReact, FaNodeJs } from "react-icons/fa";
+
+// const customIcons = [
+//   <FaReact key="react" size={42} />,
+//   <FaNodeJs key="node" size={42} />,
+//   <FactoryIcon key="fact" size={42} />,
+// ];
+
+// const slugs = ["androidstudio", "figma", "tailwindcss"];
 
 
 const Landing = () => {
@@ -126,8 +131,10 @@ const Landing = () => {
                     <h1 className="font-bold">SoftWares</h1>
                     <p>Here are the softwares i’m proficient in</p>
                 </div>
-                <div className="relative flex size-full mx-auto max-w-3xl items-center justify-center overflow-hidden bg-background">
-                    <IconCloud iconSlugs={slugs} />
+                <div className="my-32 relative flex size-full mx-auto max-w-3xl items-center justify-center overflow-hidden bg-background">
+                    {/* <IconCloud iconSlugs={slugs} customIcons={customIcons} /> */}
+                    {/* <CloudSpin /> */}
+                    <img src={software} alt="" />
                 </div>
             </div>
 
@@ -137,8 +144,8 @@ const Landing = () => {
                 </div>
                 <motion.div ref={testimonialRef} className="flex justify-center items-center flex-wrap md:flex-nowrap gap-10 md:p-20 p-2">
                     <motion.div>
-                        <p className="text-[#C6C3C3] font-bold text-2xl">01</p>
-                        <div className="py-6 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
+                        <p className="text-[#C6C3C3] font-bold text-sm py-2">01</p>
+                        <div className="py-12 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
                                 <div className="text-sm">
@@ -150,8 +157,8 @@ const Landing = () => {
                         </div>
                     </motion.div>
                     <motion.div className="origin-center bg-bodybg">
-                        <p className="text-[#C6C3C3] font-bold text-2xl">02</p>
-                        <div className="py-6 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
+                        <p className="text-[#C6C3C3] font-bold text-sm py-2">02</p>
+                        <div className="py-12 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
                                 <div className="text-sm">
@@ -163,8 +170,8 @@ const Landing = () => {
                         </div>
                     </motion.div>
                     <motion.div>
-                        <p className="text-[#C6C3C3] font-bold text-2xl">03</p>
-                        <div className="py-6 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
+                        <p className="text-[#C6C3C3] font-bold text-sm py-2">03</p>
+                        <div className="py-12 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
                                 <div className="text-sm">
@@ -178,9 +185,7 @@ const Landing = () => {
                 </motion.div>
             </div>
 
-            <Parallax translateY={[-40, 42]} speed={-5} className="origin-bottom">
-                <Footer />
-            </Parallax>
+            <Footer />
         </div>
     )
 }

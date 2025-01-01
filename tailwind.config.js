@@ -59,7 +59,12 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+		fontFamily: {
+			specify_lighter: ['lighter', 'sans-serif'],
+			specify_bold: ['specify-bold', 'sans-serif'],
+			specify_medium: ['specify-medium', 'sans-serif'],
+		},
   	}
   },
   plugins: [animate],

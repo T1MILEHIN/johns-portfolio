@@ -31,13 +31,13 @@ const liVariants = {
     animate: (i) => ({
         x: 0,
         transition: {
-            duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i
+            duration: 0.3, delay: 0.05 * i
         }
     }),
     exit: (i) => ({
         x: "80px",
         transition: {
-            duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i
+            duration: 0.3, delay: 0.05 * i
         }
     })
 }
@@ -130,9 +130,9 @@ const NavBar = () => {
                     animate={isActive ? "animate" : "exit"}
                     exit="exit"
                     className="z-20 flex flex-col justify-between pt-32 pb-8 pr-8 lg:pl-20 pl-10 fixed top-0 bottom-0 right-0 md:w-1/2 w-full  bg-[#282828] text-white">
-                    <div>
+                    <motion.div>
                         <p className="p-4 text-[#4d4d4d] border-b border-[#727272]">Navigation</p>
-                        <ul className="leading-[80px] text-4xl">
+                        <motion.ul variants={menuContainerVariant} className="leading-[80px] text-4xl">
                             {LINKS.map((link, index) => (
                                 <HoverEffect key={index} rotationRange={15} style={{ width: "fit-content" }}>
                                     <motion.li className="hover:text-blue duration-300 w-fit" onClick={() => setIsActive(false)} custom={index} variants={liVariants}>
@@ -140,8 +140,8 @@ const NavBar = () => {
                                     </motion.li>
                                 </HoverEffect>
                             ))}
-                        </ul>
-                    </div>
+                        </motion.ul>
+                    </motion.div>
                     <svg className="absolute top-0 -left-24 w-[100px] h-full stroke-none fill-[#282828]" >
                         <motion.path variants={svgVariants}></motion.path>
                     </svg>

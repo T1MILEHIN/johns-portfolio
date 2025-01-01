@@ -35,46 +35,28 @@
 @font-face {
   font-family: 'lighter';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormMedium.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'con';
-  src: url('./assets/fonts/specify/SpecifyPERSONAL-ConLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'medium';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-ConMedium.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'light';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormLight.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'bold';
+  font-family: 'specify-medium';
+  src: url('./assets/fonts/specify/SpecifyPERSONAL-NormMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'specify-bold';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormBold.ttf') format('truetype');
 }
 
 body {
   overflow-x: hidden;
-}
-
-.specify-medium {
-  font-family: medium , sans-serif;
-}
-
-.specify-light {
-  font-family: light , sans-serif;
-}
-
-.specify-conlight {
-  font-family: con , sans-serif;
-}
-.specify-light2 {
-  font-family: lighter , sans-serif;
-}
-
-.specify-bold {
-  font-family: bold , sans-serif;
 }
 
 .button {

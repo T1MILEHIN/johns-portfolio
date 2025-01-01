@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import {
@@ -9,7 +8,6 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
-// import React = require("react");
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
