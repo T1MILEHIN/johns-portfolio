@@ -7,7 +7,6 @@ import {
     TableFooter,
     TableRow,
 } from "@/components/ui/table";
-import IconCloud from "@/components/ui/icon-cloud";
 import software from '../../assets/images/software.svg'
 import Work from "./components/work";
 import WorkMobile from "./components/workMobile";
@@ -19,19 +18,6 @@ import { motion } from "framer-motion";
 import ScrollSlide from "./components/scrollSlide";
 import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
-import { FactoryIcon } from "lucide-react";
-
-import { FaReact, FaNodeJs } from "react-icons/fa";
-
-// const customIcons = [
-//   <FaReact key="react" size={42} />,
-//   <FaNodeJs key="node" size={42} />,
-//   <FactoryIcon key="fact" size={42} />,
-// ];
-
-// const slugs = ["androidstudio", "figma", "tailwindcss"];
-
-
 const Landing = () => {
     const [selected, setSelected] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
