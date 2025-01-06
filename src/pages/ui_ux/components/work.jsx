@@ -129,12 +129,6 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
         if (dir === null) {
             return {y : currentSlide * -298}
         }
-        // if (dir && dir === 'd') {
-        //     return {y : currentSlide * -298}
-        // }
-        // if (dir && dir === "u") {
-        //     return { y: currentSlide* -298 };
-        // }
         else {
             return { y: currentSlide * -298 };
         }
@@ -157,8 +151,8 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                     initial={()=> dir === "d" ? translations(currentSlide - 1) : translations(currentSlide + 1)}
                     animate={()=> translations(currentSlide)}
                     transition={{
-                        type: "spring",
-                        duration: 2
+                        type: "tween",
+                        duration: 0.7
                     }}
                     className={`relative flex flex-col`}>
                     { works.map((img, index) => (

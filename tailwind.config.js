@@ -6,15 +6,6 @@ export default {
 	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 	theme: {
 		extend: {
-			animation: {
-				scroll: "scroll 100s linear infinite",
-			},
-			keyframes: {
-				scroll: {
-					"0%": { transform: "translateX(0)" },
-					"100%": { transform: "translateX(-100%)" },
-				},
-			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

@@ -65,7 +65,6 @@ const About = () => {
           <li>Designing on development tool (Framer and Webflow).</li>
         </ul>
       </div>
-
       <Footer />
     </div>
   )
