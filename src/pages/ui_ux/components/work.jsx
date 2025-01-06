@@ -99,7 +99,7 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                 onMouseEnter={(e) => {
                     handleMouseMove(e);
                     handleSetSelected(children.id)
-                    setCurrentSlide(children.id - 1 || 0)
+                    setCurrentSlide(children.id)
                 }}
                 className={`w-full relative border-b border-[#636363] duration-300 ${selected === children.id && "text-video_bg"}`} >
                 <TableCell className="py-10 md:py-16 md:text-5xl font-medium">{children.client}</TableCell>
@@ -110,7 +110,6 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                         <TableCell className="absolute inset-0">
                             <Content
                                 dir={dir}
-                                selected={selected}
                                 currentSlide={currentSlide}
                                 setSelected={setSelected}
                                 mousePosition={mousePosition} />
@@ -123,39 +122,21 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
 
 
 
-const Content = ({ selected, dir, mousePosition, currentSlide }) => {
+const Content = ({ dir, mousePosition, currentSlide }) => {
     const contentRef = useRef(null);
 
-    const [imageHeight, setImageHeight] = useState(0);
-    const [totalHeight, setTotalHeight] = useState(0);
-
-    useEffect(() => {
-        if (contentRef.current) {
-            const imgElement = contentRef.current.querySelector("img");
-            if (imgElement) {
-                setImageHeight(imgElement.offsetHeight);
-            }
-            setTotalHeight(contentRef.current.scrollHeight);
-        }
-    }, [contentRef]);
-
-    console.log("dir", dir)
-    console.log("current", currentSlide)
-    console.log("selected", selected)
-
-
-    const translations = (action, currentSlide)=> {
-        if (dir === null && action === "initial") {
+    const translations = (currentSlide)=> {
+        if (dir === null) {
             return {y : currentSlide * -298}
         }
-        if (dir && dir === 'd') {
-            return {y : currentSlide * -298}
-        }
-        if (dir && dir === "u") {
-            return { y: currentSlide * -298 };
-        }
+        // if (dir && dir === 'd') {
+        //     return {y : currentSlide * -298}
+        // }
+        // if (dir && dir === "u") {
+        //     return { y: currentSlide* -298 };
+        // }
         else {
-            return { y: currentSlide * -98 };
+            return { y: currentSlide * -298 };
         }
     }
 
@@ -171,10 +152,10 @@ const Content = ({ selected, dir, mousePosition, currentSlide }) => {
                     pointerEvents: "none",
                     zIndex: 10000,
                 }}
-                className="absolute inset-0 w-[349px] h-[298px] overflow-hidde">
+                className="absolute inset-0 w-[349px] h-[298px] overflow-hidden">
                 <motion.div
-                    initial={dir === "u" ? translations("initial", selected) : translations("animate", currentSlide)}
-                    animate={dir === "u" ? translations("animate", currentSlide) :  translations("initial", selected)}
+                    initial={()=> dir === "d" ? translations(currentSlide - 1) : translations(currentSlide + 1)}
+                    animate={()=> translations(currentSlide)}
                     transition={{
                         type: "spring",
                         duration: 2

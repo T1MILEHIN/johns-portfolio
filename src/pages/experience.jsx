@@ -74,10 +74,8 @@ const Experience = () => {
                 <div className="py-48">
                     <h1 className="specify-light text-[40px] font-medium lg:w-804px md:my-5">Firms I worked with of recent</h1>
                     <div>
-                        {EXP.map((exp) => 
-                        {
-                        return (
-                            <motion.div key={exp.id} className="overflow-hidden md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
+                        {EXP.map((exp) =>  (
+                            <motion.div key={exp.id} className="md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
                                 <div className="flex-1 flex flex-col gap-4">
                                     <div className="font-bold text-[15px] flex flex-col">
                                         <p className="uppercase">{exp.date}</p>
@@ -88,7 +86,7 @@ const Experience = () => {
                                 </div>
                                 <motion.img initial={{y:300}} whileInView={{y:0}} transition={{duration: 0.3, type: 'spring'}} viewport={{once: true}} src={exp.image} className="lg:w-[385px] object-cover " alt="" />
                             </motion.div>
-                        )})}
+                        ))}
                         
                     </div>
                 </div>

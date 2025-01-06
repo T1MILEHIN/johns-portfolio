@@ -97,7 +97,7 @@ const NavBar = () => {
             </Link>
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&
-                    <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
+                    <motion.div className="lg:block hidden" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
                         <nav className="flex items-center font-medium text-sm *:duration-300">
                             <NavLink to="/" className={({ isActive }) => isActive ? "rounded-[5px] after:origin-left after:ml-auto after:left-0 after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-navactive after:z-[-1] after:w-full text-white rounded-tl-[5px] rounded-bl-[5px]" : "backdrop-blur-sm after:origin-left after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-transparent after:w-0 bg-nav rounded-tl-[5px] rounded-bl-[5px] transition-all"}>
                                 <p className="px-6 py-3 uppercase w-[86px] font-medium text-[9.63px] grid place-content-center tracking-wider">UI/UX</p>
@@ -109,9 +109,9 @@ const NavBar = () => {
                     </motion.div>}
             </AnimatePresence>
             <div className={`z-[40] lg:w-20 w-14 aspect-square rounded-full grid place-content-center`}>
-                <HoverEffect rotationRange={30}>
+                <HoverEffect rotationRange={20}>
                     <motion.label drag className={`${isActive ? "bg-blue" : "bg-[#282828]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
-                        <HoverEffect Z={70} rotationRange={10} style={{ width: "fit-content" }}>
+                        <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                             <input onChange={handleToggle} checked={isActive} type="checkbox" id="checkbox" />
                             <label
                                 htmlFor="checkbox"
