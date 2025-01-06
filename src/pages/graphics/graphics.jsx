@@ -7,7 +7,7 @@ const Graphics = () => {
   return (
     <>
       <div className="">
-        <div className="px-2 md:px-20 md:pt-36 relative">
+        <div className="px-2 md:px-20 lg:pt-36 pt-60 pb-0 relative">
           <LandingProfile />
         </div>
         <LaptopAnimation />
