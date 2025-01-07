@@ -4,13 +4,15 @@ import img from "../assets/images/about.jpg"
 import profile_pic from "../assets/images/profile.png"
 import Footer from "../components/footer"
 import transition from "../transition"
-import { motion, useTransform, useScroll } from "framer-motion"
+import { motion, useTransform, useScroll, useMotionValueEvent } from "framer-motion"
 
 const About = () => {
-
-  
+  const footerRef = useRef();
+  const {scrollYProgress} = useScroll({
+    target: footerRef,
+  })
   return (
-    <div className="pt-56 lg:pt-36 relative">
+    <div ref={footerRef} className="pt-56 lg:pt-36 relative">
       <div className="lg:px-20">
         <img className="w-full md:w-[700px] lg:w-[570px] mx-auto" src={profile_pic} alt="" />
         <hr className="border-[#636363]" />
@@ -33,7 +35,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      <div className="md:p-20 p-4">
+      <div className="md:p-20 p-4 relative bg-white">
         <h1 className="text-[55px]">My Services</h1>
 
         <motion.div className=" relative py-16 flex flex-wrap md:flex-nowrap gap-24 md:gap-10">
@@ -56,7 +58,7 @@ const About = () => {
       </div>
 
 
-      <div className="md:p-20 p-4">
+      <div className="md:p-20 p-4 relative bg-white">
         <h1 className="text-[55px]">Additional Skills</h1>
         <p className="text-[#2E2A2A] text-[15px] leading-[30px] md:leading-[20px]">In my 5years experience as a designer, I’ve been employed by different companies and worked together with various clients. Therefore, I’ve had the opportunity to explore more than one branch of design and built up a series of additional skills that I am now able to bring with me in a UX/UI role:</p>
         <ul className="py-5 list-disc list-inside text-[15px] leading-7">
@@ -65,7 +67,11 @@ const About = () => {
           <li>Designing on development tool (Framer and Webflow).</li>
         </ul>
       </div>
-      <Footer />
+
+
+      <motion.div initial={{marginTop: -800}} whileInView={{marginTop: 0}} viewport={{once: true}} transition={{ type: "spring", duration: 1}} className="">
+        <Footer />
+      </motion.div>
     </div>
   )
 }

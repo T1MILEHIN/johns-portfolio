@@ -53,7 +53,7 @@ const Landing = () => {
                         <motion.div  initial={{x: -200, opacity: 0}} whileInView={{x:0, opacity: 1}} viewport={{ once: true, amount: 0.5}} transition={{ type: "spring", duration: 0.7}} className="leading-[30px] text-base lg:w-[617px]">
                             <p>Hi, i&apos;m <b>Johnbeloved</b>, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences.</p>
                         </motion.div>
-                        <motion.div  initial={{x: -200, opacity: 0}} whileInView={{x:0, opacity: 1}} viewport={{ once: true, amount: 0.5}} transition={{ type: "spring", duration: 0.7}}>
+                        <motion.div  initial={{x: 200, opacity: 0}} whileInView={{x:0, opacity: 1}} viewport={{ once: true, amount: 0.5}} transition={{ type: "spring", duration: 0.7, delay: 0.2}}>
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
                         </motion.div>
                     </div>
