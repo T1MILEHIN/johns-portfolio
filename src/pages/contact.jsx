@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="pt-32 flex flex-wrap md:flex-nowrap md:px-20 lg:pt-36 md:gap-32 px-4 bg-darkbg text-white">
             <div className="lg:flex-[2] flex-1">
                 <div className="">
-                    <h1 className="specify-light2 font-semibold text-[64px] md:w-[564px] text-text_gray">Let&apos;s Work Together</h1>
+                    <h1 className="font-specify_exp_med font-semibold text-[64px] md:w-[564px] text-text_gray">Let&apos;s Work Together</h1>
                 </div>
                 <div>
                     <h1 className="font-bold text-base border-b border-[#1b1b1b] py-2">How can i help you? </h1>
@@ -105,4 +105,4 @@ const Contact = () => {
     )
 }
 
-export default transition(Contact);
+export default transition(Contact, "Contact");

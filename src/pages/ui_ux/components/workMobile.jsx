@@ -1,55 +1,9 @@
 import { motion, useMotionValue } from "framer-motion";
-import img1 from "../../../assets/images/works-images/F.jpg"
-import img2 from "../../../assets/images/works-images/hga.jpg"
-import img3 from "../../../assets/images/works-images/cocacola.jpg"
-import img4 from "../../../assets/images/works-images/coursemigo.jpg"
-import img5 from "../../../assets/images/works-images/A.jpg"
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { useState } from "react";
+import { Works } from "../../../utils/works";
 
-const works = [
-    {
-        client: "Clearwage",
-        location: "United Kingdom",
-        services: "Website and app design",
-        component: img1,
-        color: "#0000008f",
-    },
-    {
-        client: "HGA",
-        location: "United States",
-        services: "Website Design",
-        component: img2,
-        color: "#e2e2e2"
-    },
-    {
-        client: "Cocacola",
-        location: "Practice",
-        services: "Web re-design",
-        component: img3,
-        color: "red"
-    },
-    {
-        client: "Coursemigo",
-        location: "Nigeria",
-        services: "App design",
-        component: img4,
-        color: "#407BFF"
-    },
-    {
-        client: "Abbi's Place",
-        location: "Nigeria",
-        services: "Website re-design",
-        component: img5,
-        color: "#FFF"
-    },
-    {
-        client: "MYABFLEX",
-        location: "Nigeria",
-        services: "App Design",
-        component: img3
-    }
-].map((n, idx) => ({ ...n, id: idx + 1 }));
+const works = Works
 
 const WorkMobile = () => {
     const [selected, setSelected] = useState(0)

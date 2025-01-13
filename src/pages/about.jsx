@@ -4,11 +4,11 @@ import img from "../assets/images/about.jpg"
 import profile_pic from "../assets/images/profile.png"
 import Footer from "../components/footer"
 import transition from "../transition"
-import { motion, useTransform, useScroll, useMotionValueEvent } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 
 const About = () => {
   const footerRef = useRef();
-  const {scrollYProgress} = useScroll({
+  const { scrollYProgress } = useScroll({
     target: footerRef,
   })
   return (
@@ -19,7 +19,7 @@ const About = () => {
       </div>
       <div className="md:px-20">
         <div className="md:py-20 md:p-0 p-7">
-          <h1 className="lg:w-[842px] w-full text-5xl leading-[80px] font-specify_medium">Helping Brands Stand Out with Unique Design</h1>
+          <h1 className="lg:w-[842px] w-full text-5xl leading-[80px] font-specify_exp_med">Helping Brands Stand Out with Unique Design</h1>
         </div>
         <hr className="border-[#636363]" />
       </div>
@@ -76,4 +76,4 @@ const About = () => {
   )
 }
 
-export default transition(About);
+export default transition(About, "About");

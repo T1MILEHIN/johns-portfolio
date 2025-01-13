@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/display-name */
 import { motion } from "framer-motion";
 
@@ -18,7 +19,8 @@ const transition = (Components) => {
         exit={{ scaleY: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
-      </motion.div>
+        {/* <motion.p className="z-[99999999999999] absolute top-0 md:text-7xl md:font-medium text-blue">{name}</motion.p> */}
+      </motion.div>      
     </>
   )
 }

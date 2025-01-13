@@ -1,61 +1,36 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import PropTypes from 'prop-types';
-
-import img1 from "../../../assets/images/works-images/F.jpg"
-import img2 from "../../../assets/images/works-images/hga.jpg"
-import img3 from "../../../assets/images/works-images/cocacola.jpg"
-import img4 from "../../../assets/images/works-images/coursemigo.jpg"
-import img5 from "../../../assets/images/works-images/A.jpg"
+import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
+import { useNavigate } from "react-router-dom";
 
-const works = [
-    {
-        client: "Clearwage",
-        location: "United Kingdom",
-        services: "Website and app design",
-        component: img1,
-        color: "#0000008f",
-    },
-    {
-        client: "HGA",
-        location: "United States",
-        services: "Website Design",
-        component: img2,
-        color: "#e2e2e2"
-    },
-    {
-        client: "Cocacola",
-        location: "Practice",
-        services: "Web re-design",
-        component: img3,
-        color: "red"
-    },
-    {
-        client: "Coursemigo",
-        location: "Nigeria",
-        services: "App design",
-        component: img4,
-        color: "#407BFF"
-    },
-    {
-        client: "Abbi's Place",
-        location: "Nigeria",
-        services: "Website re-design",
-        component: img5,
-        color: "#FFF"
-    },
-    {
-        client: "MYABFLEX",
-        location: "Nigeria",
-        services: "App Design",
-        component: img3
-    }
-].map((n, idx) => ({ ...n, id: idx, next: idx + 1 }));
+const works = Works
 
-
-const Work = ({ dir, setDir, currentSlide, setCurrentSlide, selected, setSelected, handleSetSelected }) => {
+const Work = () => {
+    const [selected, setSelected] = useState(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [dir, setDir] = useState(null);
+    const handleSetSelected = (val) => {
+        if (typeof val === "number" && typeof selected === "number") {
+            const direction = selected > val ? "u" : "d";
+            setDir(direction);
+    
+            setCurrentSlide((prev) => {
+                if (direction === "d") {
+                    return prev + 1;
+                } else if (direction === "u") {
+                    return prev - 1;
+                }
+                return prev;
+            });
+        } else if (val === null) {
+            setDir(null);
+        }
+    
+        setSelected(val);
+    };
     return (
         <TableBody onMouseLeave={() => {
             handleSetSelected(null)
@@ -78,6 +53,7 @@ const Work = ({ dir, setDir, currentSlide, setCurrentSlide, selected, setSelecte
 }
 
 const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSelected, selected, setSelected }) => {
+    const navigate = useNavigate()
     const mousePosition = {
         x: useMotionValue(0),
         y: useMotionValue(0),
@@ -87,9 +63,26 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         mousePosition.x.set(e.clientX - rect.left - 180);
         mousePosition.y.set(e.clientY - rect.top - 150);
     }
+    const handleWheel = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const cursorX = e.clientX - rect.left - 180;
+        const cursorY = e.clientY - rect.top - 150;
+
+        // Update mouse position based on scroll
+        mousePosition.x.set(cursorX);
+        mousePosition.y.set(cursorY);
+    };
+    const handleKeyDown = (e) => {
+        if (e.key === "ArrowUp") {
+            mousePosition.y.set((prev) => prev - 20); // Move up
+        } else if (e.key === "ArrowDown") {
+            mousePosition.y.set((prev) => prev + 20); // Move down
+        }
+    };
     return (
         <>
             <TableRow
+                onClick={()=> navigate(`/projects/${works.find(work=> work.id === currentSlide).client}`)}
                 id={`overflow-hidden relative shift-tab-${children.id} content`}
                 onMouseMove={
                     (e) => {
@@ -101,6 +94,8 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                     handleSetSelected(children.id)
                     setCurrentSlide(children.id)
                 }}
+                onKeyDown={handleKeyDown}
+                onWheel={(e) => handleWheel(e)}
                 className={`w-full relative border-b border-[#636363] duration-300 ${selected === children.id && "text-video_bg"}`} >
                 <TableCell className="py-10 md:py-16 md:text-5xl font-medium">{children.client}</TableCell>
                 <TableCell className="py-10 px-5">{children.location}</TableCell>
@@ -125,9 +120,9 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
 const Content = ({ dir, mousePosition, currentSlide }) => {
     const contentRef = useRef(null);
 
-    const translations = (currentSlide)=> {
+    const translations = (currentSlide) => {
         if (dir === null) {
-            return {y : currentSlide * -298}
+            return { y: currentSlide * -298 }
         }
         else {
             return { y: currentSlide * -298 };
@@ -148,14 +143,16 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                 }}
                 className="absolute inset-0 w-[349px] h-[298px] overflow-hidden">
                 <motion.div
-                    initial={()=> dir === "d" ? translations(currentSlide - 1) : translations(currentSlide + 1)}
-                    animate={()=> translations(currentSlide)}
+                    
+                    initial={() => dir === "d" ? translations(currentSlide - 1) : dir === "u" ? translations(currentSlide + 1) : translations(currentSlide)}
+                    animate={() => translations(currentSlide)}
                     transition={{
                         type: "tween",
                         duration: 0.7
                     }}
                     className={`relative flex flex-col`}>
-                    { works.map((img, index) => (
+                    
+                    {works.map((img, index) => (
                         <motion.img key={index} layout="fill"
                             style={{
                                 backgroundColor: img.color
@@ -166,7 +163,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                 </motion.div>
                 <div className="absolute grid place-content-center inset-0">
                     <HoverEffect Z={80} rotationRange={40} style={{ width: "fit-content" }}>
-                        <button className="w-20 h-20 grid place-content-center cursor-pointer p-4 rounded-full z-10 bg-darkbg text-white font-bold">
+                        <button className="w-20 h-20 grid place-content-center cursor-pointer p-4 rounded-[20px] z-10 bg-darkbg text-white font-bold">
                             <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content" }}>
                                 <div className="button">view</div>
                             </HoverEffect>

@@ -65,14 +65,14 @@ const Experience = () => {
         <div>
             <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
                 <div className="md:px-20">
-                    <h1 className="specify-light leading-[60px] lg:leading-[70px] text-4xl lg:text-[70px] w-full lg:w-[819px] tracking-tighter"><span className="font-semibold">5</span> Years Background Experience in Designing</h1>
+                    <h1 className="font-specify_exp_med leading-[60px] lg:leading-[93.6px] lg:text-[72px] w-full lg:w-[1050px] tracking-tighter"><span className="font-semibold">5</span> Years Background Experience in Designing</h1>
                 </div>
                 <div className="relative text-right mx-auto mt-20 md:py-0">
                     <button className="absolute right-20 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue text-white w-fit">Get In Touch</button>
                     <hr className="z-[2] w-full border-[#636363]"></hr>
                 </div>
                 <div className="py-48">
-                    <h1 className="specify-light text-[40px] font-medium lg:w-804px md:my-5">Firms I worked with of recent</h1>
+                    <h1 className="font-specify_exp_med text-[40px] font-medium lg:w-804px md:my-5">Firms I worked with of recent</h1>
                     <div>
                         {EXP.map((exp) =>  (
                             <motion.div key={exp.id} className="md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
@@ -96,4 +96,4 @@ const Experience = () => {
     )
 }
 
-export default transition(Experience);
+export default transition(Experience, "Experience");

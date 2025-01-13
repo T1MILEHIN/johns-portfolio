@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
     Table,
     TableCell,
@@ -18,29 +17,9 @@ import { motion } from "framer-motion";
 import ScrollSlide from "./components/scrollSlide";
 import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
+import { Link } from "react-router-dom";
+
 const Landing = () => {
-    const [selected, setSelected] = useState(null);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [dir, setDir] = useState(null);
-    const handleSetSelected = (val) => {
-        if (typeof val === "number" && typeof selected === "number") {
-            const direction = selected > val ? "u" : "d"; // Determine the direction
-            setDir(direction);
-    
-            setCurrentSlide((prev) => {
-                if (direction === "d") {
-                    return prev + 1;
-                } else if (direction === "u") {
-                    return prev - 1;
-                }
-                return prev;
-            });
-        } else if (val === null) {
-            setDir(null);
-        }
-    
-        setSelected(val);
-    };
     const testimonialRef = useRef(null)
     return (
         <div>
@@ -58,13 +37,13 @@ const Landing = () => {
                         </motion.div>
                     </div>
                     <Parallax translateY={[20, -20]}>
-                        <HoverEffect Z={100} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
-                            <div
+                        <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
+                            <Link to="/about"
                                 className="mt-5 ml-auto button black_hover rounded-[40px] bg-black text-white w-fit">
-                                <HoverEffect Z={100} rotationRange={30} style={{ width: "fit-content" }}>
+                                <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                                     <div className="button">About Me</div>
                                 </HoverEffect>
-                            </div>
+                            </Link>
                         </HoverEffect>
                     </Parallax>
                 </div>
@@ -80,25 +59,18 @@ const Landing = () => {
                                     <TableHead>SERVICES</TableHead>
                                 </TableRow>
                             </TableHeader>
-                            <Work
-                                dir={dir}
-                                setDir={setDir}
-                                currentSlide={currentSlide}
-                                setCurrentSlide={setCurrentSlide}
-                                selected={selected}
-                                setSelected={setSelected}
-                                handleSetSelected={handleSetSelected} />
+                            <Work />
                             <TableFooter>
                                 <TableRow>
                                     <TableCell colSpan={2}></TableCell>
                                     <TableCell className="text-right p-10">
-                                        <Parallax translateY={[20, -20]}>
-                                            <HoverEffect Z={100} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
-                                                <div className="ml-auto button black_hover rounded-[40px] bg-black text-white">
-                                                    <HoverEffect Z={100} rotationRange={30} style={{ width: "fit-content" }}>
+                                        <Parallax translateY={[10, -10]}>
+                                            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
+                                                <Link to="/allprojects" className="ml-auto button black_hover rounded-[40px] bg-black text-white">
+                                                    <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                                                         <div className="button">More Works</div>
                                                     </HoverEffect>
-                                                </div>
+                                                </Link>
                                             </HoverEffect>
                                         </Parallax>
                                     </TableCell>
@@ -134,12 +106,12 @@ const Landing = () => {
                         <div className="py-12 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
-                                <div className="text-sm">
-                                    <p>John Doe</p>
-                                    <p className="text-[#636363]">CEO, XYZ Corporation</p>
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <p className="font-bold">John Doe</p>
+                                    <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-7 text-xs">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="font-normal text-darkbg leading-7 text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                         </div>
                     </motion.div>
                     <motion.div className="origin-center bg-bodybg">
@@ -147,12 +119,12 @@ const Landing = () => {
                         <div className="py-12 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
-                                <div className="text-sm">
-                                    <p>John Doe</p>
-                                    <p className="text-[#636363]">CEO, XYZ Corporation</p>
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <p className="font-bold">John Doe</p>
+                                    <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-7 text-xs">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="font-normal text-darkbg leading-7 text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                         </div>
                     </motion.div>
                     <motion.div>
@@ -160,12 +132,12 @@ const Landing = () => {
                         <div className="py-12 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
                                 <img src={tesOne} alt="" className="w-10" />
-                                <div className="text-sm">
-                                    <p>John Doe</p>
-                                    <p className="text-[#636363]">CEO, XYZ Corporation</p>
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <p className="font-bold">John Doe</p>
+                                    <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-7 text-xs">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="font-normal text-darkbg leading-7 text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                         </div>
                     </motion.div>
                 </motion.div>
