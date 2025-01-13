@@ -31,6 +31,23 @@ const SingleProject = () => {
           </TableRow>
         </TableBody>
       </Table>
+
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h1 className="font-specify_exp_med text-[40px] leading-[52px] font-bold">Project OverView</h1>
+          <p className="text-[24px] leading-[51.6px] font-normal">{work.singleDetails.overview}</p>
+        </div>
+
+
+        <div className="flex flex-col gap-4">
+          <h1 className="font-specify_exp_med text-[40px] leading-[52px] font-bold">Project Objectives</h1>
+          <ul>
+            {work.singleDetails.objectives.map((objective, index) => (
+              <li className="text-[24px] leading-[51.6px] font-normal" key={index}>{objective}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   )
 }

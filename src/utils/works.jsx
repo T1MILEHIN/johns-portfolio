@@ -16,7 +16,17 @@ export const Works = [
         singleDetails: {
             role: "Designer",
             credit: "Clearwage Limited",
-            location: "Umited Kingdom"
+            location: "Umited Kingdom",
+            
+
+            overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",
+            objectives: [
+                "Streamline HR processes for UK businesses",
+                "Enhance employee experience through intuitive interfaces",
+                "Improve accuracy and efficiency in time tracking, tax management, and payment processing",
+                "Provide actionable insights for business growth",
+                "Ensure compliance with UK labor laws and regulations."
+            ]
         }
     },
     {
