@@ -34,7 +34,22 @@ export const Works = [
         location: "United States",
         services: "Website design",
         component: img2,
-        color: "#131927"
+        color: "#131927",
+        singleDetails: {
+            role: "Designer",
+            credit: "Minato Limited",
+            location: "Umited Kingdom",
+            
+
+            overview: "The Minato Foundation project aimed to enhance academic, career, and professional opportunities for individuals from underserved backgrounds. As the designer, I created an illustrative logo that embodies the foundation's mission and designed an intuitive website to facilitate access to resources and information. The website serves as a user-friendly platform, ensuring that users can easily navigate and find the support they need.",
+            objectives: [
+                "Streamline HR processes for UK businesses",
+                "Enhance employee experience through intuitive interfaces",
+                "Improve accuracy and efficiency in time tracking, tax management, and payment processing",
+                "Provide actionable insights for business growth",
+                "Ensure compliance with UK labor laws and regulations."
+            ]
+        }
     },
     {
         client: "Cocacola",
