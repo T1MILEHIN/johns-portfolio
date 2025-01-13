@@ -13,6 +13,11 @@ export const Works = [
         services: "Website and app design",
         component: img1,
         color: "#0000008f",
+        singleDetails: {
+            role: "Designer",
+            credit: "Clearwage Limited",
+            location: "Umited Kingdom"
+        }
     },
     {
         client: "Minato",

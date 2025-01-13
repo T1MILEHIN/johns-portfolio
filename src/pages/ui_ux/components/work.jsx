@@ -200,14 +200,7 @@ Table_Row.propTypes = {
     handleSetSelected: PropTypes.func,
 }
 Work.propTypes = {
-    currentSlide: PropTypes.any,
-    setCurrentSlide: PropTypes.func,
-    dir: PropTypes.any,
-    setDir: PropTypes.any,
-    selected: PropTypes.any,
-    current: PropTypes.any,
-    setSelected: PropTypes.func,
-    handleSetSelected: PropTypes.func,
+    category: PropTypes.any,
 }
 
 Content.propTypes = {

@@ -10,6 +10,8 @@ import {
 import { Button } from "@/components/ui/button";
 import Work from "./ui_ux/components/work";
 import { useSearchParams } from "react-router-dom";
+import WorkMobile from "./ui_ux/components/workMobile";
+
 
 
 const AllProjects = () => {
