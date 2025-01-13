@@ -41,7 +41,7 @@ const SingleProject = () => {
 
         <div className="flex flex-col gap-4">
           <h1 className="font-specify_exp_med text-[40px] leading-[52px] font-bold">Project Objectives</h1>
-          <ul>
+          <ul className="list-disc list-inside">
             {work.singleDetails.objectives.map((objective, index) => (
               <li className="text-[24px] leading-[51.6px] font-normal" key={index}>{objective}</li>
             ))}
