@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const works = Works
 
-const Work = () => {
+const Work = ({category}) => {
     const [selected, setSelected] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [dir, setDir] = useState(null);
@@ -36,7 +36,7 @@ const Work = () => {
             handleSetSelected(null)
             setDir(null)
         }} className="relative">
-            {works.map((work) => (
+            {category === "All" ? works.map((work) => (
                 <Table_Row
                     key={work.client}
                     dir={dir}
@@ -47,7 +47,20 @@ const Work = () => {
                     handleSetSelected={handleSetSelected}>
                     {work}
                 </Table_Row>
-            ))}
+            )) :
+                works.filter((work)=> work.services.includes(category)).map((work)=> (
+                    <Table_Row
+                        key={work.client}
+                        dir={dir}
+                        currentSlide={currentSlide}
+                        setCurrentSlide={setCurrentSlide}
+                        selected={selected}
+                        setSelected={setSelected}
+                        handleSetSelected={handleSetSelected}>
+                        {work}
+                    </Table_Row>
+                ))
+            }
         </TableBody>
     )
 }
