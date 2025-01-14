@@ -1,7 +1,7 @@
 import img1 from "../assets/images/works-images/F.jpg"
-import c1 from "../assets/images/clearwage/1.jpg"
+// import c1 from "../assets/images/clearwage/1.jpg"
 import c2 from "../assets/images/clearwage/2.svg"
-import c3 from "../assets/images/clearwage/3.png";
+// import c3 from "../assets/images/clearwage/3.png";
 import img2 from "../assets/images/works-images/minato.jpg"
 import img3 from "../assets/images/works-images/cocacola.jpg"
 import img4 from "../assets/images/works-images/coursemigo.jpg"
@@ -20,12 +20,9 @@ export const Works = [
             role: "Designer",
             credit: "Clearwage Limited",
             location: "United Kingdom",
-
             images: [
                 c2
             ],
-            
-
             overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",
             objectives: [
                 "Streamline HR processes for UK businesses",
@@ -46,8 +43,6 @@ export const Works = [
             role: "Designer",
             credit: "Minato Limited",
             location: "United Kingdom",
-            
-
             overview: "The Minato Foundation project aimed to enhance academic, career, and professional opportunities for individuals from underserved backgrounds. As the designer, I created an illustrative logo that embodies the foundation's mission and designed an intuitive website to facilitate access to resources and information. The website serves as a user-friendly platform, ensuring that users can easily navigate and find the support they need.",
             objectives: [
                 "Brand Identity Development",
@@ -69,15 +64,10 @@ export const Works = [
         services: "Web re-design",
         component: img3,
         color: "red",
-
-
-
         singleDetails: {
             role: "Designer",
             credit: "Cocacola company",
             location: "Practice Project",
-            
-
             overview: "The Coca-Cola website redesign aims to enhance user experience through modern navigation, interactive elements, and mobile responsiveness while maintaining the iconic brand identity. Focused on accessibility, the project will engage diverse audiences and promote brand storytelling effectively.",
         }
     },
@@ -87,15 +77,11 @@ export const Works = [
         services: "Web design",
         component: img3,
         color: "#131927",
-
-
-
         singleDetails: {
             role: "Designer",
             credit: "SEEEG Daily",
             location: "United States",
-            
-
+    
             overview: "SEEEG Daily is a ministry whose name stands for Search, Enlighten, Empower, Encourage, Grow Daily—reflecting the transformative experience of anyone who engages with God’s Word daily. As the UI/UX Designer for this project, my role was to create an intuitive, user-friendly interface that enhances the user experience while effectively conveying the website's mission.",
             objectives: [
                 "Facilitate Daily Engagement",
@@ -117,9 +103,6 @@ export const Works = [
         services: "Website and app design",
         component: img4,
         color: "#407BFF",
-
-
-
         singleDetails: {
             role: "Design Facilitator",
             credit: "Coursemigo",

@@ -19,7 +19,7 @@ const menuContainerVariant = {
     exit: {
         x: "calc(100% + 100px)",
         transition: {
-            duration: 0.8, ease: [0.76, 0, 0.24, 1]
+            duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.3
         }
     }
 }

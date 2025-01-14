@@ -34,7 +34,7 @@ const AllProjects = () => {
             <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>All</Button>
             <Button onClick={(e) => handleCategories(e, "app")} className={`${CATEGORY === "app" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Applications</Button>
             <Button onClick={(e) => handleCategories(e, "Website")} className={`${CATEGORY === "Website" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Website</Button>
-            <Button className="blue_footer_hover border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 px-10">Case Studies</Button>
+            <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 px-10">Case Studies</Button>
           </div>
           <div className="py-10">
             <Table className="overflow-hidden">

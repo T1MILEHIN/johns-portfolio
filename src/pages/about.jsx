@@ -19,7 +19,7 @@ const About = () => {
       </div>
       <div className="md:px-20">
         <div className="md:py-20 md:p-0 p-7">
-          <h1 className="lg:w-[842px] w-full text-5xl leading-[80px] font-specify_exp_med">Helping Brands Stand Out with Unique Design</h1>
+          <h1 className="lg:w-[842px] w-full text-[40px] font-medium leading-[64px] font-specify_exp_med">Helping Brands Stand Out with Unique Design</h1>
         </div>
         <hr className="border-[#636363]" />
       </div>

@@ -80,8 +80,6 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         const rect = e.currentTarget.getBoundingClientRect();
         const cursorX = e.clientX - rect.left - 180;
         const cursorY = e.clientY - rect.top - 150;
-
-        // Update mouse position based on scroll
         mousePosition.x.set(cursorX);
         mousePosition.y.set(cursorY);
     };
@@ -143,7 +141,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
     }
 
     return (
-        <AnimatePresence>
+        <AnimatePresence mode="sync">
             {<motion.div
                 ref={contentRef}
                 style={{
