@@ -75,8 +75,8 @@ const LINKS = [
         url: "/contact"
     },
     {
-        name: "Case Studies",
-        url: "/case"
+        name: "Projects",
+        url: "/allprojects"
     },
     {
         name: "Experience",
