@@ -1,4 +1,7 @@
 import img1 from "../assets/images/works-images/F.jpg"
+import c1 from "../assets/images/clearwage/1.jpg"
+import c2 from "../assets/images/clearwage/2.svg"
+import c3 from "../assets/images/clearwage/3.png";
 import img2 from "../assets/images/works-images/minato.jpg"
 import img3 from "../assets/images/works-images/cocacola.jpg"
 import img4 from "../assets/images/works-images/coursemigo.jpg"
@@ -17,6 +20,10 @@ export const Works = [
             role: "Designer",
             credit: "Clearwage Limited",
             location: "United Kingdom",
+
+            images: [
+                c2
+            ],
             
 
             overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",

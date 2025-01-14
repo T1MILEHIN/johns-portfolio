@@ -8,6 +8,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .applied-sans {
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
