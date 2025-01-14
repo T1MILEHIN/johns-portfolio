@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import { useEffect } from "react";
 import {
     Select,
     SelectContent,
@@ -12,6 +13,9 @@ import tesOne from "../assets/images/FOOTER.jpg";
 import transition from "../transition";
 
 const Contact = () => {
+    useEffect(()=> {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className="pt-32 flex flex-wrap md:flex-nowrap md:px-20 lg:pt-36 md:gap-32 px-4 bg-darkbg text-white">
             <div className="lg:flex-[2] flex-1">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import tesOne from "../assets/images/FOOTER.jpg";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +15,9 @@ const Footer = () => {
             </div>
 
             <div className="relative text-right mt-10 mb-20">
-                <button className="absolute md:right-20 right-10 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue text-white">Get In Touch</button>
+                <Link to="/contact">
+                    <button className="absolute md:right-20 right-10 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue text-white">Get In Touch</button>
+                </Link>
                 <hr className="z-[2] w-full"></hr>
             </div>
 
