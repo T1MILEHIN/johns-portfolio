@@ -200,6 +200,7 @@ Table_Row.propTypes = {
 }
 Work.propTypes = {
     category: PropTypes.any,
+    limit: PropTypes.number,
 }
 
 Content.propTypes = {
