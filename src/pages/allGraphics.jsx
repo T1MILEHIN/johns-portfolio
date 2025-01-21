@@ -19,11 +19,14 @@ const AllGraphics = () => {
         <>
             <div className="pt-32 px-20">
                 <div className="md:block hidden">
-                    <h1 className="font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">Graphic Designs Library</h1>
-                    <div className="flex items-center gap-[18.61px]">
-                        <Button onClick={(e) => handleCategories(e, "FLYER")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Flyer Design</Button>
-                        <Button onClick={(e) => handleCategories(e, "LOGO")} className={`${CATEGORY === "LOGO" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Logo Design</Button>
+                    <div className="py-10">
+                        <h1 className="md:w-[686px] w-full font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">Graphic Designs Library</h1>
+                        <div className="flex items-center gap-[18.61px]">
+                            <Button onClick={(e) => handleCategories(e, "FLYER")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Flyer Design</Button>
+                            <Button onClick={(e) => handleCategories(e, "LOGO")} className={`${CATEGORY === "LOGO" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Logo Design</Button>
+                        </div>
                     </div>
+                    <hr />
                     <div className="py-10">
 
                     </div>
