@@ -10,6 +10,7 @@ import img6 from "../../../assets/images/moises/2.svg";
 import img7 from "../../../assets/images/moises/3.svg";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 
 const Section = ({ isInView, laptopImg, contentImgs, title, description, reverse }) => {
@@ -137,7 +138,7 @@ const LaptopAnimation = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
                     <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content" }}>
-                        <div className="button">More Works</div>
+                        <Link to="/alldesigns" className="button">More Works</Link>
                     </HoverEffect>
                 </motion.div>
             </HoverEffect>

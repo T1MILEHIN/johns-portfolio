@@ -27,7 +27,7 @@ const AllProjects = () => {
   };
   return (
     <>
-      <div className="pt-32 px-10">
+      <div className="pt-32 px-20">
         <div className="md:block hidden">
           <h1 className="font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">Recent Projects</h1>
           <div className="flex items-center gap-[18.61px]">

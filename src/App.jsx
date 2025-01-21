@@ -19,6 +19,8 @@ const Contact = React.lazy(() => import("./pages/contact"));
 
 const AllProjects = React.lazy(() => import("./pages/allProjects"));
 
+const AllDesigns = React.lazy(() => import("./pages/allGraphics"));
+
 const SingleProject = React.lazy(() => import("./pages/singleProject"));
 
 
@@ -37,6 +39,7 @@ function App() {
           <Route path='/experience' element={<Experience />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/allprojects' element={<AllProjects />} />
+          <Route path='/alldesigns' element={<AllDesigns />} />
           <Route path='/projects/:project' element={<SingleProject />} />
         </Routes>
       </AnimatePresence >
