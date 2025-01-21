@@ -145,4 +145,39 @@ export const Works = [
         component: img7,
         color: "#005d93"
     },
+    {
+        client: "Moises",
+        location: "Practice",
+        services: "App re-design",
+        component: img1,
+        color: "#005d93"
+    },
+    {
+        client: "GadCare",
+        location: "Website design",
+        services: "Website design",
+        component: img2,
+        color: "green"
+    },
+    {
+        client: "Bedmate",
+        location: "Practice",
+        services: "Website re-design",
+        component: img3,
+        color: "pink"
+    },
+    {
+        client: "MYABFLEX",
+        location: "Nigeria",
+        services: "App re-design",
+        component: img4,
+        color: "black"
+    },
+    {
+        client: "Truecaller",
+        location: "Practice",
+        services: "App re-design",
+        component: img5,
+        color: "blue"
+    },
 ].map((n, idx) => ({ ...n, id: idx, next: idx + 1 }));

@@ -45,7 +45,7 @@ const AllProjects = () => {
                   <TableHead>SERVICES</TableHead>
                 </TableRow>
               </TableHeader>
-              <Work category={CATEGORY} />
+              <Work category={CATEGORY} limit={100} />
             </Table>
           </div>
         </div>

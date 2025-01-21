@@ -6,9 +6,10 @@ import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { useNavigate } from "react-router-dom";
 
+
 const works = Works
 
-const Work = ({category}) => {
+const Work = ({category, limit}) => {
     const [selected, setSelected] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [dir, setDir] = useState(null);
@@ -36,7 +37,7 @@ const Work = ({category}) => {
             handleSetSelected(null)
             setDir(null)
         }} className="relative">
-            {category === "All" ? works.map((work) => (
+            {category === "All" ? works?.filter((_, index)=> index < limit)?.map((work) => (
                 <Table_Row
                     key={work.client}
                     dir={dir}
