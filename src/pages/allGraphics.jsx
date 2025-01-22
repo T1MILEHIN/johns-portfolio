@@ -38,7 +38,7 @@ const AllGraphics = () => {
                         </div>
                         <div className="grid lg:gap-10 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers.map((img, index)=> (
-                                <img key={img.id} scr={img.image} className="w-full aspect-square" alt="" />
+                                <img key={img.id} scr={img.image} className="w-full object-cover" alt="" />
                             ))}
                         </div>
                     </div>
