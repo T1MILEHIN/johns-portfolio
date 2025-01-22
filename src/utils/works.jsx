@@ -181,3 +181,22 @@ export const Works = [
         color: "blue"
     },
 ].map((n, idx) => ({ ...n, id: idx, next: idx + 1 }));
+
+
+export const Flyers = [
+    { id: 1, image: 'https://www.dropbox.com/scl/fi/52lzwpghd5chyuv3ivcu0/Artboard-1-copy-1.png?rlkey=bh1ih36ryvbanet6st5ffw1cz&st=ajztxrd4&raw=1' },
+    { id: 2, image: 'https://www.dropbox.com/scl/fi/boi7ogbaetjm19w2g3vg1/Artboard-1-copy-4.png?rlkey=6rpwrh8xcwd9wt8ur2mxh2ddi&st=uwibhebk&raw=1' },
+    { id: 3, image: 'https://www.dropbox.com/scl/fi/pxchkvbjkegr2dmiipm57/BTS-special-seminar.png?rlkey=te8dpwxjbl6e86w1pti1cbiid&st=nc3q4pv4&raw=1' },
+    { id: 4, image: 'https://www.dropbox.com/scl/fi/s05vzqh38be519h65005a/Business-Management-Training.png?rlkey=cc24gsj84pa8d65ny6vm2ev3g&st=7sbcxi68&raw=1' },
+    { id: 5, image: 'https://www.dropbox.com/scl/fi/96xhm9am68y3x4y9mk8eg/Desktop-57.png?rlkey=bbsv0zmndnc3yj7aeaikojqx7&st=z5bgolwz&raw=1' },
+    { id: 6, image: 'https://www.dropbox.com/scl/fi/dk1ojkn9gvp0m8ewh6j2m/Desktop-59.png?rlkey=zas7cm9r4zpid20h4k86mgnwe&st=ulxbadk4&raw=1' },
+    { id: 7, image: 'https://www.dropbox.com/scl/fi/3140ft7p9bhdfce7i56ig/ekrem-1.png?rlkey=tiqfcusjk557w4g4po9u0vwz0&st=z97mftyp&raw=1' },
+    { id: 8, image: 'https://www.dropbox.com/scl/fi/hhlvdr9bjhzbbxi9kiydb/Foursquare.png?rlkey=m4x605zag5etc73g7k60reb6e&st=ibbhh1v0&raw=1' },
+    { id: 9, image: 'https://www.dropbox.com/scl/fi/3f95ouqgm21rj2v4fkv09/Frame-13.png?rlkey=r0dho5310mnxk90h5b5c5opbr&st=0mfq6gux&raw=1' },
+    { id: 10, image: 'https://www.dropbox.com/scl/fi/r8gfb87r0ug5c4g446q1r/Frame-1532.png?rlkey=7p79en49ujia5xhqqrsus7z71&st=eef4r9rf&raw=1' },
+    { id: 11, image: 'https://www.dropbox.com/scl/fi/t8hacg80c2kugpotxkkoq/HIGHER-GROUND-COMMUNITY.png?rlkey=gr5252i81hzifwt4zcsfryyr6&st=5wgjbjon&raw=1' },
+    { id: 12, image: 'https://www.dropbox.com/scl/fi/2qp88cpckq1ksowytsczl/LIVE-PRAISE-CONNECT.png?rlkey=lqtzykzbkhnazk774j5drgdxf&st=vb5mnw99&raw=1' },
+    { id: 13, image: 'https://www.dropbox.com/scl/fi/9d8alznn2tmazqmtvbbzs/Menu.png?rlkey=e7mowp7gdnx00n8l1gzdhn5m8&st=q07z7w45&raw=1' },
+    { id: 14, image: 'https://www.dropbox.com/scl/fi/azk2aa01epgiaeom4ojj6/monibite-2.png?rlkey=i0gmhsa0ki89qtxcxcml85jf1&st=ao5xtax0&raw=1' },
+    { id: 15, image: 'https://www.dropbox.com/scl/fi/d583nik4ajwg3v7ultx69/PGA-carol.png?rlkey=ltm2dcxfbranyqmjixghk7zmv&st=lesevbsc&raw=1' },
+]
