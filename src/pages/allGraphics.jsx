@@ -3,7 +3,9 @@ import transition from "../transition"
 import Footer from "../components/footer";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "react-router-dom";
-import { Flyers } from "../utils/works"
+import { Flyers } from "../utils/works";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const AllGraphics = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -38,7 +40,7 @@ const AllGraphics = () => {
                         </div>
                         <div className="grid lg:gap-10 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers.map((img, index)=> (
-                                <img loading="lazy" key={img.id} src={img.image} className="w-full object-cover" alt="" />
+                                <LazyLoadImage effect="blur" key={img.id} src={img.image} className="w-full object-cover" alt="" />
                             ))}
                         </div>
                     </div>

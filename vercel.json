@@ -1,0 +1,26 @@
+{
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    "github": {
+        "autoJobCancelation": true,
+        "silent": true,
+        "autoAlias": true,
+        "enabled": true
+    },
+    "git": {
+        "deploymentEnabled": {
+            "master": true
+        }
+    },
+    "builds": [
+        {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "dist" }
+        }
+    ]
+}
