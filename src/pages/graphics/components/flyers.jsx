@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { Flyers } from "../../../utils/works";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -20,7 +22,7 @@ const imageVariants = {
 };
 
 const FlyersDisplay = () => {
-    const images = Flyers
+    const images = Flyers.slice(0, 15)
     return (
         <div
             className="md:p-20 p-4">
@@ -33,7 +35,9 @@ const FlyersDisplay = () => {
                 className="md:py-20 py-5">
                 <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
                     {Flyers.map((image, index) => index < 5 && (
-                        <motion.img loading="lazy" custom={index} key={image.id} variants={imageVariants} className="w-32 object-cover flex-1" src={image.image} alt="" />
+                        <motion.div custom={index} key={image.id} variants={imageVariants}>
+                            <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                        </motion.div>
                     ))}
                 </motion.div>
             </motion.div>
@@ -45,7 +49,9 @@ const FlyersDisplay = () => {
                 className="md:py-20 py-5">
                 <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
                 {images.map((image, index) => (index > 4 && index < 10) && (
-                    <motion.img loading="lazy" custom={index} key={image.id} variants={imageVariants} className="w-32 object-cover flex-1" src={image.image} alt="" />
+                    <motion.div custom={index} key={image.id} variants={imageVariants}>
+                        <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                    </motion.div>
                 ))}
                 </motion.div>
             </motion.div>
@@ -57,8 +63,10 @@ const FlyersDisplay = () => {
                 className="md:py-20 py-5">
                 <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
                 {images.map((image, index) => index > 9 && (
-                        <motion.img custom={index} key={image.id} variants={imageVariants} className="w-32 object-cover flex-1" src={image.image} alt="" />
-                    ))}
+                    <motion.div custom={index} key={image.id} variants={imageVariants}>
+                        <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                    </motion.div>
+                ))}
                 </motion.div>
             </motion.div>
             <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content", margin: "0 auto" }}>
