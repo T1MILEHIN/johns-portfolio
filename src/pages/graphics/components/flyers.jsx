@@ -33,10 +33,10 @@ const FlyersDisplay = () => {
                 variants={containerVariants}
                 viewport={{ once: true }}
                 className="md:py-20 py-5">
-                <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
+                <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                     {Flyers.map((image, index) => index < 5 && (
                         <motion.div custom={index} key={image.id} variants={imageVariants}>
-                            <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                            <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -47,10 +47,10 @@ const FlyersDisplay = () => {
                 variants={containerVariants}
                 viewport={{ once: true }}
                 className="md:py-20 py-5">
-                <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
+                <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => (index > 4 && index < 10) && (
                     <motion.div custom={index} key={image.id} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                        <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
                     </motion.div>
                 ))}
                 </motion.div>
@@ -61,10 +61,10 @@ const FlyersDisplay = () => {
                 variants={containerVariants}
                 viewport={{ once: true }}
                 className="md:py-20 py-5">
-                <motion.div className="flex lg:flex-nowrap flex-wrap gap-3 w-full">
+                <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => index > 9 && (
                     <motion.div custom={index} key={image.id} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" loading="lazy" className="w-32 object-cover flex-1" src={image.image} alt="" />
+                        <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
                     </motion.div>
                 ))}
                 </motion.div>
