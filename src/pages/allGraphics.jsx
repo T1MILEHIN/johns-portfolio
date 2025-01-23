@@ -38,9 +38,9 @@ const AllGraphics = () => {
                             <Button onClick={(e) => handleCategories(e, "MyPromosphere Design")} className={`${CATEGORY === "MyPromosphere Design" ? "bg-black text-white" : "bg-white"} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10 shadow-none`}>MyPromosphere Design</Button>
                             <Button onClick={(e) => handleCategories(e, "Kwe4 Designs")} className={`${CATEGORY === "MyPromosphere Design" ? "bg-black text-white" : "bg-white"} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10 shadow-none`}>Kwe4 Designs</Button>
                         </div>
-                        <div className="grid lg:gap-10 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                        <div className="grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers.map((img)=> (
-                                <LazyLoadImage effect="blur" key={img.id} src={img.image} className="w-full" alt="" />
+                                <LazyLoadImage effect="blur" key={img.id} src={img.image} className="w-full aspect-square object-cover" alt="" />
                             ))}
                         </div>
                     </div>
