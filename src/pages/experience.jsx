@@ -8,6 +8,7 @@ import promo from "../assets/images/EXP/promo.jpg";
 import Footer from "../components/footer";
 import transition from "../transition";
 import { motion } from "framer-motion";
+import { fadeIn } from "./variant";
 
 const EXP = [
     {
@@ -65,7 +66,7 @@ const Experience = () => {
         <div>
             <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
                 <div className="md:px-20">
-                    <h1 className="font-light font-stretchPro leading-[60px] lg:leading-[93.6px] text-[30px] lg:text-[72px] w-full lg:w-[1050px] tracking-tighter">
+                    <h1 className="font-light font-stretchPro leading-[60px] lg:leading-[93.6px] text-[30px] lg:text-[72px] w-full xl:w-[1050px] tracking-tighter">
                     <span className="font-bold">5</span> <span className="font-specify_exp_med">Years Background Experience in Designing</span></h1>
                 </div>
                 <div className="relative text-right mx-auto mt-20 md:py-0">
@@ -85,7 +86,7 @@ const Experience = () => {
                                     </div>
                                     <p className="text-[15px] md:w-[464px] md:leading-7 leading-[20px]">As a UI/UX intern in Colorfi, i assists in user interface and experience design, contributing to projects, learning design principles, and gaining practical experience.</p>
                                 </div>
-                                <motion.img initial={{y:300}} whileInView={{y:0}} transition={{duration: 0.3, type: 'spring'}} viewport={{once: true}} src={exp.image} className="lg:w-[385px] object-cover " alt="" />
+                                <motion.img variants={fadeIn("up", 0.5, 0.3)} initial="hidden" whileInView={"show"} viewport={{once: true, amount: 0.7}} src={exp.image} className="lg:w-[385px] object-cover " alt="" />
                             </motion.div>
                         ))}
                         

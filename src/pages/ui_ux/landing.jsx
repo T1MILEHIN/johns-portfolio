@@ -18,6 +18,7 @@ import ScrollSlide from "./components/scrollSlide";
 import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
 import { Link } from "react-router-dom";
+import { fadeIn } from "../variant";
 
 const Landing = () => {
     const testimonialRef = useRef(null)
@@ -27,10 +28,10 @@ const Landing = () => {
             <div className="lg:p-20 py-10 px-4">
                 <div className="">
                     <div className="flex lg:flex-row flex-col md:gap-14 gap-20 lg:items-center">
-                        <motion.div  initial={{x: -200, opacity: 0}} whileInView={{x:0, opacity: 1}} viewport={{ once: true, amount: 0.5}} transition={{ type: "spring", duration: 0.7}} className="leading-[30px] text-base lg:w-[617px]">
+                        <motion.div variants={fadeIn("right", 0.2, 0.4)} initial="hidden" whileInView={"show"} viewport={{once: true, amount: 0.7}} className="leading-[30px] text-base lg:w-[617px]">
                             <p className="">Hi, i&apos;m <b>Johnbeloved</b>, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences.</p>
                         </motion.div>
-                        <motion.div  initial={{x: 200, opacity: 0}} whileInView={{x:0, opacity: 1}} viewport={{ once: true, amount: 0.5}} transition={{ type: "spring", duration: 0.7, delay: 0.2}}>
+                        <motion.div variants={fadeIn("left", 0.3, 0.4)} initial="hidden" whileInView={"show"} viewport={{once: true, amount: 0.7}}>
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
                         </motion.div>
                     </div>
