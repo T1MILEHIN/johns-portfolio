@@ -27,16 +27,16 @@ const AllProjects = () => {
   };
   return (
     <>
-      <div className="pt-32 px-20">
-        <div className="md:block hidden">
-          <h1 className="font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">Recent Projects</h1>
-          <div className="flex items-center gap-[18.61px]">
-            <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>All</Button>
-            <Button onClick={(e) => handleCategories(e, "app")} className={`${CATEGORY === "app" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Applications</Button>
-            <Button onClick={(e) => handleCategories(e, "Website")} className={`${CATEGORY === "Website" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 px-10`}>Website</Button>
-            <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 px-10">Case Studies</Button>
+      <div className="md:pt-32 pt-36 md:px-20 px-4">
+        <div className="">
+          <h1 className="font-bold text-[42px] md:text-[64px] leading-[50px] md:leading-[83.2px] font-specify_exp_med py-10">Recent Projects</h1>
+          <div className="flex flex-wrap md:flex-nowrap items-center gap-[18.61px]">
+            <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>All</Button>
+            <Button onClick={(e) => handleCategories(e, "app")} className={`${CATEGORY === "app" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>Applications</Button>
+            <Button onClick={(e) => handleCategories(e, "Website")} className={`${CATEGORY === "Website" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>Website</Button>
+            <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 py-6 px-10 shadow-none">Case Studies</Button>
           </div>
-          <div className="py-10">
+          <div className="py-10 md:block hidden">
             <Table className="overflow-hidden">
               <TableHeader>
                 <TableRow className="border-b border-[#636363]">
@@ -50,8 +50,8 @@ const AllProjects = () => {
           </div>
         </div>
 
-        <div className="md:hidden block">
-          <WorkMobile />
+        <div className="py-10 md:hidden block">
+          <WorkMobile category={CATEGORY} slice={100} />
         </div>
       </div>
       <Footer />

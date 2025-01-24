@@ -33,23 +33,12 @@ const Work = ({category, limit}) => {
         setSelected(val);
     };
     return (
-        <TableBody onMouseLeave={() => {
-            handleSetSelected(null)
-            setDir(null)
-        }} className="relative">
-            {category === "All" ? works?.filter((_, index)=> index < limit)?.map((work) => (
-                <Table_Row
-                    key={work.client}
-                    dir={dir}
-                    currentSlide={currentSlide}
-                    setCurrentSlide={setCurrentSlide}
-                    selected={selected}
-                    setSelected={setSelected}
-                    handleSetSelected={handleSetSelected}>
-                    {work}
-                </Table_Row>
-            )) :
-                works.filter((work)=> work.services.includes(category)).map((work)=> (
+        <AnimatePresence>
+            <TableBody onMouseLeave={() => {
+                handleSetSelected(null)
+                setDir(null)
+            }} className="relative">
+                {category === "All" ? works?.filter((_, index)=> index < limit)?.map((work) => (
                     <Table_Row
                         key={work.client}
                         dir={dir}
@@ -60,9 +49,22 @@ const Work = ({category, limit}) => {
                         handleSetSelected={handleSetSelected}>
                         {work}
                     </Table_Row>
-                ))
-            }
-        </TableBody>
+                )) :
+                    works.filter((work)=> work.services.includes(category)).map((work)=> (
+                        <Table_Row
+                            key={work.client}
+                            dir={dir}
+                            currentSlide={currentSlide}
+                            setCurrentSlide={setCurrentSlide}
+                            selected={selected}
+                            setSelected={setSelected}
+                            handleSetSelected={handleSetSelected}>
+                            {work}
+                        </Table_Row>
+                    ))
+                }
+            </TableBody>
+        </AnimatePresence>
     )
 }
 
@@ -109,9 +111,9 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                 onKeyDown={handleKeyDown}
                 onWheel={(e) => handleWheel(e)}
                 className={`w-full relative border-b border-[#636363] duration-300 ${selected === children.id && "text-video_bg"}`} >
-                <TableCell className="py-10 md:py-16 md:text-5xl font-medium">{children.client}</TableCell>
-                <TableCell className="py-10 px-5">{children.location}</TableCell>
-                <TableCell className="py-10 px-5">{children.services}</TableCell>
+                <TableCell className="py-10 md:py-16 text-3xl lg:text-5xl font-medium">{children.client}</TableCell>
+                <TableCell className="py-10 px-5 text-sm lg:text-base">{children.location}</TableCell>
+                <TableCell className="py-10 px-5 text-sm lg:text-base">{children.services}</TableCell>
                 {selected === children.id &&
                     <AnimatePresence>
                         <TableCell className="absolute inset-0">
@@ -143,7 +145,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
 
     return (
         <AnimatePresence mode="sync">
-            {<motion.div
+            <motion.div
                 ref={contentRef}
                 style={{
                     position: 'absolute',
@@ -182,7 +184,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                         </button>
                     </HoverEffect>
                 </div>
-            </motion.div>}
+            </motion.div>
         </AnimatePresence>
     );
 }

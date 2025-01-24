@@ -93,7 +93,7 @@ const NavBar = () => {
     return (
         <header className={`z-[9999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
             <Link to="/">
-                <img src={pathname === "/contact" ? darklogo : logo} className="lg:w-[96px] sm:w-[90px] w-[70px]" alt="" />
+                <img src={pathname === "/contact" ? darklogo : logo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
             </Link>
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&
@@ -110,7 +110,7 @@ const NavBar = () => {
             </AnimatePresence>
             <div className={`z-[40] lg:w-20 w-14 aspect-square rounded-full grid place-content-center`}>
                 <HoverEffect rotationRange={20}>
-                    <motion.label drag className={`${isActive ? "bg-blue" : "bg-[#282828]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
+                    <motion.label className={`${isActive ? "bg-blue" : "bg-[#282828]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
                         <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                             <input onChange={handleToggle} checked={isActive} type="checkbox" id="checkbox" />
                             <label

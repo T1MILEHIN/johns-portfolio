@@ -62,6 +62,7 @@ export default {
 			},
 			fontFamily: {
 				specify_lighter: ['lighter', 'sans-serif'],
+				stretchPro: ['stretchPro', 'sans-serif'],
 				specify_bold: ['specify-bold', 'sans-serif'],
 				specify_medium: ['specify-medium', 'sans-serif'],
 				specify_exp_med: ['specify-expMed', 'san-serif']

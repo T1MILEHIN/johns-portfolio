@@ -6,6 +6,7 @@
 
 * {
   font-family: "Montserrat", sans-serif;
+  /* border: 1px solid white; */
 }
 
 html {
@@ -43,6 +44,13 @@ html {
 
 /* fonts family */
 @font-face {
+  font-family: 'stretchPro';
+  src: url('./assets/fonts/stretchPro/StretchPro.otf') format('originaltype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'lighter';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormMedium.ttf') format('truetype');
   font-weight: normal;
@@ -79,6 +87,14 @@ body {
   display: grid;
   place-content: center;
 }
+
+@media only screen and (max-width:700px) {
+  .button {
+    width: 129px;
+    height: 128px;
+  }
+}
+
 /* BLUE BUTTON HOVER */
 .blue_hover {
   position: relative;
@@ -197,6 +213,12 @@ body {
   margin: auto;
   display: block;
   height: calc(4px * 3 + 11px * 2);
+}
+
+@media only screen and (max-width:700px) {
+  .toggle {
+    width: 25px;
+  }
 }
 
 .bar {

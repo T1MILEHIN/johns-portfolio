@@ -65,7 +65,8 @@ const Experience = () => {
         <div>
             <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
                 <div className="md:px-20">
-                    <h1 className="font-specify_exp_med leading-[60px] lg:leading-[93.6px] lg:text-[72px] w-full lg:w-[1050px] tracking-tighter"><span className="font-semibold">5</span> Years Background Experience in Designing</h1>
+                    <h1 className="font-light font-stretchPro leading-[60px] lg:leading-[93.6px] text-[30px] lg:text-[72px] w-full lg:w-[1050px] tracking-tighter">
+                    <span className="font-bold">5</span> <span className="font-specify_exp_med">Years Background Experience in Designing</span></h1>
                 </div>
                 <div className="relative text-right mx-auto mt-20 md:py-0">
                     <button className="absolute right-20 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue text-white w-fit">Get In Touch</button>
