@@ -52,4 +52,4 @@ const AllGraphics = () => {
 }
 
 
-export default transition(AllGraphics);
+export default transition(AllGraphics, "Logos And Flyers");
