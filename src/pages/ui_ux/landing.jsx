@@ -12,7 +12,7 @@ import WorkMobile from "./components/workMobile";
 import tesOne from "../../assets/images/profile.png"
 import Footer from "../../components/footer";
 import LandingProfile from "../../components/landingProfile";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollSlide from "./components/scrollSlide";
 import HoverEffect from "../../components/custom/hoverEffect";
@@ -22,6 +22,9 @@ import { fadeIn } from "../variant";
 
 const Landing = () => {
     const testimonialRef = useRef(null)
+    useEffect(()=> {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div>
             <LandingProfile />

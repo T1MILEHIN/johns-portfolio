@@ -9,6 +9,7 @@ import Footer from "../components/footer";
 import transition from "../transition";
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";
+import { useEffect } from "react";
 
 const EXP = [
     {
@@ -62,6 +63,9 @@ const EXP = [
 ]
 
 const Experience = () => {
+    useEffect(()=> {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div>
             <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">

@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import img from "../assets/images/about.jpg"
 import profile_pic from "../assets/images/profile.png"
 import Footer from "../components/footer"
@@ -9,6 +9,9 @@ import { fadeIn } from "./variant";
 
 const About = () => {
   const footerRef = useRef();
+  useEffect(()=> {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div ref={footerRef} className="relative">
       <div className="lg:px-20 min-h-screen flex justify-center items-end">
