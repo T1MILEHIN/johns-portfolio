@@ -45,11 +45,10 @@ html {
 /* fonts family */
 @font-face {
   font-family: 'stretchPro';
-  src: url('./assets/fonts/stretchPro/StretchPro.otf') format('originaltype');
+  src: url('./assets/fonts/stretchPro/StretchPro.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'lighter';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormMedium.ttf') format('truetype');
@@ -199,6 +198,34 @@ body {
 .blue_footer_hover:hover::after {
   height: 100%;
 }
+
+/* TEXT SLIDER */
+.slide-left {
+  animation: slide-left 10s linear infinite forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.slide-right {
+  align-content: end;
+  justify-items: end;
+  animation: slide-right 10s linear infinite alternate-reverse;
+}
+@keyframes slide-right {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-60%, 0);
+  }
+}
+
 
 /* TOGGLER CSS  */
 /* From Uiverse.io by vk-uiux */ 

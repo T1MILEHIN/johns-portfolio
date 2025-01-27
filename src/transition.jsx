@@ -2,27 +2,48 @@
 /* eslint-disable react/display-name */
 import { motion } from "framer-motion";
 
-const transition = (Components) => {
+const transition = (Components, name) => {
   return () => (
     <>
       <Components />
-      <motion.div className="slide-in z-[99999999999]"
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scaleY: 1 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      >
-      </motion.div>
-      <motion.div className="slide-out z-[99999999999]"
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        exit={{ scaleY: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {/* <motion.p className="z-[99999999999999] absolute top-0 md:text-7xl md:font-medium text-blue">{name}</motion.p> */}
-      </motion.div>      
+      <div>
+        <motion.div
+          className="slide-in z-[99999999999] overflow-hidden"
+          initial={{ height: 0 }}
+          animate={{ height: 0 }}
+          exit={{ height: "100%"}}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.p
+          className="md:text-7xl md:font-medium text-white grid place-content-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          {name}
+        </motion.p>
+        </motion.div>
+        <motion.div
+          className="slide-out z-[99999999999] overflow-hidden"
+          initial={{ height: "100%" }}
+          animate={{ height: 0 }}
+          exit={{ height: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.p
+          className="md:text-7xl md:font-medium text-white grid place-content-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          {name}
+        </motion.p>
+        </motion.div>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default transition;
