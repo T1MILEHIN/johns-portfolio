@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import img1 from "../assets/images/works-images/F.jpg"
 // import c1 from "../assets/images/clearwage/1.jpg"
-import c2 from "../assets/images/clearwage/2.svg"
 // import c3 from "../assets/images/clearwage/3.png";
 import img2 from "../assets/images/works-images/minato.jpg"
 import img3 from "../assets/images/works-images/cocacola.jpg"
@@ -9,6 +8,25 @@ import img4 from "../assets/images/works-images/coursemigo.jpg"
 import img5 from "../assets/images/works-images/A.jpg"
 import img6 from "../assets/images/works-images/hga.jpg"
 import img7 from "../assets/images/works-images/givingli.jpg"
+
+
+
+import phoneMockUp from "../assets/images/all-single-products/coursemigo.png"
+import cocacolaLanding from "../assets/images/all-single-products/cocacolaL.png"
+import cocacola1 from "../assets/images/all-single-products/cocacola1.png"
+import cocacola3 from "../assets/images/all-single-products/cocacola3.png"
+import cocacola4 from "../assets/images/all-single-products/cocacola4.png"
+import seeegLanding from "../assets/images/all-single-products/seeegL.png"
+import seeeg1 from "../assets/images/all-single-products/seeeg1.png"
+import seeeg2 from "../assets/images/all-single-products/seeeg2.png"
+import clearwageLanding from "../assets/images/all-single-products/clearwageL.png"
+import clearwage1 from "../assets/images/all-single-products/clearwage1.png"
+import clearwage2 from "../assets/images/all-single-products/clearwage2.png"
+import clearwage3 from "../assets/images/all-single-products/clearwage3.png"
+import minatoLanding from "../assets/images/all-single-products/minatoL.png"
+import minato1 from "../assets/images/all-single-products/minato1.png"
+import minato2 from "../assets/images/all-single-products/minato2.png"
+import minato3 from "../assets/images/all-single-products/minato3.png"
 
 export const Works = [
     {
@@ -21,8 +39,11 @@ export const Works = [
             role: "Designer",
             credit: "Clearwage Limited",
             location: "United Kingdom",
-            images: [
-                c2
+            laptopMockup: [
+                clearwageLanding,
+                clearwage1,
+                clearwage2,
+                clearwage3
             ],
             overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",
             objectives: [
@@ -44,6 +65,12 @@ export const Works = [
             role: "Designer",
             credit: "Minato Limited",
             location: "United Kingdom",
+            laptopMockup: [
+                minatoLanding,
+                minato1,
+                minato2,
+                minato3,
+            ],
             overview: "The Minato Foundation project aimed to enhance academic, career, and professional opportunities for individuals from underserved backgrounds. As the designer, I created an illustrative logo that embodies the foundation's mission and designed an intuitive website to facilitate access to resources and information. The website serves as a user-friendly platform, ensuring that users can easily navigate and find the support they need.",
             objectives: [
                 "Brand Identity Development",
@@ -69,6 +96,13 @@ export const Works = [
             role: "Designer",
             credit: "Cocacola company",
             location: "Practice Project",
+            laptopMockup: [
+                cocacolaLanding,
+                cocacola1,
+                img3,
+                cocacola3,
+                cocacola4,
+            ],
             overview: "The Coca-Cola website redesign aims to enhance user experience through modern navigation, interactive elements, and mobile responsiveness while maintaining the iconic brand identity. Focused on accessibility, the project will engage diverse audiences and promote brand storytelling effectively.",
         }
     },
@@ -83,6 +117,11 @@ export const Works = [
             credit: "SEEEG Daily",
             location: "United States",
     
+            laptopMockup: [
+                seeegLanding,
+                seeeg1,
+                seeeg2,
+            ],
             overview: "SEEEG Daily is a ministry whose name stands for Search, Enlighten, Empower, Encourage, Grow Daily—reflecting the transformative experience of anyone who engages with God’s Word daily. As the UI/UX Designer for this project, my role was to create an intuitive, user-friendly interface that enhances the user experience while effectively conveying the website's mission.",
             objectives: [
                 "Facilitate Daily Engagement",
@@ -108,6 +147,13 @@ export const Works = [
             role: "Design Facilitator",
             credit: "Coursemigo",
             location: "United Kingdom",
+
+            // laptopMockup: {
+            //     img1: phoneMockUp
+            // },
+            phoneMockup: [
+                phoneMockUp
+            ],
             
 
             overview: "Coursemigo offers affordable, unlimited access to diverse courses through a subscription model, enabling users to explore various subjects, share resources with family, and enjoy flexible, high-quality online education.",

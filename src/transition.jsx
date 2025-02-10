@@ -15,11 +15,11 @@ const transition = (Components, name) => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-          className="md:text-7xl md:font-medium text-white grid place-content-center"
+          className="md:text-7xl md:font-medium text-white grid place-content-center font-specify_exp_med"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
         >
           {name}
         </motion.p>
@@ -29,10 +29,10 @@ const transition = (Components, name) => {
           initial={{ height: "100%" }}
           animate={{ height: 0 }}
           exit={{ height: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-          className="md:text-7xl md:font-medium text-white grid place-content-center"
+          className="md:text-7xl md:font-medium text-white grid place-content-center font-specify_exp_med"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

@@ -87,7 +87,9 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         mousePosition.y.set(cursorY);
     };
     const handleKeyDown = (e) => {
+        alert(e)
         if (e.key === "ArrowUp") {
+            alert('working')
             mousePosition.y.set((prev) => prev - 20); // Move up
         } else if (e.key === "ArrowDown") {
             mousePosition.y.set((prev) => prev + 20); // Move down
@@ -96,6 +98,7 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
     return (
         <>
             <TableRow
+                tabIndex={0}
                 onClick={()=> navigate(`/projects/${works.find(work=> work.id === currentSlide).client}`)}
                 id={`overflow-hidden relative shift-tab-${children.id} content`}
                 onMouseMove={
@@ -103,13 +106,15 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                         handleMouseMove(e);
                     }
                 }
+                onKeyDown={()=> alert('working')}
+                
                 onMouseEnter={(e) => {
                     handleMouseMove(e);
                     handleSetSelected(children.id)
                     setCurrentSlide(children.id)
                 }}
-                onKeyDown={handleKeyDown}
-                onWheel={(e) => handleWheel(e)}
+                // onKeyDown={(e)=> handleKeyDown(e)}
+                // onWheel={(e) => handleWheel(e)}
                 className={`w-full relative border-b border-[#636363] duration-300 ${selected === children.id && "text-video_bg"}`} >
                 <TableCell className="py-10 md:py-16 text-3xl lg:text-5xl font-medium">{children.client}</TableCell>
                 <TableCell className="py-10 px-5 text-sm lg:text-base">{children.location}</TableCell>

@@ -41,7 +41,7 @@ const About = () => {
       <div className="md:p-20 p-4 relative bg-white">
         <h1 className="text-[55px]">My Services</h1>
 
-        <motion.div className=" relative py-16 flex flex-wrap md:flex-nowrap gap-24 md:gap-10">
+        <motion.div className=" relative py-16 flex flex-wrap md:flex-nowrap gap-32 md:gap-14">
           <motion.div className="relative flex flex-col gap-5">
             <h2 className="font-medium text-2xl">Graphic Design</h2>
             <p className="text-[#2E2A2A] text-[15px] leading-[30px]">With a strong portfolio, I possess 5 years of extensive experience in graphics design, delivering high-quality visuals with precision expertise.</p>

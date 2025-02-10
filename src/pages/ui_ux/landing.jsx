@@ -38,7 +38,7 @@ const Landing = () => {
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
                         </motion.div>
                     </div>
-                    <Parallax translateY={[10, -10]} easing={"easeInOut"}>
+                    <Parallax translateY={[10, -15]} easing={"easeInOut"} speed={5}>
                         <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
                             <Link to="/about"
                                 className="mt-5 ml-auto button black_hover rounded-[40px] bg-black text-white w-fit">
@@ -66,7 +66,7 @@ const Landing = () => {
                                 <TableRow>
                                     <TableCell colSpan={2}></TableCell>
                                     <TableCell className="text-right p-10">
-                                        <Parallax translateY={[10, -10]}>
+                                        <Parallax translateY={[10, -15]} easing={"easeInOut"} speed={5}>
                                             <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
                                                 <Link to="/allprojects" className="ml-auto button black_hover rounded-[40px] bg-black text-white">
                                                     <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
