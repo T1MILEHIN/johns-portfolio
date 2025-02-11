@@ -27,18 +27,18 @@ const ScrollSlide = () => {
         <div ref={targetRef} className="relative h-[400vh] py-[30vh]">
             <div className="sticky top-0 right-0 left-0 overflow-hidden flex items-center h-screen">
                 <div className="flex flex-col gap-5">
-                    <motion.div style={{ x }} transition={{ type: "spring", stiffness: 100, damping: 20 }} className="flex gap-5">
+                    <motion.div style={{ x }} transition={{ type: "tween" }} className="flex gap-5">
                         {videos?.map((vid, id)=> id < 5 && (
-                            <div key={vid.id} className="relative w-[420px] h-[237px] aspect-square bg-video_bg">
+                            <div key={vid.id} className="relative w-[420px] h-[337px] aspect-square bg-video_bg">
                                 <div className="absolute top-[30px] bottom-[30px] right-0 left-0">
                                     <ReactPlayer style={{objectFit: 'cover'}} width={`100%`} height={`100%`} playing={true} loop={true} muted={true} url={vid.url} />
                                 </div>
                             </div>
                         ))}
                     </motion.div>
-                    <motion.div style={{ x: xReverse }} className="flex gap-5">
+                    <motion.div style={{ x: xReverse }} transition={{ type: "tween" }} className="flex gap-5">
                         {videos?.map((vid, id)=> id > 5 && (
-                            <div key={vid.id} className="relative w-[420px] h-[237px] aspect-square bg-video_bg">
+                            <div key={vid.id} className="relative w-[420px] h-[337px] aspect-square bg-video_bg">
                                 <div className="absolute top-[30px] bottom-[30px] right-0 left-0">
                                     <ReactPlayer width={`100%`} height={`100%`} playing={true} loop={true} muted={true} url={vid.url} />
                                 </div>
