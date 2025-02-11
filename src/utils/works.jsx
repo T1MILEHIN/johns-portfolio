@@ -147,13 +147,6 @@ export const Works = [
             role: "Design Facilitator",
             credit: "Coursemigo",
             location: "United Kingdom",
-
-            // laptopMockup: {
-            //     img1: phoneMockUp
-            // },
-            phoneMockup: [
-                phoneMockUp
-            ],
             
 
             overview: "Coursemigo offers affordable, unlimited access to diverse courses through a subscription model, enabling users to explore various subjects, share resources with family, and enjoy flexible, high-quality online education.",

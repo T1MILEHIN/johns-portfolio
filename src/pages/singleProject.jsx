@@ -45,6 +45,7 @@ const SingleProject = () => {
         </Table>
       </div>
 
+      {work?.singleDetails?.laptopMockup && 
       <div className="relative py-10">
         <img className="block xl:w-[1176px] mx-auto" src={work?.singleDetails?.laptopMockup[0]} alt="" />
         <div className="absolute top-0 right-32">
@@ -56,7 +57,7 @@ const SingleProject = () => {
             </button>
           </HoverEffect>
         </div>
-      </div>
+      </div>}
 
       {work?.singleDetails?.laptopMockup && (
         <div className="py-20 flex flex-col gap-20">
@@ -64,7 +65,7 @@ const SingleProject = () => {
             <div>
               <img src={work?.singleDetails?.laptopMockup[1]} alt="" />
             </div>
-            <div className="absolute -bottom-40 left-1/2 -translate-x-1/2">
+            <div className="absolute -bottom-20 lg:-bottom-40 left-1/2 -translate-x-1/2">
               <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
             </div>
           </div>
@@ -73,13 +74,6 @@ const SingleProject = () => {
           </div>
           <div className="">
             <img className="w-full" src={work?.singleDetails?.laptopMockup[4]} alt="" />
-          </div>
-        </div>
-      )}
-      {work?.singleDetails?.phoneMockup && (
-        <div className="py-20">
-          <div className="relative">
-            <img src={work?.singleDetails?.phoneMockup[0]} alt="" />
           </div>
         </div>
       )}
