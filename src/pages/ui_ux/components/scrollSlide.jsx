@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
-import ReactPlayer from 'react-player'
+import VideoComponent from './videoPlayer';
 
 const videos = [
     { id: 1, url: 'https://www.dropbox.com/scl/fi/0jhi10x2odvndlvaqw5ht/art.mp4?rlkey=g1cluvwtcp932jrbb5z2mciv5&st=0imcx1hb&dl=0'},
@@ -21,26 +21,26 @@ const ScrollSlide = () => {
         target: targetRef,
     });
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
-
     const xReverse = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
+
     return (
         <div ref={targetRef} className="relative h-[400vh] py-[30vh]">
             <div className="sticky top-0 right-0 left-0 overflow-hidden flex items-center h-screen">
                 <div className="flex flex-col gap-5">
-                    <motion.div style={{ x }} transition={{ type: "tween" }} className="flex gap-5">
+                    <motion.div style={{ x }} transition={{ type: "tween", willChange: 'transform' }} className="flex gap-5">
                         {videos?.map((vid, id)=> id < 5 && (
-                            <div key={vid.id} className="relative w-[420px] h-[337px] aspect-square bg-video_bg">
+                            <div key={vid.id} className="relative w-[420px] h-[300px] aspect-square bg-video_bg px-5/ md:px-10">
                                 <div className="absolute top-[30px] bottom-[30px] right-0 left-0">
-                                    <ReactPlayer style={{objectFit: 'cover'}} width={`100%`} height={`100%`} playing={true} loop={true} muted={true} url={vid.url} />
+                                    <VideoComponent url={vid.url} />
                                 </div>
                             </div>
                         ))}
                     </motion.div>
-                    <motion.div style={{ x: xReverse }} transition={{ type: "tween" }} className="flex gap-5">
+                    <motion.div style={{ x: xReverse }} transition={{ type: "tween", willChange: 'transform' }} className="flex gap-5">
                         {videos?.map((vid, id)=> id > 5 && (
-                            <div key={vid.id} className="relative w-[420px] h-[337px] aspect-square bg-video_bg">
+                            <div key={vid.id} className="relative w-[420px] h-[300px] aspect-square bg-video_bg px-10">
                                 <div className="absolute top-[30px] bottom-[30px] right-0 left-0">
-                                    <ReactPlayer width={`100%`} height={`100%`} playing={true} loop={true} muted={true} url={vid.url} />
+                                    <VideoComponent url={vid.url} />
                                 </div>
                             </div>
                         ))}
