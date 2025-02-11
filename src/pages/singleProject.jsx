@@ -20,6 +20,7 @@ const SingleProject = () => {
   const navigate = useNavigate()
   const work = Works.find((work) => work?.client === project)
   const nextWork = Math.floor(Math.random() * Works.length + 1)
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [project])

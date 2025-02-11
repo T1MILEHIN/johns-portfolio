@@ -11,7 +11,6 @@ import img7 from "../assets/images/works-images/givingli.jpg"
 
 
 
-import phoneMockUp from "../assets/images/all-single-products/coursemigo.png"
 import cocacolaLanding from "../assets/images/all-single-products/cocacolaL.png"
 import cocacola1 from "../assets/images/all-single-products/cocacola1.png"
 import cocacola3 from "../assets/images/all-single-products/cocacola3.png"
@@ -27,6 +26,8 @@ import minatoLanding from "../assets/images/all-single-products/minatoL.png"
 import minato1 from "../assets/images/all-single-products/minato1.png"
 import minato2 from "../assets/images/all-single-products/minato2.png"
 import minato3 from "../assets/images/all-single-products/minato3.png"
+import coursemigoLanding from "../assets/images/all-single-products/coursemigoL.png"
+import abbiLanding from "../assets/images/all-single-products/abbiL.png"
 
 export const Works = [
     {
@@ -147,7 +148,9 @@ export const Works = [
             role: "Design Facilitator",
             credit: "Coursemigo",
             location: "United Kingdom",
-            
+            laptopMockup: [
+                coursemigoLanding,
+            ],
 
             overview: "Coursemigo offers affordable, unlimited access to diverse courses through a subscription model, enabling users to explore various subjects, share resources with family, and enjoy flexible, high-quality online education.",
             objectives: [
@@ -169,7 +172,12 @@ export const Works = [
         location: "Nigeria",
         services: "Website re-design",
         component: img5,
-        color: "#FFF"
+        color: "#FFF",
+        singleDetails: {
+            laptopMockup: [
+                abbiLanding,
+            ],
+        }
     },
     {
         client: "HGA",
