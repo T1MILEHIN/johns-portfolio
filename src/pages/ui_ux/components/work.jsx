@@ -6,7 +6,6 @@ import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { useNavigate } from "react-router-dom";
 
-
 const works = Works
 
 const Work = ({category, limit}) => {
@@ -160,7 +159,9 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                     pointerEvents: "none",
                     zIndex: 10000,
                 }}
-                className="absolute inset-0 w-[349px] h-[298px] overflow-hidden">
+                className="absolute inset-0 w-[349px] h-[298px] overflow-hidden"
+                whileHover={{ scale: 0.9 }}
+                >
                 <motion.div
                     
                     initial={() => dir === "d" ? translations(currentSlide - 1) : dir === "u" ? translations(currentSlide + 1) : translations(currentSlide)}
