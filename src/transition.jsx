@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const transition = (Components, name) => {
-  const TransitionComponent = () => (
+  const TransitionComponent = (props) => (
     <>
-      <Components />
+      <Components {...props} />
       <div>
         <motion.div
           className="slide-in absolute inset-0  z-[99999999999] overflow-hidden"

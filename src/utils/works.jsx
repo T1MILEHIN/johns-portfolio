@@ -1,7 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
 import img1 from "../assets/images/works-images/F.jpg"
-// import c1 from "../assets/images/clearwage/1.jpg"
-// import c3 from "../assets/images/clearwage/3.png";
 import img2 from "../assets/images/works-images/minato.jpg"
 import img3 from "../assets/images/works-images/cocacola.jpg"
 import img4 from "../assets/images/works-images/coursemigo.jpg"

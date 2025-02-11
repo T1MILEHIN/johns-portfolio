@@ -15,7 +15,7 @@ import { Works } from "../utils/works";
 import transition from "../transition";
 import HoverEffect from "../components/custom/hoverEffect";
 
-const SingleProject = () => {
+const SingleProject = (props) => {
   const { project } = useParams()
   const navigate = useNavigate()
   const work = Works.find((work) => work?.client === project)
@@ -126,3 +126,4 @@ const SingleProject = () => {
 }
 
 export default transition(SingleProject)
+// export default transition((props) => <SingleProject {...props} project={useParams().project} />);
