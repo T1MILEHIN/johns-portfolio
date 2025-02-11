@@ -124,7 +124,7 @@ const Landing = () => {
                                     <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
                         </motion.div>
                     </motion.div>
                     <motion.div>
@@ -134,10 +134,10 @@ const Landing = () => {
                                 <img src={tesOne} alt="" className="w-10" />
                                 <div className="flex flex-col gap-1 text-sm">
                                     <p className="font-bold">John Doe</p>
-                                    <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
+                                    <p className="text-[#636363] text-xs">Founder; Tech Startup Co</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
                         </motion.div>
                     </motion.div>
                 </motion.div>
