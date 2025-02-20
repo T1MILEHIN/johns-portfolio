@@ -36,7 +36,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                     {Flyers.map((image, index) => index < 5 && (
                         <motion.div custom={index} key={image.id} variants={imageVariants}>
-                            <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
+                            <LazyLoadImage threshold={100} visibleByDefault={false} effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -50,7 +50,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => (index > 4 && index < 10) && (
                     <motion.div custom={index} key={image.id} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
+                        <LazyLoadImage threshold={100} visibleByDefault={false} effect="blur" className="w-full aspect-square object-cover" src={image.image} alt="" />
                     </motion.div>
                 ))}
                 </motion.div>
@@ -64,7 +64,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => index > 9 && (
                     <motion.div custom={index} key={image.id} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
+                        <LazyLoadImage effect="blur" className="w-full aspect-square object-cover" src={image.image} alt="" />
                     </motion.div>
                 ))}
                 </motion.div>

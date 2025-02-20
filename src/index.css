@@ -201,7 +201,7 @@ body {
 
 /* TEXT SLIDER */
 .slide-left {
-  animation: slide-left 30s linear infinite forwards;
+  animation: slide-left 10s linear infinite forwards;
 }
 
 @keyframes slide-left {
@@ -215,7 +215,7 @@ body {
 .slide-right {
   align-content: end;
   justify-items: end;
-  animation: slide-right 30s linear infinite alternate-reverse;
+  animation: slide-right 10s linear infinite alternate-reverse;
 }
 @keyframes slide-right {
   0% {
