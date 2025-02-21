@@ -6,8 +6,6 @@ import img5 from "../assets/images/works-images/A.jpg"
 import img6 from "../assets/images/works-images/hga.jpg"
 import img7 from "../assets/images/works-images/givingli.jpg"
 
-
-
 import cocacolaLanding from "../assets/images/all-single-products/cocacolaL.png"
 import cocacola1 from "../assets/images/all-single-products/cocacola1.png"
 import cocacola3 from "../assets/images/all-single-products/cocacola3.png"
@@ -43,6 +41,8 @@ export const Works = [
                 clearwage2,
                 clearwage3
             ],
+            videoBg: "#DDE8FF",
+            video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059999/JOHN%27s%20PORT/lmdimfjrolakbtwdknqr.mp4",
             overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",
             objectives: [
                 "Streamline HR processes for UK businesses",
@@ -98,9 +98,10 @@ export const Works = [
                 cocacolaLanding,
                 cocacola1,
                 img3,
-                cocacola3,
                 cocacola4,
             ],
+            videoBg: "black",
+            video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059997/JOHN%27s%20PORT/wbebebhda9chizpusyks.mp4",
             overview: "The Coca-Cola website redesign aims to enhance user experience through modern navigation, interactive elements, and mobile responsiveness while maintaining the iconic brand identity. Focused on accessibility, the project will engage diverse audiences and promote brand storytelling effectively.",
         }
     },
@@ -114,12 +115,13 @@ export const Works = [
             role: "Designer",
             credit: "SEEEG Daily",
             location: "United States",
-    
             laptopMockup: [
                 seeegLanding,
                 seeeg1,
                 seeeg2,
             ],
+            videoBg: "black",
+            video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059996/JOHN%27s%20PORT/oxgkny1h5ba8mirlfnqm.mp4",
             overview: "SEEEG Daily is a ministry whose name stands for Search, Enlighten, Empower, Encourage, Grow Daily—reflecting the transformative experience of anyone who engages with God’s Word daily. As the UI/UX Designer for this project, my role was to create an intuitive, user-friendly interface that enhances the user experience while effectively conveying the website's mission.",
             objectives: [
                 "Facilitate Daily Engagement",

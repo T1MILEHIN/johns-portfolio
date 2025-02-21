@@ -11,11 +11,12 @@ import {
 } from "@/components/ui/table";
 
 import { Works } from "../utils/works";
-
+import laptop from "../assets/images/laptop.png"
 import transition from "../transition";
 import HoverEffect from "../components/custom/hoverEffect";
+import ReactPlayer from 'react-player'
 
-const SingleProject = (props) => {
+const SingleProject = () => {
   const { project } = useParams()
   const navigate = useNavigate()
   const work = Works.find((work) => work?.client === project)
@@ -62,16 +63,21 @@ const SingleProject = (props) => {
 
       {work?.singleDetails?.laptopMockup && (
         <div className="py-20 flex flex-col gap-20">
-          <div className="relative mb-40">
-            <div>
-              <img src={work?.singleDetails?.laptopMockup[1]} alt="" />
+          <div className="relative mb-40"
+           style={{backgroundColor: work?.singleDetails?.videoBg}}
+          >
+            <div className="overflow-hidden relative md:w-[677px] mx-auto ">
+              <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
+              <div className="absolute overflow-hidden grid place-content-center sm:top-5 top-2 sm:right-20 right-10 sm:bottom-14 bottom-5 sm:left-20 left-10">
+                <ReactPlayer playing={true} loop={true} muted={true} url={work?.singleDetails?.video} />
+              </div>
             </div>
-            <div className="absolute -bottom-20 lg:-bottom-40 left-1/2 -translate-x-1/2">
+            <div className="absolute -bottom-20 lg:-bottom-[250px] left-1/2 -translate-x-1/2">
               <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
             </div>
           </div>
-          <div className="">
-            <img className="w-[773px] mx-auto" src={work?.singleDetails?.laptopMockup[3]} alt="" />
+          <div className="py-10">
+            <img className="w-full mx-auto" src={work?.singleDetails?.laptopMockup[3]} alt="" />
           </div>
           <div className="">
             <img className="w-full" src={work?.singleDetails?.laptopMockup[4]} alt="" />
@@ -126,4 +132,3 @@ const SingleProject = (props) => {
 }
 
 export default transition(SingleProject)
-// export default transition((props) => <SingleProject {...props} project={useParams().project} />);

@@ -36,7 +36,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                     {Flyers.map((image, index) => index < 5 && (
                         <motion.div custom={index} key={image.id} variants={imageVariants}>
-                            <LazyLoadImage threshold={100} visibleByDefault={false} effect="blur" loading="lazy" className="w-full aspect-square object-cover" src={image.image} alt="" />
+                            <LazyLoadImage effect="blur" className="w-full aspect-square object-cover" src={image.image} alt="" />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -50,7 +50,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => (index > 4 && index < 10) && (
                     <motion.div custom={index} key={image.id} variants={imageVariants}>
-                        <LazyLoadImage threshold={100} visibleByDefault={false} effect="blur" className="w-full aspect-square object-cover" src={image.image} alt="" />
+                        <LazyLoadImage effect="blur" className="w-full aspect-square object-cover" src={image.image} alt="" />
                     </motion.div>
                 ))}
                 </motion.div>
@@ -69,12 +69,12 @@ const FlyersDisplay = () => {
                 ))}
                 </motion.div>
             </motion.div>
-            <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content", margin: "0 auto" }}>
+            <HoverEffect Z={30} rotationRange={20} style={{ width: "fit-content", margin: "0 auto" }}>
                 <motion.div
                     className="ml-auto button black_hover rounded-[40px] bg-black text-white"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
-                    <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content" }}>
+                    <HoverEffect Z={30} rotationRange={15} style={{ width: "fit-content" }}>
                         <Link to="/alldesigns" className="button">More Works</Link>
                     </HoverEffect>
                 </motion.div>

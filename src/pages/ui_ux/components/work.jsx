@@ -78,22 +78,6 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         mousePosition.x.set(e.clientX - rect.left - 180);
         mousePosition.y.set(e.clientY - rect.top - 150);
     }
-    const handleWheel = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const cursorX = e.clientX - rect.left - 180;
-        const cursorY = e.clientY - rect.top - 150;
-        mousePosition.x.set(cursorX);
-        mousePosition.y.set(cursorY);
-    };
-    const handleKeyDown = (e) => {
-        alert(e)
-        if (e.key === "ArrowUp") {
-            alert('working')
-            mousePosition.y.set((prev) => prev - 20); // Move up
-        } else if (e.key === "ArrowDown") {
-            mousePosition.y.set((prev) => prev + 20); // Move down
-        }
-    };
     return (
         <>
             <TableRow
@@ -112,8 +96,6 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                     handleSetSelected(children.id)
                     setCurrentSlide(children.id)
                 }}
-                // onKeyDown={(e)=> handleKeyDown(e)}
-                // onWheel={(e) => handleWheel(e)}
                 className={`w-full relative border-b border-[#636363] duration-300 ${selected === children.id && "text-video_bg"}`} >
                 <TableCell className="py-10 md:py-16 text-3xl lg:text-5xl font-medium">{children.client}</TableCell>
                 <TableCell className="py-10 px-5 text-sm lg:text-base">{children.location}</TableCell>
