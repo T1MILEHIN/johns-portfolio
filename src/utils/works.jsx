@@ -8,7 +8,7 @@ import img7 from "../assets/images/works-images/givingli.jpg"
 
 import cocacolaLanding from "../assets/images/all-single-products/cocacolaL.png"
 import cocacola1 from "../assets/images/all-single-products/cocacola1.png"
-import cocacola3 from "../assets/images/all-single-products/cocacola3.png"
+// import cocacola3 from "../assets/images/all-single-products/cocacola3.png"
 import cocacola4 from "../assets/images/all-single-products/cocacola4.png"
 import seeegLanding from "../assets/images/all-single-products/seeegL.png"
 import seeeg1 from "../assets/images/all-single-products/seeeg1.png"
@@ -244,22 +244,3 @@ export const Works = [
         color: "blue"
     },
 ].map((n, idx) => ({ ...n, id: idx, next: idx + 1 }));
-
-
-export const Flyers = [
-    { id: 1, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026506/JOHN%27s%20PORT/ur1oy2vshahp616lx4qj.png' },
-    { id: 2, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026505/JOHN%27s%20PORT/oux1r2tgrcp8aipcft7h.png' },
-    { id: 3, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026505/JOHN%27s%20PORT/duegn9ehiwqpjf5yoyyk.png' },
-    { id: 4, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026505/JOHN%27s%20PORT/hrstrhh9vfr1mkhjdpcq.png' },
-    { id: 5, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026503/JOHN%27s%20PORT/afgnhvqa4b2cnto2nnb6.png' },
-    { id: 6, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026504/JOHN%27s%20PORT/epqsnhbovqql7iqilakl.png' },
-    { id: 7, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026503/JOHN%27s%20PORT/y7jslfgd11zmh3xjjjzn.png' },
-    { id: 8, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026503/JOHN%27s%20PORT/lwggsrr8vkezfyitxejp.png' },
-    { id: 9, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026502/JOHN%27s%20PORT/ozpta4kkuzzkjrj49ndq.png' },
-    { id: 10, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026502/JOHN%27s%20PORT/uz22r2sm0yvchswrkcaz.png' },
-    { id: 11, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026501/JOHN%27s%20PORT/blqihkprqvwlbjkuomdb.png' },
-    { id: 12, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026500/JOHN%27s%20PORT/hffzkxhhgusqaooca18m.png' },
-    { id: 13, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026500/JOHN%27s%20PORT/q7se5oroulor8eos3tbr.png' },
-    { id: 14, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026500/JOHN%27s%20PORT/sh05h6fukxzvxhkzkslt.png' },
-    { id: 15, image: 'https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740026500/JOHN%27s%20PORT/wdgblav5hmspmvzclixa.png' },
-]

@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import { useEffect } from "react";
 import transition from "../transition"
 import Footer from "../components/footer";
 import {
@@ -26,20 +27,23 @@ const AllProjects = () => {
       setSearchParams({ CATEGORY: "All" });
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <div className="md:pt-32 pt-36 md:px-20 px-4">
         <div className="">
           <h1 className="font-bold text-[42px] md:text-[64px] leading-[50px] md:leading-[83.2px] font-specify_exp_med py-10">Recent Projects</h1>
           <div className="flex flex-wrap md:flex-nowrap items-center gap-[18.61px]">
-            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content"}}>
+            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content" }}>
               <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>
                 <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                   <span>All</span>
                 </HoverEffect>
               </Button>
             </HoverEffect>
-            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content"}}>
+            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content" }}>
               <Button onClick={(e) => handleCategories(e, "app")} className={`${CATEGORY === "app" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>
                 <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                   <span>Applications</span>
