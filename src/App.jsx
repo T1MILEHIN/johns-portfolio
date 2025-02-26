@@ -23,6 +23,8 @@ const AllDesigns = React.lazy(() => import("./pages/allGraphics/allGraphics"));
 
 const FlyerDesigns = React.lazy(() => import("./pages/allGraphics/flyerDesigns"));
 
+const LogoDesigns = React.lazy(() => import("./pages/allGraphics/logoDesigns"));
+
 const SingleProject = React.lazy(() => import("./pages/singleProject"));
 
 function App() {
@@ -42,7 +44,7 @@ function App() {
           <Route path='/allprojects' element={<AllProjects />} />
           <Route path='/alldesigns' element={<AllDesigns />}>
             <Route index element={<FlyerDesigns />} />
-
+            <Route path='logodesigns' element={<LogoDesigns />} />
           </Route>
           <Route path='/projects/:project' element={<SingleProject />} />
         </Routes>

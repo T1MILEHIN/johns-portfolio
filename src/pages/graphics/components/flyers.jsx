@@ -61,7 +61,7 @@ const FlyersDisplay = () => {
                 viewport={{ once: true }}
                 className="md:py-20 py-5">
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
-                {images.map((image, index) => index > 9 && (
+                {images.map((image, index) => index > 9 && index < 15 && (
                     <motion.div custom={index} key={index} variants={imageVariants}>
                         <LazyLoadImage effect="blur" className="w-full aspect-square object-cover" src={image} alt="" />
                     </motion.div>

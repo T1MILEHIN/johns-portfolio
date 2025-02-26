@@ -1,6 +1,6 @@
-import { useState } from "react";
-import logo from "../assets/images/logo3-removebg.png";
-import darklogo from "../assets/images/darklogo-removebg.png";
+import { useState, useEffect } from "react";
+import logo from "../assets/images/johnLogoLight.png";
+import darklogo from "../assets/images/johnLogoDark.png";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import HoverEffect from "../components/custom/hoverEffect"
@@ -90,10 +90,19 @@ const NavBar = () => {
     const handleToggle = (e) => {
         setIsActive(!e.target.checked)
     }
+    const [currentLogo, setCurrentLogo] = useState(logo);
+
+    useEffect(() => {
+        if (pathname === "/contact" || pathname === "/alldesigns/logodesigns") {
+            setCurrentLogo(logo);
+        } else {
+            setCurrentLogo(darklogo);
+        }
+    }, [pathname]);
     return (
         <header className={`z-[9999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
             <Link to="/">
-                <img src={pathname === "/contact" ? darklogo : logo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
+                <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
             </Link>
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&

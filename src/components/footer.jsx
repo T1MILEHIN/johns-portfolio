@@ -1,32 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import tesOne from "../assets/images/FOOTER.jpg";
 import { Button } from "@/components/ui/button";
 import { Parallax } from 'react-scroll-parallax';
 
 const Footer = () => {
+    const { pathname } = useLocation()
     return (
-        <footer className="md:px-32 px-4 py-10 bg-darkbg text-white">
+        <footer className={`md:px-32 px-4 py-10 ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
             <div className="md:pt-20 p-2">
                 <div className="flex md:flex-nowrap flex-wrap items-end lg:gap-20 gap-3">
                     <div className="w-fit rounded-3xl overflow-hidden">
                         <img src={tesOne} alt="" className="w-28 md:w-52 filter grayscale" />
                     </div>
-                    <h1 className="font-specify_exp_med tracking-wide md:w-[476px] w-full text-4xl md:text-5xl lg:text-[64px] md:leading-[76.8px] text-text_gray">Let&apos;s Work Together</h1>
+                    <h1 className="font-specify_exp_med tracking-wide md:w-[476px] w-full text-4xl md:text-5xl lg:text-[64px] md:leading-[76.8px]">Let&apos;s Work Together</h1>
                 </div>
             </div>
 
             <div className="relative text-right mt-20 md:mt-20 mb-20">
                 <Parallax translateX={[-20, 0]} easing={"easeInOut"}>
                     <Link to="/contact">
-                        <button className="absolute md:right-20 right-10 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue text-white">Get In Touch</button>
+                        <button className="absolute md:right-20 right-10 top-1/2 -translate-y-1/2 z-10 button blue_black_hover rounded-[40px] bg-blue">Get In Touch</button>
                     </Link>
                 </Parallax>
-                <hr className="z-[2] w-full"></hr>
+                <hr className="z-[2] w-full "></hr>
             </div>
 
             <div className="flex md:flex-row flex-col gap-4 mt-20 px-2 md:px-0">
-                <Button className="blue_footer_hover duration-300 hover:border-blue border border-text_gray text-text_gray text-xs md:text-[10.78px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
-                <Button className="blue_footer_hover duration-300 hover:border-blue border border-text_gray text-text_gray text-xs md:text-[12.57px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">+234 9063 606 002</Button>
+                <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[10.78px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
+                <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[12.57px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">+234 9063 606 002</Button>
             </div>
 
             <div>
