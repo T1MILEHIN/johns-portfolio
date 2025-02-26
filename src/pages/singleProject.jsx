@@ -24,7 +24,8 @@ const SingleProject = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [project])
+  }, [project]);
+
   return (
     <div className="pt-32">
       <div className="md:px-20 px-4">
@@ -51,7 +52,7 @@ const SingleProject = () => {
       <div className="relative py-10">
         <img className="block xl:w-[1176px] mx-auto" src={work?.singleDetails?.laptopMockup[0]} alt="" />
         <div className="absolute top-0 right-32">
-          <HoverEffect Z={30} rotationRange={10} style={{ width: "fit-content" }}>
+          <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
             <button className="w-28 h-28 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
               <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
                 <div className="button">Design File</div>
@@ -72,7 +73,7 @@ const SingleProject = () => {
                 <ReactPlayer playing={true} loop={true} muted={true} url={work?.singleDetails?.video} />
               </div>
             </div>
-            <div className="absolute -bottom-20 lg:-bottom-[250px] left-1/2 -translate-x-1/2">
+            <div className={`${work?.singleDetails?.absoluteImage && "absolute -bottom-20 lg:-bottom-[250px] left-1/2 -translate-x-1/2"}`}>
               <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
             </div>
           </div>

@@ -41,6 +41,7 @@ export const Works = [
                 clearwage2,
                 clearwage3
             ],
+            absoluteImage: true,
             videoBg: "#DDE8FF",
             video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059999/JOHN%27s%20PORT/lmdimfjrolakbtwdknqr.mp4",
             overview: "Clear Wage aims to revolutionize HR management in the UK by providing an all-in-one platform for time tracking, time management, tax management, employee payment, and growth-related services.",
@@ -69,6 +70,7 @@ export const Works = [
                 minato2,
                 minato3,
             ],
+            absoluteImage: true,
             overview: "The Minato Foundation project aimed to enhance academic, career, and professional opportunities for individuals from underserved backgrounds. As the designer, I created an illustrative logo that embodies the foundation's mission and designed an intuitive website to facilitate access to resources and information. The website serves as a user-friendly platform, ensuring that users can easily navigate and find the support they need.",
             objectives: [
                 "Brand Identity Development",
@@ -100,6 +102,7 @@ export const Works = [
                 img3,
                 cocacola4,
             ],
+            absoluteImage: true,
             videoBg: "black",
             video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059997/JOHN%27s%20PORT/wbebebhda9chizpusyks.mp4",
             overview: "The Coca-Cola website redesign aims to enhance user experience through modern navigation, interactive elements, and mobile responsiveness while maintaining the iconic brand identity. Focused on accessibility, the project will engage diverse audiences and promote brand storytelling effectively.",
@@ -176,6 +179,19 @@ export const Works = [
             laptopMockup: [
                 abbiLanding,
             ],
+            overview: "Abbi Foods is a user-friendly mobile application designed to streamline the process of ordering food and tracking deliveries. The app aims to connect users with a Abbi local restaurants, enabling them to browse menus, place orders, and receive real-time updates on their delivery status. With a focus on enhancing the user experience, Abbi Foods combines intuitive design and robust functionality to create a seamless food ordering experience.",
+            objectives: [
+                "Project Supervisor",
+                "Co-Designer",
+                "Requirements Gathering",
+                "Wireframing",
+                "User Testing",
+                "Collaboration with Developers",
+                "Quality Assurance",
+                "Marketing Strategy Input",
+                "Stakeholder Communication",
+                "Post-Launch Evaluation",
+            ]
         }
     },
     {

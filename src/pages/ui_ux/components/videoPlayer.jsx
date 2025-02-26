@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types';
+// import {} from "react-intersection-observer"
 
 const VideoComponent = memo(({ url }) => (
     <ReactPlayer
