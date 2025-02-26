@@ -50,7 +50,13 @@ const AllProjects = () => {
                 </HoverEffect>
               </Button>
             </HoverEffect>
-            <Button onClick={(e) => handleCategories(e, "Website")} className={`${CATEGORY === "Website" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>Website</Button>
+            <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content" }}>
+              <Button onClick={(e) => handleCategories(e, "Website")} className={`${CATEGORY === "Website" ? "bg-black text-white" : ""} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-6 px-10 shadow-none`}>
+                <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
+                  <span>Website</span>
+                </HoverEffect>
+              </Button>
+            </HoverEffect>
             <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 py-6 px-10 shadow-none">Case Studies</Button>
           </div>
           <div className="py-10 md:block hidden">

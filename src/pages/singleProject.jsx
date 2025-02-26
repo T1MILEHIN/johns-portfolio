@@ -78,15 +78,13 @@ const SingleProject = () => {
             </div>
           </div>
           <div className="py-10">
-            <img className="w-full mx-auto" src={work?.singleDetails?.laptopMockup[3]} alt="" />
+            <img className={`${project === "Clearwage" ? "w-[30%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[3]} alt="" />
           </div>
           <div className="">
             <img className="w-full" src={work?.singleDetails?.laptopMockup[4]} alt="" />
           </div>
         </div>
       )}
-
-
       <div className="py-20 md:px-20 px-4 flex flex-col gap-8">
         {work?.singleDetails?.overview &&
           <div className="flex flex-col gap-6">
