@@ -47,6 +47,7 @@ export const Flyers = {
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740568567/Product_Management_ug4ojd.png",
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740568564/MAY_CODAR-1_cipl16.png",
     ],
+
     myPromoSphere: [
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740569438/Promotweet_hxwr8z.png",
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740569424/ABOUT_MYPROMOSPHERE_i7dyej.png",
@@ -56,5 +57,13 @@ export const Flyers = {
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740569420/EZEGOLD_zbcdp7.png",
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740569439/Frame_6_ttrfho.png",
         "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740569437/RUTILITY_FASHION_ggz1qz.png",
+    ],
+    kwe: [
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572448/Promotweet_kd4ojz.png",
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572457/ABOUT_MYPROMOSPHERE_bzzwjg.png",
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572457/Meet_Our_Promoter_of_the_Week__msoznx.png",
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572455/Frame_2_rfw8gr.png",
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572463/Frame_1_ddefjb.png",
+        "https://res.cloudinary.com/dqrhl6zcc/image/upload/v1740572444/RUTILITY_FASHION_pkodzb.png",
     ]
 }
