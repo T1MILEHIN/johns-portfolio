@@ -81,7 +81,7 @@ const Experience = () => {
                     <h1 className="my-12 font-specify_exp_med text-[20px] md:text-[40px] font-medium lg:w-804px md:my-5">Firms I worked with of recent</h1>
                     <div>
                         {EXP.map((exp) =>  (
-                            <motion.div key={exp.id} className="pb-20 md:pb-0 md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border border-b-[#636363]">
+                            <motion.div key={exp.id} className="pb-20 md:pb-0 md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border-b-[#636363]">
                                 <div className="flex-1 flex flex-col gap-4">
                                     <div className="font-bold text-[15px] flex flex-col">
                                         <motion.p variants={fadeIn("right", 0.1, 0.3)} initial="hidden" whileInView={"show"} viewport={{once: true, amount: 0.7}}  className="uppercase">{exp.date}</motion.p>
