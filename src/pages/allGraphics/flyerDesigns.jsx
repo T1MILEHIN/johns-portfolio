@@ -59,7 +59,7 @@ const FlyerDesigns = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ type: "spring", duration: 0.3 }}
-                        className="grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                        className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.codar?.map((img, index) => (
                             <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
                         ))}
@@ -73,7 +73,7 @@ const FlyerDesigns = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ type: "spring", duration: 0.3 }}
-                        className="grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                        className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.myPromoSphere?.map((img, index) => (
                             <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
                         ))}
@@ -87,7 +87,7 @@ const FlyerDesigns = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ type: "spring", duration: 0.3 }}
-                        className="grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                        className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.kwe?.map((img, index) => (
                             <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
                         ))}

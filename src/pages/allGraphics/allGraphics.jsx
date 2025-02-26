@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import { useEffect } from "react";
 import transition from "../../transition"
 import Footer from "../../components/footer";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,9 @@ const AllGraphics = () => {
             setSearchParams({ CATEGORY: "All" });
         }
     };
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <>
             <div className={`${pathname === "/alldesigns/logodesigns" && "bg-black text-bodybg"} pt-32 px-5 md:px-20`}>
