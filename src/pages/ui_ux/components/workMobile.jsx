@@ -18,16 +18,14 @@ const WorkMobile = ({ category, slice }) => {
                         }}
                         src={img.component}
                         alt="" className={`relative w-full h-[298px] object-contain p-7`} />
-                    <div className="absolute grid place-content-center inset-0">
-                        <HoverEffect Z={30} rotationRange={10} style={{ width: "fit-content" }}>
-                            <motion.button
-                                className="w-20 h-20 grid place-content-center cursor-pointer p-4 rounded-[40px] z-10 bg-darkbg text-white font-bold">
-                                <HoverEffect Z={10} rotationRange={20} style={{ width: "fit-content" }}>
-                                    <div className="button">view</div>
-                                </HoverEffect>
-                            </motion.button>
-                        </HoverEffect>
-                    </div>
+                        <div className="py-6">
+                            <h1 className="font-medium text-2xl my-2">{img.client}</h1>
+                            <hr className="border-[#636363]" />
+                            <div className="py-3 flex justify-between items-center text-[10px] font-medium text-[#636363]">
+                                <p>{img.services}</p>
+                                <p>{img.location}</p>
+                            </div>
+                        </div>
                 </div>
             ))
                 :

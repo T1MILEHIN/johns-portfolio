@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import profile_pic from "../assets/images/profile.png";
+import profile_pic2 from "../assets/images/mobilePic.png";
 import { Parallax } from 'react-scroll-parallax';
 
 const LandingProfile = () => {
@@ -22,11 +23,12 @@ const LandingProfile = () => {
     return (
         <div ref={targetRef} className="relative min-h-screen flex justify-center items-end">
             <div className='overflow-hidden'>
-                <Parallax translateY={[0, 10]} speed={-5} >
-                    <img className="w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic} alt="" />
+                <Parallax translateY={[0, 10]} speed={-5} className='overflow-hidden'>
+                    <img className="md:block hidden w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic} alt="" />
+                    <img className="md:hidden block w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic2} alt="" />
                 </Parallax>
                 <div className="cursor-pointer font-light ">
-                    <div className="w-[300px] overflow-hidden absolute top-2/4 md:top-1/2 -translate-y-1/2 md:right-44 right-10 text-center">
+                    <div className="flex md:flex-col gap-4 flex-col-reverse w-[300px] overflow-hidden absolute top-3/4 md:top-1/2 -translate-y-1/2 md:right-44 right-10 text-center md:text-black text-white">
                         <AnimatePresence mode="">
                             {pathname === "/" ? (
                                 <motion.p

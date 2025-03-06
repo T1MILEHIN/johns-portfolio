@@ -99,20 +99,29 @@ const NavBar = () => {
             setCurrentLogo(darklogo);
         }
     }, [pathname]);
+
     return (
         <header className={`z-[9999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
-            <Link to="/">
+            <Link to="/" className="md:block hidden">
                 <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
             </Link>
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&
-                    <motion.div className="lg:block hidden" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
-                        <nav className="flex items-center font-medium text-sm *:duration-300">
+                    <motion.div className="" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
+                        <nav className="md:flex hidden items-center font-medium text-sm *:duration-300">
                             <NavLink to="/" className={({ isActive }) => isActive ? "rounded-[5px] after:origin-left after:ml-auto after:left-0 after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-navactive after:z-[-1] after:w-full text-white rounded-tl-[5px] rounded-bl-[5px]" : "backdrop-blur-sm after:origin-left after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-transparent after:w-0 bg-nav rounded-tl-[5px] rounded-bl-[5px] transition-all"}>
                                 <p className="px-6 py-3 uppercase w-[86px] font-medium text-[9.63px] grid place-content-center tracking-wider">UI/UX</p>
                             </NavLink>
                             <NavLink to="/graphics" className={({ isActive }) => isActive ? "rounded-[5px] ml-auto after:duration-300 relative z-[1] overflow-hidden after:absolute after:inset-0 after:bg-navactive after:z-[-1] after:w-full text-white rounded-tr-[5px] rounded-br-[5px]" : "backdrop-blur-sm ml-auto after:duration-300 relative z-[1] overflow-hidden after:absolute after:inset-0 after:bg-transparent after:w-0 bg-nav text-[#9f9f9f] rounded-tr-[5px] rounded-br-[5px] transition-all"}>
                                 <p className="px-6 py-3 uppercase w-[86px] font-medium text-[9.63px] grid place-content-center tracking-wider">Graphics</p>
+                            </NavLink>
+                        </nav>
+                        <nav className="md:hidden flex gap-4 text-sm font-medium">
+                            <NavLink className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
+                                <p>UI/UX</p>
+                            </NavLink>
+                            <NavLink>
+                                <p>GRAPHICS</p>
                             </NavLink>
                         </nav>
                     </motion.div>}
