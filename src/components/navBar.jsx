@@ -102,9 +102,15 @@ const NavBar = () => {
 
     return (
         <header className={`z-[9999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
-            <Link to="/" className="md:block hidden">
-                <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
-            </Link>
+            {(pathname === "/" || pathname === "/graphics") ?
+                <Link to="/" className="md:block hidden">
+                    <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
+                </Link>
+                :
+                <Link to="/" className="">
+                    <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />
+                </Link>
+            }
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&
                     <motion.div className="" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
@@ -117,10 +123,10 @@ const NavBar = () => {
                             </NavLink>
                         </nav>
                         <nav className="md:hidden flex gap-4 text-sm font-medium">
-                            <NavLink to="/" className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
+                            <NavLink to="/" className={({ isActive }) => isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
                                 <p>UI/UX</p>
                             </NavLink>
-                            <NavLink to="/graphics" className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
+                            <NavLink to="/graphics" className={({ isActive }) => isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
                                 <p>GRAPHICS</p>
                             </NavLink>
                         </nav>

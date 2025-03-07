@@ -23,11 +23,11 @@ const AllGraphics = () => {
       }, [])
     return (
         <>
-            <div className={`${pathname === "/alldesigns/logodesigns" && "bg-black text-bodybg"} pt-32 px-5 md:px-20`}>
+            <div className={`${pathname === "/alldesigns/logodesigns" && "bg-black text-bodybg"} pt-32 px-4 md:px-20`}>
                 <div>
                     <div className="py-10">
-                        <h1 className="md:w-[686px] w-full font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">Graphic Designs Library</h1>
-                        <div className="flex items-center gap-[18.61px]">
+                        <h1 className="md:w-[686px] w-full font-bold text-[65.51px] md:text-[64px] leading-[83.2px] font-specify_exp_med py-10">Graphic Designs Library</h1>
+                        <div className="flex items-center gap-2 md:gap-[18.61px]">
                             <Link to="/alldesigns">
                                 <Button className={`${pathname === "/alldesigns" ? "bg-black text-white hover:bg-white hover:text-black" : pathname === "/alldesigns/logodesigns" ? "hover:bg-white hover:text-black" : "bg-white hover:bg-black hover:text-white"} border border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-[25px] px-10 shadow-none`}>Flyer Design</Button>
                             </Link>
@@ -36,7 +36,7 @@ const AllGraphics = () => {
                             </Link>
                         </div>
                     </div>
-                    <hr />
+                    <hr className="w-full" />
                     <Outlet context={{handleCategories, CATEGORY}} />
                 </div>
             </div>
