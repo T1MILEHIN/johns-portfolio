@@ -117,10 +117,10 @@ const NavBar = () => {
                             </NavLink>
                         </nav>
                         <nav className="md:hidden flex gap-4 text-sm font-medium">
-                            <NavLink className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
+                            <NavLink to="/" className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
                                 <p>UI/UX</p>
                             </NavLink>
-                            <NavLink>
+                            <NavLink to="/graphics" className={({isActive})=> isActive ? "relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-1 after:rounded-full" : "relative"}>
                                 <p>GRAPHICS</p>
                             </NavLink>
                         </nav>

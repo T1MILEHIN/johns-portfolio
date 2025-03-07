@@ -17,7 +17,7 @@ const Section = ({ isInView, laptopImg, contentImgs, title, description, reverse
     return (
         <div className="py-20 flex flex-col gap-8">
             <motion.div className="mx-auto w-fit relative">
-                <img src={laptopImg} alt="Laptop" className="md:w-[677px] mx-auto" />
+                <img src={laptopImg} alt="Laptop" className="md:w-[677px] w-full mx-auto border-2" />
                 <div className="bg-bodybg overflow-hidden grid place-content-center absolute sm:top-5 top-2 sm:right-20 right-10 sm:bottom-14 bottom-5 sm:left-20 left-10">
                     <div className="flex gap-5 items-center">
                         {contentImgs.map((img, index) => reverse ? (
@@ -68,9 +68,10 @@ const Section = ({ isInView, laptopImg, contentImgs, title, description, reverse
                     </div>
                 </div>
             </motion.div>
-            <div className="sm:w-[450px] mx-auto text-center flex flex-col gap-4">
-                <h2 className="font-medium uppercase">{title}</h2>
-                <p className="text-sm">{description}</p>
+            <div className="sm:w-[450px] mx-auto md:text-center flex flex-col gap-4">
+                <h2 className="font-bold md:font-medium uppercase">{title}</h2>
+                <hr className="border-[#636363] md:hidden block" />
+                <p className="text-base md:text-sm">{description}</p>
             </div>
         </div>
     );
@@ -117,7 +118,7 @@ const LaptopAnimation = () => {
     ];
 
     return (
-        <div className="p-10 flex flex-col gap-20">
+        <div className="p-4 md:p-10 flex flex-col gap-20">
             <h1 className="mx-auto lg:w-[1023px] font-medium">RECENT WORKS</h1>
             <div ref={ref}>
                 {sections.map((section, index) => (

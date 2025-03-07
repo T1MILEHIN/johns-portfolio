@@ -56,10 +56,10 @@ const LandingProfile = () => {
                             <div className="">
                                 <div className={`${dir ? "slide-left" : "slide-right"} relative flex`}>
                                     <div className='block'>
-                                        <span className="min-w-full whitespace-nowrap text-center inline-block text-base font-specify_exp_med after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-[10px] after:bg-[#263238] group-hover:after:bg-blue group-hover:after:w-3 after:duration-300 duration-300">Oluwawole Johnbeloved Ayomide </span>
+                                        <span className="text-lg md:text-base min-w-full whitespace-nowrap text-center inline-block font-specify_exp_med after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-[10px] after:bg-[#263238] group-hover:after:bg-blue group-hover:after:w-3 after:duration-300 duration-300">Oluwawole Johnbeloved Ayomide </span>
                                     </div>
                                     <div className='block'>
-                                        <span className="min-w-full whitespace-nowrap text-center inline-block text-base font-specify_exp_med after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-[10px] after:bg-[#263238] group-hover:after:bg-blue group-hover:after:w-3 after:duration-300 duration-300">Oluwawole Johnbeloved Ayomide</span>
+                                        <span className="text-lg md:text-base min-w-full whitespace-nowrap text-center inline-block font-specify_exp_med after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-[10px] after:bg-[#263238] group-hover:after:bg-blue group-hover:after:w-3 after:duration-300 duration-300">Oluwawole Johnbeloved Ayomide</span>
                                     </div>
                                 </div>
                             </div>
