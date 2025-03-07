@@ -18,7 +18,7 @@ import ScrollSlide from "./components/scrollSlide";
 import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
 import { Link } from "react-router-dom";
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -120,7 +120,12 @@ const Landing = () => {
                 </div>
                 <div className="md:hidden block py-10">
                     <Swiper
-                        modules={[Pagination]}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        modules={[Autoplay, Pagination, Navigation]}
                         slidesPerView={1}
                         pagination={{ clickable: true }}
                     >
