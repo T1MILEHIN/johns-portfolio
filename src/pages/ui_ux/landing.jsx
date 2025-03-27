@@ -28,6 +28,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { fadeIn } from "../variant";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+
+const words = `Hi, i'm Johnbeloved, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences`
 
 const Landing = () => {
     const testimonialRef = useRef(null)
@@ -41,13 +44,14 @@ const Landing = () => {
                 <div className="">
                     <div className="flex lg:flex-row flex-col md:gap-14 gap-20 lg:items-center overflow-hidden">
                         <motion.div variants={fadeIn("right", 0.2, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="leading-[30px] text-base lg:w-[617px]">
-                            <p className="">Hi, i&apos;m <b>Johnbeloved</b>, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences.</p>
+                            <TextGenerateEffect duration={2} filter={false} words={words} />
+                            {/* <p className="">Hi, i&apos;m <b>Johnbeloved</b>, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences.</p> */}
                         </motion.div>
                         <motion.div variants={fadeIn("left", 0.3, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }}>
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
                         </motion.div>
                     </div>
-                    <Parallax translateY={[10, -15]} easing={"easeInOut"} speed={5}>
+                    <Parallax translateY={[5, -30]} easing={"easeInOut"} speed={10}>
                         <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", marginLeft: "auto" }}>
                             <Link to="/about"
                                 className="mt-5 ml-auto button black_hover rounded-[40px] bg-black text-white w-fit">
@@ -91,7 +95,7 @@ const Landing = () => {
                     </div>
                     <div className="md:hidden block">
                         <WorkMobile category={"All"} slice={4} />
-                        <Parallax translateY={[10, -15]} easing={"easeInOut"} speed={5}>
+                        <Parallax translateY={[5, -30]} easing={"easeInOut"} speed={5}>
                             <HoverEffect Z={70} rotationRange={20} style={{ width: "fit-content", margin: "0 auto" }}>
                                 <Link to="/allprojects" className="button black_hover rounded-[40px] bg-black text-white">
                                     <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
@@ -113,7 +117,6 @@ const Landing = () => {
                     <img src={software} className="w-full" alt="" />
                 </div>
             </div>
-
             <div className="relative z-[999999999] bg-bodybg p-4">
                 <div className="text-center py-10">
                     <h1 className="font-bold uppercase text-2xl md:text-3xl">Testimonials</h1>
@@ -187,7 +190,7 @@ const Landing = () => {
                                     <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                         </motion.div>
                     </motion.div>
                     <motion.div className="origin-center bg-bodybg">
@@ -200,7 +203,7 @@ const Landing = () => {
                                     <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
+                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
                         </motion.div>
                     </motion.div>
                     <motion.div>
@@ -213,15 +216,14 @@ const Landing = () => {
                                     <p className="text-[#636363] text-xs">Founder; Tech Startup Co</p>
                                 </div>
                             </div>
-                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
+                            <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
                         </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
-
             <Footer />
         </div>
     )
 }
 
-export default Landing
+export default Landing;

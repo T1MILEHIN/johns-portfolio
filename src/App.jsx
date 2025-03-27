@@ -3,8 +3,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/navBar";
 
-// import Loader from "./components/loader";
-
 const Home = React.lazy(() => import("./pages/home"));
 
 const Landing = React.lazy(() => import("./pages/ui_ux/landing"));

@@ -29,7 +29,7 @@ const SingleProject = () => {
   return (
     <div className="pt-32">
       <div className="md:px-20 px-4">
-        <h1 className="font-bold text-[64px] leading-[83.2px] font-specify_exp_med py-10">{project}</h1>
+        <h1 className="font-bold text-3xl md:text-[64px] leading-[83.2px] font-specify_exp_med py-10">{project}</h1>
         <Table className="overflow-hidden md:px-20 px-4">
           <TableHeader>
             <TableRow className="border-b border-[#636363]">
@@ -40,22 +40,22 @@ const SingleProject = () => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium py-10 px-5">{work?.singleDetails?.role}</TableCell>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium py-10 px-5">{work?.singleDetails?.credit}</TableCell>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium py-10 px-5">{work?.singleDetails?.location}</TableCell>
+              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.role}</TableCell>
+              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.credit}</TableCell>
+              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.location}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </div>
 
       {work?.singleDetails?.laptopMockup && 
-      <div className="relative py-10">
-        <img className="block xl:w-[1176px] mx-auto" src={work?.singleDetails?.laptopMockup[0]} alt="" />
-        <div className="absolute top-0 right-32">
+      <div className="relative lg:py-10 py-20">
+        <img className="block xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.laptopMockup[0]} alt="" />
+        <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
           <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
-            <button className="w-28 h-28 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
+            <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
               <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
-                <div className="button">Design File</div>
+                <div className="button text-xs">Design File</div>
               </HoverEffect>
             </button>
           </HoverEffect>
@@ -63,17 +63,25 @@ const SingleProject = () => {
       </div>}
 
       {work?.singleDetails?.laptopMockup && (
-        <div className="py-20 flex flex-col gap-20">
+        <div className="md:py-20 flex flex-col gap-20">
           <div className="relative mb-40"
            style={{backgroundColor: work?.singleDetails?.videoBg}}
           >
-            <div className="overflow-hidden relative md:w-[677px] mx-auto ">
+            <div className="overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
-              <div className="absolute overflow-hidden grid place-content-center sm:top-5 top-2 sm:right-20 right-10 sm:bottom-14 bottom-5 sm:left-20 left-10">
-                <ReactPlayer playing={true} loop={true} muted={true} url={work?.singleDetails?.video} />
+              <div className="absolute top-[20%] left-[10%] w-[80%] h-[57%]">
+                <ReactPlayer 
+                  className="" 
+                  playing={true} 
+                  loop={true} 
+                  muted={true} 
+                  url={work?.singleDetails?.video} 
+                  width="100%"
+                  height="100%" 
+                />
               </div>
             </div>
-            <div className={`${work?.singleDetails?.absoluteImage && "absolute -bottom-20 lg:-bottom-[250px] left-1/2 -translate-x-1/2"}`}>
+            <div className={`${work?.singleDetails?.absoluteImage && "absolute -bottom-24 lg:-bottom-[350px] left-1/2 -translate-x-1/2"}`}>
               <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
             </div>
           </div>
@@ -89,7 +97,7 @@ const SingleProject = () => {
         {work?.singleDetails?.overview &&
           <div className="flex flex-col gap-6">
             <h1 className="font-specify_exp_med text-[20px] md:text-[40px] leading-[52px] font-bold">Project OverView</h1>
-            <p className="text-base leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal">{work?.singleDetails?.overview}</p>
+            <p className="text-sm leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal">{work?.singleDetails?.overview}</p>
           </div>}
 
 
@@ -98,7 +106,7 @@ const SingleProject = () => {
             <h1 className="font-specify_exp_med text-[20px] md:text-[40px] leading-[52px] font-bold">Project Objectives</h1>
             <ul className="list-disc list-inside">
               {work?.singleDetails?.objectives.map((objective, index) => (
-                <li className="text-base leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal" key={index}>{objective}</li>
+                <li className="text-sm leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal" key={index}>{objective}</li>
               ))}
             </ul>
           </div>}
@@ -107,20 +115,20 @@ const SingleProject = () => {
         <div className="flex items-center justify-center">
           <div onClick={() => navigate(`/projects/${Works[nextWork].client}`)} className="cursor-pointer flex flex-col gap-4 items-center">
             <h1 className="text-text_gray text-base font-medium">Next Project</h1>
-            <img src={Works[nextWork].component} className="w-full md:w-[539px] h-[347px] cursor-pointer" alt="" />
+            <img src={Works[nextWork]?.component} className="w-full md:w-[539px] h-[347px] object-contain cursor-pointer" alt="" />
           </div>
         </div>
         <div>
           <div className="px-2 md:pt-10 md:pb-10 pt-10 pb-5">
             <h1 className="text-sm font-bold text-[#636363] my-2">SOCIALS</h1>
-            <div className="flex justify-between text-xs ">
+            <div className="flex flex-col gap-10 lg:gap-0 justify-between text-xs">
               <ul className="flex md:gap-10 gap-4 text-white">
                 <li className="relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Instagram</li>
                 <li className="relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">LinkedIn</li>
                 <li className="relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Behance</li>
               </ul>
               <ul>
-                <li className="font-medium text-[#636363]">2024 Jayzleux. All rights reserved.</li>
+                <li className="text-center font-medium text-[#636363]">2024 Jayzleux. All rights reserved.</li>
               </ul>
             </div>
           </div>

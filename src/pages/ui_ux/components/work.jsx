@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import PropTypes from 'prop-types';
 import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
@@ -73,11 +73,16 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         x: useMotionValue(0),
         y: useMotionValue(0),
     };
+
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
-        mousePosition.x.set(e.clientX - rect.left - 180);
-        mousePosition.y.set(e.clientY - rect.top - 150);
-    }
+        const newX = e.clientX - rect.left - 174.5;
+        const newY = e.clientY - rect.top - 149;
+
+        mousePosition.x.set(newX);
+        mousePosition.y.set(newY);
+    };
+
     return (
         <>
             <TableRow
@@ -89,8 +94,9 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                         handleMouseMove(e);
                     }
                 }
-                onKeyDown={()=> alert('working')}
-                
+                onKeyDown={(e) => {
+                    handleMouseMove(e)
+                }}
                 onMouseEnter={(e) => {
                     handleMouseMove(e);
                     handleSetSelected(children.id)
@@ -120,36 +126,37 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
 const Content = ({ dir, mousePosition, currentSlide }) => {
     const contentRef = useRef(null);
 
+    const springX = useSpring(mousePosition.x, { stiffness: 300, damping: 20 });
+    const springY = useSpring(mousePosition.y, { stiffness: 300, damping: 20 });
+
     const translations = (currentSlide) => {
-        if (dir === null) {
-            return { y: currentSlide * -298 }
-        }
-        else {
-            return { y: currentSlide * -298 };
-        }
-    }
+        return { y: currentSlide * -298 };
+    };
 
     return (
         <AnimatePresence mode="sync">
             <motion.div
+                drag
                 ref={contentRef}
                 style={{
-                    position: 'absolute',
-                    top: mousePosition.y,
-                    left: mousePosition.x,
-                    transition: 'all 200ms 10ms cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    x: springX,
+                    y: springY,
                     pointerEvents: "none",
                     zIndex: 10000,
                 }}
                 className="absolute inset-0 w-[349px] h-[298px] overflow-hidden"
-                whileHover={{ scale: 0.9 }}
+                    whileHover={{ scale: 0.9 }}
                 >
                 <motion.div
-                    
                     initial={() => dir === "d" ? translations(currentSlide - 1) : dir === "u" ? translations(currentSlide + 1) : translations(currentSlide)}
                     animate={() => translations(currentSlide)}
                     transition={{
-                        type: "tween",
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 20,
                         duration: 0.7
                     }}
                     className={`relative flex flex-col`}>

@@ -78,7 +78,7 @@ const Contact = () => {
             
                             </div>
                             <div className="relative text-right my-32 md:py-0">
-                                <button className="absolute right-20 top-1/2 -translate-y-1/2 z-10 button rounded-[40px] bg-blue blue_black_hover text-white">Get In Touch</button>
+                                <button className="absolute right-5 lg:right-20 top-1/2 -translate-y-1/2 z-10 button rounded-[40px] bg-blue blue_black_hover text-white">Get In Touch</button>
                                 <hr className="text-[#1b1b1b] z-[2] w-full" />
                             </div>
                         </form>
