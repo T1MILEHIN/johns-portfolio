@@ -82,6 +82,10 @@ const LINKS = [
         name: "Experience",
         url: "/experience"
     },
+    {
+        name: "Case Study",
+        url: "/case-study"
+    },
 ]
 
 const NavBar = () => {
@@ -153,7 +157,7 @@ const NavBar = () => {
                     initial="initial"
                     animate={isActive ? "animate" : "exit"}
                     exit="exit"
-                    className="z-20 flex flex-col justify-between pt-32 pb-8 pr-8 lg:pl-20 pl-10 fixed top-0 bottom-0 right-0 md:w-1/2 w-full  bg-[#282828] text-white">
+                    className="z-20 flex flex-col justify-between pt-20 pb-8 pr-8 lg:pl-20 pl-10 fixed top-0 bottom-0 right-0 md:w-1/2 w-full  bg-[#282828] text-white">
                     <motion.div>
                         <p className="p-4 text-[#4d4d4d] border-b border-[#727272]">Navigation</p>
                         <motion.ul variants={menuContainerVariant} className="leading-[80px] text-4xl">

@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/navBar";
-
 const Home = React.lazy(() => import("./pages/home"));
 
 const Landing = React.lazy(() => import("./pages/ui_ux/landing"));
@@ -25,6 +24,8 @@ const LogoDesigns = React.lazy(() => import("./pages/allGraphics/logoDesigns"));
 
 const SingleProject = React.lazy(() => import("./pages/singleProject"));
 
+const CaseStudy = React.lazy(() => import("./pages/caseStudy"));
+
 function App() {
   const location = useLocation()
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/experience' element={<Experience />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/allprojects' element={<AllProjects />} />
+          <Route path='/case-study' element={<CaseStudy />} />
           <Route path='/alldesigns' element={<AllDesigns />}>
             <Route index element={<FlyerDesigns />} />
             <Route path='logodesigns' element={<LogoDesigns />} />

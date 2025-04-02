@@ -13,6 +13,10 @@ export default {
 			},
 			colors: {
 				blue: "#407BFF",
+				caseStudyBlue: "#0075CA",
+				caseStudyProgressBarBg: "#DCDAFA",
+				caseStudyGreen: "#30CC83",
+				caseStudyGray: "#666666",
 				text_gray: "#D9D9D9",
 				video_bg: "#C9C9CA",
 				bodybg: "#ebebeb",
