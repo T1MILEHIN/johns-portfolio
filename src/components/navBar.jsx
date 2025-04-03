@@ -105,7 +105,7 @@ const NavBar = () => {
     }, [pathname]);
 
     return (
-        <header className={`z-[9999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
+        <header className={`z-[99999999999999999999999999999] fixed w-full top-0 right-0 flex justify-between items-center md:p-8 p-4 ${pathname === "/contact" ? "bg-darkbg" : "bg-transparent"}`}>
             {(pathname === "/" || pathname === "/graphics") ?
                 <Link to="/" className="md:block hidden">
                     <motion.img src={currentLogo} className="lg:w-[96px] sm:w-[90px] w-[90px]" alt="" />

@@ -1,6 +1,6 @@
 "use client";
-import { useEffect } from "react";
-import { motion, useAnimate, stagger } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useAnimate, stagger, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import PropTypes from "prop-types";
 
@@ -10,20 +10,25 @@ export const TextGenerateEffect = ({
   filter = true,
   duration = 0.5
 }) => {
+  const textRef = useRef()
+  const isInView = useInView(textRef, {once: true})
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
 
   useEffect(() => {
-    animate(
-      "span",
-      { opacity: 1, filter: filter ? "blur(0px)" : "none" },
-      { duration, delay: stagger(0.2) }
-    );
-  }, [animate, filter, duration]);
+    if (isInView) {
+      animate(
+        "span",
+        { opacity: 1, filter: filter ? "blur(0px)" : "none" },
+        { duration, delay: stagger(0.2) }
+      );
+    }
+   
+  }, [animate, filter, duration, isInView]);
 
   return (
-    <div className={cn(className)}>
-      <div className="mt-4 dark:text-white text-black">
+    <div ref={textRef} className={cn(className)}>
+      <div className="mt-4 dark:text-black text-black">
         <motion.div ref={scope}>
           {wordsArray.map((word, idx) => (
             <motion.span

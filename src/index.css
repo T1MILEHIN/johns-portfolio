@@ -787,3 +787,14 @@ body {
 .banter-loader__box:nth-child(9) {
   animation: moveBox-9 4s infinite;
 }
+
+
+html, body {
+  /* overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;  */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  /* display: none; */
+}

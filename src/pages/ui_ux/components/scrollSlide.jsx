@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll as S, useTransform, useSpring } from "framer-motion";
 import VideoComponent from './videoPlayer';
 
 const videos = [
@@ -17,20 +17,19 @@ const videos = [
 
 const ScrollSlide = () => {
     const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
+    const { scrollYProgress: scrollSlideYProgress } = S({
         target: targetRef,
         offset: ["start start", "end end"],
     });
     
-    const x = useTransform(scrollYProgress, [0, 1], [0, -500]);
-    const xReverse = useTransform(scrollYProgress, [0, 1], [-400, 0]);
-
-    const smoothX = useSpring(x, { stiffness: 130, damping: 10 });
-    const smoothXReverse = useSpring(xReverse, { stiffness: 130, damping: 10 });
+    const x = useTransform(scrollSlideYProgress, [0, 1], [0, -500]);
+    const xReverse = useTransform(scrollSlideYProgress, [0, 1], [-400, 0]);
+    const smoothX = useSpring(x, { stiffness: 130, damping: 90 });
+    const smoothXReverse = useSpring(xReverse, { stiffness: 130, damping: 90 });
 
     return (
         <div ref={targetRef} className="relative h-[400vh] py-[30vh]">
-            <div className="sticky top-0 right-0 left-0 overflow-hidden flex items-center h-screen">
+            <div className="sticky top-0 overflow-hidden flex items-center h-screen">
                 <div className="flex flex-col gap-5">
                     <motion.div style={{ x:smoothX }} className="flex gap-5">
                         {videos?.map((vid, id)=> id < 5 && (

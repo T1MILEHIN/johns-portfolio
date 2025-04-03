@@ -2,6 +2,8 @@ import img from "../assets/images/hero-casestudy-img.png";
 import targerUser from "../assets/images/caseUser.png";
 import center from "../assets/images/clearwork/clearworkCenter.png";
 import { Progress } from "@/components/ui/progress"
+import { motion } from "framer-motion";
+import { fadeIn } from "./variant";
 
 
 const CaseStudy = () => {
@@ -9,11 +11,24 @@ const CaseStudy = () => {
         <section className="">
             <div className="min-h-screen bg-caseStudyBlue flex flex-col items-center justify-between text-center pt-28 md:pt-32 ">
                 <div className="text-xl lg:text-[36px] text-white font-bold leading-[180%]">
-                    <h1 className="text-2xl lg:text-[54px]">CLEARWORK</h1>
-                    <p><span className="text-caseStudyGreen">Revolutionizing{" "}</span>HR Management in the UK</p>
-                    <p>A UX design Case Study</p>
+                    <motion.h1
+                        variants={fadeIn("down", 0.1, 0.3)}
+                        initial="hidden"
+                        whileInView={"show"}
+                        viewport={{ once: true, amount: 0.7 }}
+                        className="text-2xl lg:text-[54px]">CLEARWORK</motion.h1>
+                    <motion.p
+                        variants={fadeIn("down", 0.2, 0.3)}
+                        initial="hidden" whileInView={"show"}
+                        viewport={{ once: true, amount: 0.7 }}><span className="text-caseStudyGreen">Revolutionizing{" "}</span>HR Management in the UK</motion.p>
+                    <motion.p
+                        variants={fadeIn("down", 0.3, 0.3)}
+                        initial="hidden" whileInView={"show"}
+                        viewport={{ once: true, amount: 0.7 }}>A UX design Case Study</motion.p>
                 </div>
-                <img className="lg:w-[1000px]" src={img} alt="" />
+                <motion.img variants={fadeIn("up", 0.5, 0.3)} 
+                initial="hidden" whileInView={"show"} 
+                viewport={{ once: true }} className="lg:w-[1000px]" src={img} alt="" />
             </div>
 
             <section className="container mx-auto px-4">
@@ -160,7 +175,7 @@ const CaseStudy = () => {
                     <div className="p-6 bg-[#07499408] border-2 border-dashed rounded-3xl">
                         <div className="flex items-center flex-wrap justify-between border-b pb-4">
                             <div className="flex items-center ">
-                                <img src={center} alt="User Image" className="w-16 h-16 rounded-full mr-4"/>
+                                <img src={center} alt="User Image" className="w-16 h-16 rounded-full mr-4" />
                                 <div>
                                     <h2 className="text-lg font-bold">Sarah Thompson</h2>
                                     <p className="text-gray-600">30 years • HR Manager</p>
@@ -272,7 +287,7 @@ const CaseStudy = () => {
                         <p className="text-caseStudyGray">Style guide and mid fidelity</p>
                     </div>
                     <p className="leading-[27px]">Based on our research findings, we began sketching and ideating potential solutions for the ClearWork platform. Our goal was to create a user-friendly and intuitive interface that directly addressed key pain points. During this phase, we explored various layouts, refined user flows, and developed mid-fidelity wireframes to ensure seamless navigation. Additionally, we established a cohesive style guide to maintain visual consistency and enhance usability across the platform.</p>
-                
+
                 </div>
 
             </section>

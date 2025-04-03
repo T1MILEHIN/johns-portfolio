@@ -1,16 +1,20 @@
 import { useState, useRef } from 'react';
-import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, AnimatePresence, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import profile_pic from "../assets/images/profile.png";
 import profile_pic2 from "../assets/images/mobilePic.png";
-import { Parallax } from 'react-scroll-parallax';
 
 const LandingProfile = () => {
     const [dir, setDir] = useState(true);
     const { pathname } = useLocation()
     const targetRef = useRef(null);
 
-    const { scrollY } = useScroll();
+
+    const { scrollY, scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start start", "end start"],
+    });
+
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
         if (latest > previous) {
@@ -20,13 +24,16 @@ const LandingProfile = () => {
         }
     });
 
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 3]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
     return (
         <div ref={targetRef} className="relative min-h-screen flex justify-center items-end">
             <div className='overflow-hidden'>
-                <Parallax translateY={[0, 10]} speed={-5} className='overflow-hidden'>
+                <div className='overflow-hidden'>
                     <img className="md:block hidden w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic} alt="" />
-                    <img className="md:hidden block w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic2} alt="" />
-                </Parallax>
+                    <motion.img style={{ opacity, scale }} className="origin-bottom md:hidden block w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic2} alt="" />
+                </div>
                 <div className="cursor-pointer font-light ">
                     <div className="flex md:flex-col gap-4 flex-col-reverse w-[300px] overflow-hidden absolute top-3/4 md:top-1/2 -translate-y-1/2 md:right-44 right-10 text-center md:text-black text-white">
                         <AnimatePresence mode="">

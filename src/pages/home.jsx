@@ -4,7 +4,7 @@ import transition from "../transition"
 
 const Home = () => {
     return (
-        <div className='relative bg-bodybg'>
+        <div className='relative'>
             <Outlet />
         </div>
     )

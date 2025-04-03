@@ -10,7 +10,6 @@ import software from '../../assets/images/softwares.png'
 import Work from "./components/work";
 import WorkMobile from "./components/workMobile";
 import tesOne from "../../assets/images/profile.png"
-import Footer from "../../components/footer";
 import LandingProfile from "../../components/landingProfile";
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -38,14 +37,13 @@ const Landing = () => {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div>
+        <>
             <LandingProfile />
             <div className="lg:p-20 py-10 px-4">
                 <div className="">
                     <div className="flex lg:flex-row flex-col md:gap-14 gap-20 lg:items-center overflow-hidden">
                         <motion.div variants={fadeIn("right", 0.2, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="leading-[30px] text-base lg:w-[617px]">
-                            <TextGenerateEffect duration={2} filter={false} words={words} />
-                            {/* <p className="">Hi, i&apos;m <b>Johnbeloved</b>, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences.</p> */}
+                            <TextGenerateEffect duration={1} filter={false} words={words} />
                         </motion.div>
                         <motion.div variants={fadeIn("left", 0.3, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }}>
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
@@ -117,11 +115,11 @@ const Landing = () => {
                     <img src={software} className="w-full" alt="" />
                 </div>
             </div>
-            <div className="relative z-[999999999] bg-bodybg p-4">
+            <div className="relative p-4 overflow-hidden z-40">
                 <div className="text-center py-10">
                     <h1 className="font-bold uppercase text-2xl md:text-3xl">Testimonials</h1>
                 </div>
-                <div className="md:hidden block py-10">
+                <div className="relative md:hidden block py-10">
                     <Swiper
                         autoplay={{
                             delay: 2500,
@@ -143,12 +141,12 @@ const Landing = () => {
                                             <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                         </div>
                                     </div>
-                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
+                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="origin-center bg-bodybg">
+                            <div className="origin-center">
                                 <p className="text-[#C6C3C3] font-bold text-xl md:text-sm py-2">02</p>
                                 <div className="py-6 md:py-12 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
                                     <div className="flex items-center gap-4">
@@ -158,7 +156,7 @@ const Landing = () => {
                                             <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
                                         </div>
                                     </div>
-                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
+                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -173,7 +171,7 @@ const Landing = () => {
                                             <p className="text-[#636363] text-xs">Founder; Tech Startup Co</p>
                                         </div>
                                     </div>
-                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px]">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
+                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -193,7 +191,7 @@ const Landing = () => {
                             <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved transformed our interface into a visually stunning experience. Their attention to detail and understanding of our brand made the collaboration seamless. Highly recommended!</p>
                         </motion.div>
                     </motion.div>
-                    <motion.div className="origin-center bg-bodybg">
+                    <motion.div className="origin-center">
                         <motion.p variants={fadeIn("right", 0.2, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.5 }} className="text-[#C6C3C3] font-bold text-xl md:text-sm py-2">02</motion.p>
                         <motion.div variants={fadeIn("down", 0.3, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.5 }} className="py-6 md:py-12 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
                             <div className="flex items-center gap-4">
@@ -221,8 +219,7 @@ const Landing = () => {
                     </motion.div>
                 </motion.div>
             </div>
-            <Footer />
-        </div>
+        </>
     )
 }
 
