@@ -22,7 +22,7 @@ const ScrollSlide = () => {
         offset: ["start start", "end end"],
     });
     
-    const x = useTransform(scrollSlideYProgress, [0, 1], [0, -500]);
+    const x = useTransform(scrollSlideYProgress, [0, 1], [0, -800]);
     const xReverse = useTransform(scrollSlideYProgress, [0, 1], [-400, 0]);
     const smoothX = useSpring(x, { stiffness: 130, damping: 90 });
     const smoothXReverse = useSpring(xReverse, { stiffness: 130, damping: 90 });
