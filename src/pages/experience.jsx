@@ -5,7 +5,6 @@ import codar from "../assets/images/EXP/codar.jpg";
 import kw from "../assets/images/EXP/kw.jpg";
 import clearwage from "../assets/images/EXP/clearwage.jpg";
 import promo from "../assets/images/EXP/promo.jpg";
-import Footer from "../components/footer";
 import transition from "../transition";
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";

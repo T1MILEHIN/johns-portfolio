@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
 import transition from "../transition"
-import Footer from "../components/footer";
 import {
   Table,
   TableHead,
