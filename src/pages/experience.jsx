@@ -154,7 +154,6 @@ const Experience = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

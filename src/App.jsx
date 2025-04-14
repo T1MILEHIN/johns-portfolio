@@ -37,7 +37,7 @@ function App() {
         smoothTouch: true
       }}>
         <NavBar />
-        <motion.div style={{borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius}} className="bg-bodybg relative z-[99] pb-20">
+        <motion.div style={{borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius}} className={`${location.pathname === "/contact" ? "bg-darkbg" : location.pathname === "/about" ? "bg-white" : "bg-bodybg"} relative z-[99] pb-20`}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path='/' element={<Home />}>

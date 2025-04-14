@@ -77,7 +77,6 @@ const AllProjects = () => {
           <WorkMobile category={CATEGORY} slice={100} />
         </div>
       </div>
-      <Footer />
     </>
   )
 }
