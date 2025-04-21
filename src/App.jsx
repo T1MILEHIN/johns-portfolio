@@ -25,7 +25,7 @@ function App() {
     offset: ["start end", "end end"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-400, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
   const smoothY = useSpring(y, { stiffness: 300, damping: 100 });
   const radius = useTransform(scrollYProgress, [0, 1], [200, 0]);
   const smoothRadius = useSpring(radius, { stiffness: 250, damping: 90 });
