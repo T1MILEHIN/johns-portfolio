@@ -7,7 +7,7 @@ import { useOutletContext } from "react-router-dom";
 const FlyerDesigns = () => {
     const { handleCategories, CATEGORY } = useOutletContext()
     return (
-        <div className="py-10 flex flex-col gap-10 w-full">
+        <div className="bg-bodybg py-10 flex flex-col gap-10 w-full">
 
             <div className="flex flex-wrap items-center gap-4 md:gap-[18.61px] w-full">
                 <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : "bg-white"} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-[25px] px-10 shadow-none`}>All</Button>
@@ -94,7 +94,6 @@ const FlyerDesigns = () => {
                     </motion.div>
                 }
             </AnimatePresence>
-            <hr />
         </div>
     )
 }
