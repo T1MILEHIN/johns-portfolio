@@ -22,7 +22,7 @@ const AllGraphics = () => {
       }, [])
     return (
         <>
-            <div className={`${pathname === "/alldesigns/logodesigns" && "bg-black text-bodybg"} pt-32 px-4 md:px-20`}>
+            <div className={`${pathname === "/alldesigns/logodesigns" ? "bg-black text-bodybg" : "bg-white"} pt-32 px-4 md:px-20`}>
                 <div>
                     <div className="py-10">
                         <h1 className="md:w-[686px] w-full font-bold text-[65.51px] md:text-[64px] leading-[83.2px] font-specify_exp_med py-10">Graphic Designs Library</h1>
