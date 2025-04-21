@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
 import transition from "../../transition"
-import Footer from "../../components/footer";
 import { Button } from "@/components/ui/button";
 import { useSearchParams, useLocation, Outlet, Link } from "react-router-dom";
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -40,7 +39,6 @@ const AllGraphics = () => {
                     <Outlet context={{handleCategories, CATEGORY}} />
                 </div>
             </div>
-            <Footer />
         </>
     )
 }
