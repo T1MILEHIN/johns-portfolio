@@ -11,7 +11,6 @@ const Graphics = () => {
       <LandingProfile />
       <LaptopAnimation />
       <Flyers />
-      <Footer />
     </>
   )
 }
