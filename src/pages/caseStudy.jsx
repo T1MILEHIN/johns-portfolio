@@ -31,7 +31,7 @@ const CaseStudy = () => {
                 viewport={{ once: true }} className="lg:w-[1000px]" src={img} alt="" />
             </div>
 
-            <section className="container mx-auto px-4">
+            <section className="container mx-auto px-4 bg-white">
                 <div className="py-20">
                     <h1 className="text-right text-[64px] font-bold text-[#07499459]">01</h1>
                     <h2 className="text-caseStudyBlue text-[28px] my-10 font-bold">Project Overview</h2>
