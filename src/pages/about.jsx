@@ -70,7 +70,7 @@ const About = () => {
       </div>
 
 
-      <div className="md:p-32 p-4 relative bg-white">
+      <div className="md:p-20 p-4 relative bg-white">
         <h1 className="text-[30px] md:text-[55px] font-medium">Additional Skills</h1>
         <p className="text-[#2E2A2A] text-[15px] leading-[30px] md:leading-[20px]">In my 5years experience as a designer, I’ve been employed by different companies and worked together with various clients. Therefore, I’ve had the opportunity to explore more than one branch of design and built up a series of additional skills that I am now able to bring with me in a UX/UI role:</p>
         <ul className="py-5 list-disc list-inside text-[15px] leading-7">
