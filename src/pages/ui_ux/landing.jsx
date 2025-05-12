@@ -72,7 +72,7 @@ const Landing = () => {
                                     <TableHead>SERVICES</TableHead>
                                 </TableRow>
                             </TableHeader>
-                            <Work category={"All"} limit={5} />
+                            <Work category={"All"} limit={6} />
                             <TableFooter>
                                 <TableRow>
                                     <TableCell colSpan={2}></TableCell>

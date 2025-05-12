@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Table,
   TableHead,
@@ -11,23 +11,23 @@ import {
 } from "@/components/ui/table";
 
 import { Works } from "../utils/works";
-import laptop from "../assets/images/laptop.png"
+import laptop from "../assets/images/laptop.png";
 import transition from "../transition";
 import HoverEffect from "../components/custom/hoverEffect";
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
 const SingleProject = () => {
-  const { project } = useParams()
-  const navigate = useNavigate()
-  const work = Works.find((work) => work?.client === project)
-  const nextWork = Math.floor(Math.random() * Works.length + 1)
+  const { project } = useParams();
+  const navigate = useNavigate();
+  const work = Works.find((work) => work?.client === project);
+  const nextWork = Math.floor(Math.random() * Works.length + 1);
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [project]);
 
   return (
-    <div className="pt-32">
+    <div className="pt-32 bg-bodybg">
       <div className="md:px-20 px-4">
         <h1 className="font-bold text-3xl md:text-[64px] leading-[83.2px] font-specify_exp_med py-10">{project}</h1>
         <Table className="overflow-hidden md:px-20 px-4">
@@ -48,49 +48,91 @@ const SingleProject = () => {
         </Table>
       </div>
 
-      {work?.singleDetails?.laptopMockup && 
-      <div className="relative lg:py-10 py-20">
-        <img className="block xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.laptopMockup[0]} alt="" />
-        <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
-          <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
-            <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
-              <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
-                <div className="button text-xs">Design File</div>
-              </HoverEffect>
-            </button>
-          </HoverEffect>
-        </div>
-      </div>}
+      {work?.singleDetails?.laptopMockup &&
+        <div className="relative lg:py-10 py-20">
+          <img className="block xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.laptopMockup[0]} alt="" />
+          <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
+            <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+              <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
+                <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+                  <div className="button text-xs">Design File</div>
+                </HoverEffect>
+              </button>
+            </HoverEffect>
+          </div>
+        </div>}
 
-      {work?.singleDetails?.laptopMockup && (
-        <div className="md:py-20 flex flex-col gap-20">
-          <div className="relative mb-40"
-           style={{backgroundColor: work?.singleDetails?.videoBg}}
+      {work?.singleDetails?.allImage && (
+        <div className="bg-bodybg">
+          <div className="relative lg:py-10 py-20">
+            <img className="block xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.allImage[0]} alt="" />
+            <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
+              <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+                <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
+                  <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+                    <div className="button text-xs">Design File</div>
+                  </HoverEffect>
+                </button>
+              </HoverEffect>
+            </div>
+          </div>
+          <div>
+            {work?.singleDetails?.allImage.map((img, index) => index > 0 && (
+              <img key={index} src={img} alt="" />
+            ))}
+          </div>
+        </div>
+      )}
+      {(!work?.singleDetails?.absoluteImage && !work?.singleDetails?.allImage) && 
+        <div>
+          <img src={work?.singleDetails?.laptopMockup[1]} alt="" />
+        </div>
+      }
+      {(work?.singleDetails?.laptopMockup && work.singleDetails.video) && (
+        <div className="md:py-10 flex flex-col">
+          <div className="relative"
+            style={{ backgroundColor: work?.singleDetails?.videoBg }}
           >
             <div className="overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
               <div className="absolute top-[20%] left-[10%] w-[80%] h-[57%]">
-                <ReactPlayer 
-                  className="" 
-                  playing={true} 
-                  loop={true} 
-                  muted={true} 
-                  url={work?.singleDetails?.video} 
+                <ReactPlayer
+                  className=""
+                  playing={true}
+                  loop={true}
+                  muted={true}
+                  url={work?.singleDetails?.video}
                   width="100%"
-                  height="100%" 
+                  height="100%"
                 />
               </div>
             </div>
-            <div className={`${work?.singleDetails?.absoluteImage && "absolute -bottom-24 lg:-bottom-[350px] left-1/2 -translate-x-1/2"}`}>
-              <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
-            </div>
+            {work?.singleDetails?.absoluteImage ?
+              <div className={`${work?.singleDetails?.absoluteImage && "absolute -bottom-24 lg:-bottom-[350px] left-1/2 -translate-x-1/2 bg-black"}`}>
+                <img className="" src={work?.singleDetails?.laptopMockup[2]} alt="" />
+              </div>
+              :
+              <div className="absolute -bottom-24 lg:-bottom-[200px] left-1/2 -translate-x-1/2">
+                <ReactPlayer
+                  className=""
+                  playing={true}
+                  loop={true}
+                  muted={true}
+                  url={work?.singleDetails?.absoluteVideo}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            }
           </div>
-          <div className="py-10">
+
+          <div className={`pt-[300px]`}>
             <img className={`${project === "Clearwage" ? "w-[30%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[3]} alt="" />
           </div>
-          <div className="">
-            <img className="w-full" src={work?.singleDetails?.laptopMockup[4]} alt="" />
+          <div>
+            <img className={`${project === "MYABFLEX" ? "w-[20%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[2]} alt="" />
           </div>
+
         </div>
       )}
       <div className="py-20 md:px-20 px-4 flex flex-col gap-8">
@@ -98,8 +140,8 @@ const SingleProject = () => {
           <div className="flex flex-col gap-6">
             <h1 className="font-specify_exp_med text-[20px] md:text-[40px] leading-[52px] font-bold">Project OverView</h1>
             <p className="text-sm leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal">{work?.singleDetails?.overview}</p>
-          </div>}
-
+          </div>
+        }
 
         {work?.singleDetails?.objectives &&
           <div className="flex flex-col gap-6">
@@ -109,8 +151,10 @@ const SingleProject = () => {
                 <li className="text-sm leading-[40px] md:text-[24px] md:leading-[51.6px] font-normal" key={index}>{objective}</li>
               ))}
             </ul>
-          </div>}
+          </div>
+        }
       </div>
+
       <div className="bg-black px-4 md:px-32 pt-32">
         <div className="flex items-center justify-center">
           <div onClick={() => navigate(`/projects/${Works[nextWork].client}`)} className="cursor-pointer flex flex-col gap-4 items-center">
