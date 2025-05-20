@@ -1,6 +1,6 @@
 import img from "../assets/images/hero-casestudy-img.png";
 import targerUser from "../assets/images/caseUser.png";
-import center from "../assets/images/clearwork/clearworkCenter.png";
+import center from "../assets/images/clearwork/center.jpg";
 import { Progress } from "@/components/ui/progress"
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";
