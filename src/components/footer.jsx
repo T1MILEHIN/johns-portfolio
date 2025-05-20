@@ -8,7 +8,7 @@ const Footer = ({footerRef, smoothY, opacity}) => {
     const { pathname } = useLocation();
     return (
         <div className={`z-30 relative ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
-            <motion.footer ref={footerRef} style={{y: smoothY, opacity}} className={`z-30 md:px-32 px-4 pt-16 ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
+            <motion.footer ref={footerRef} style={{y: smoothY}} className={`z-30 md:px-32 px-4 pt-16 ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
                 <div className="md:pt-20 p-2">
                     <div className="flex  items-end lg:gap-20 gap-3">
                         <div className="w-fit rounded-3xl overflow-hidden">
