@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
-// import transition from "../../transition"
-import {withPageTransition} from "../transition"
+import { withPageTransition } from "../../transition"
 import { Button } from "@/components/ui/button";
 import { useSearchParams, useLocation, Outlet, Link } from "react-router-dom";
 import 'react-lazy-load-image-component/src/effects/blur.css';

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const Footer = ({footerRef, smoothY, opacity}) => {
+const Footer = ({ footerRef, smoothY }) => {
     const { pathname } = useLocation();
     return (
         <div className={`z-30 relative ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
@@ -39,7 +39,7 @@ const Footer = ({footerRef, smoothY, opacity}) => {
                                 <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Behance</li>
                             </ul>
                             <ul>
-                                <li className="content-center text-sm md:text-base font-medium text-[#636363]">2024 Jayzleux. All rights reserved.</li>
+                                <li className="content-center text-sm md:text-base font-medium text-[#636363]">{new Date().getFullYear()} Jayzleux. All rights reserved.</li>
                             </ul>
                         </div>
                     </div>

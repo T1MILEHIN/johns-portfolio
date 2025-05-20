@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { Flyers } from "../../../utils/flyers";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,7 +34,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                     {images.map((image, index) => index < 5 && (
                         <motion.div custom={index} key={index} variants={imageVariants}>
-                            <LazyLoadImage effect="blur" className="w-full md:aspect-square md:object-cover" src={image} alt="" />
+                            <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -49,7 +48,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => (index > 4 && index < 10) && (
                     <motion.div custom={index} key={index} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" className="w-full md:aspect-square md:object-cover" src={image} alt="" />
+                        <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
                     </motion.div>
                 ))}
                 </motion.div>
@@ -63,7 +62,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => index > 9 && index < 15 && (
                     <motion.div custom={index} key={index} variants={imageVariants}>
-                        <LazyLoadImage effect="blur" className="w-full md:aspect-square md:object-cover" src={image} alt="" />
+                        <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
                     </motion.div>
                 ))}
                 </motion.div>

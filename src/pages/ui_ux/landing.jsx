@@ -9,7 +9,9 @@ import {
 import software from '../../assets/images/softwares.png'
 import Work from "./components/work";
 import WorkMobile from "./components/workMobile";
-import tesOne from "../../assets/images/profile.png"
+import tesOne from "../../assets/images/test-one.png";
+import tesTwo from "../../assets/images/test-two.png";
+import tesThree from "../../assets/images/test-three.png";
 import LandingProfile from "../../components/landingProfile";
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -150,10 +152,10 @@ const Landing = () => {
                                 <p className="text-[#C6C3C3] font-bold text-xl md:text-sm py-2">02</p>
                                 <div className="py-6 md:py-12 border-t-2 border-b border-[#C6C3C3] flex flex-col gap-4">
                                     <div className="flex items-center gap-4">
-                                        <img src={tesOne} alt="" className="w-10" />
+                                        <img src={tesTwo} alt="" className="w-16" />
                                         <div className="flex flex-col gap-1 text-sm">
-                                            <p className="font-bold">John Doe</p>
-                                            <p className="text-[#636363] text-xs">CEO, XYZ Corporation</p>
+                                            <p className="font-bold">Sarah Lee</p>
+                                            <p className="text-[#636363] text-xs">Manager, E-commerce Company</p>
                                         </div>
                                     </div>
                                     <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved optimized our website for conversions with their UI/UX expertise. Their graphics captured our brand essence perfectly. Highly recommended for any design project.</p>
@@ -165,13 +167,13 @@ const Landing = () => {
                                 <p className="text-[#C6C3C3] font-bold text-xl md:text-sm py-2">03</p>
                                 <div className="py-6 md:py-12 border-y-2 border-[#C6C3C3] flex flex-col gap-4">
                                     <div className="flex items-center gap-4">
-                                        <img src={tesOne} alt="" className="w-10" />
+                                        <img src={tesThree} alt="" className="w-10" />
                                         <div className="flex flex-col gap-1 text-sm">
-                                            <p className="font-bold">John Doe</p>
-                                            <p className="text-[#636363] text-xs">Founder; Tech Startup Co</p>
+                                            <p className="font-bold">Michael Johnson </p>
+                                            <p className="text-[#636363] text-xs">Founder, Tech Startup Co.</p>
                                         </div>
                                     </div>
-                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">Johnbeloved Designs boosted our platform&apos;s engagement significantly. His ability to execute complex concepts sets him apart. A designer who delivers results.</p>
+                                    <p className="text-darkbg leading-9 md:leading-7 text-base md:text-[12px] line-clamp-3">designs boosted our platform&apos;s engagement significantly. Their ability to execute complex concepts sets them apart. A designer who delivers results.</p>
                                 </div>
                             </div>
                         </SwiperSlide>

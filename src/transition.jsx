@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 
 export const PageTransition = ({ children, pageName }) => {
+  const { project } = useParams();
+  const displayName = pageName || project || "";
+
   return (
     <>
       {children}
       <motion.div
-        className="fixed inset-0 z-[9999] pointer-events-none"
+        className="fixed inset-0 z-[999999] pointer-events-none"
         initial={{ opacity: 0 }}
         exit={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -18,18 +22,18 @@ export const PageTransition = ({ children, pageName }) => {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         />
         <motion.p
-          className="absolute inset-0 text-white flex items-center justify-center text-4xl md:text-6xl font-medium tracking-wide"
+          className="absolute inset-0 text-white flex items-center justify-center text-4xl md:text-6xl font-medium font-specify_exp_med tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           exit={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          {pageName}
+          {displayName}
         </motion.p>
       </motion.div>
-      
+
       {/* Overlay that appears when entering a page */}
       <motion.div
-        className="fixed inset-0 z-[9999] pointer-events-none"
+        className="fixed inset-0 z-[999999] pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -43,12 +47,12 @@ export const PageTransition = ({ children, pageName }) => {
         />
         {/* Page name that fades out */}
         <motion.p
-          className="absolute inset-0 text-white flex items-center justify-center text-4xl md:text-6xl font-medium tracking-wide"
+          className="absolute inset-0 text-white flex items-center justify-center text-4xl md:text-6xl font-medium font-specify_exp_med tracking-wide"
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          {pageName}
+          {displayName}
         </motion.p>
       </motion.div>
     </>
@@ -56,8 +60,8 @@ export const PageTransition = ({ children, pageName }) => {
 };
 
 PageTransition.propTypes = {
-  children: PropTypes.any, 
-  pageName:  PropTypes.any
+  children: PropTypes.any,
+  pageName: PropTypes.any
 }
 
 // Higher-order component for easy wrapping

@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, useInView, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import PropTypes from 'prop-types';
 import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 const works = Works
 
-const Work = ({category, limit}) => {
+const Work = ({ category, limit }) => {
+    const tableBodyRef = useRef(null);
+    const isInView = useInView(tableBodyRef);
     const [selected, setSelected] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [dir, setDir] = useState(null);
@@ -16,7 +18,6 @@ const Work = ({category, limit}) => {
         if (typeof val === "number" && typeof selected === "number") {
             const direction = selected > val ? "u" : "d";
             setDir(direction);
-    
             setCurrentSlide((prev) => {
                 if (direction === "d") {
                     return prev + 1;
@@ -28,16 +29,41 @@ const Work = ({category, limit}) => {
         } else if (val === null) {
             setDir(null);
         }
-    
         setSelected(val);
     };
+    // const handleKeyDown = (e) => {
+    //     console.log(e)
+    //     const rect = e.currentTarget.getBoundingClientRect();
+    //     const newX = e.clientX - rect.left - 174.5;
+    //     const newY = e.clientY - rect.top - 149;
+    //     console.log("parent=>", e.currentTarget.getBoundingClientRect())
+
+    //     switch (e.key) {
+    //         case "ArrowUp":
+    //         case "PageUp":
+
+    //             break;
+    //         case "ArrowDown":
+    //         case "PageDown":
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    // };
+    useEffect(() => {
+        if (tableBodyRef.current && isInView) {
+            tableBodyRef.current.focus();
+        }
+    }, [isInView]);
     return (
         <AnimatePresence>
-            <TableBody onMouseLeave={() => {
+            <TableBody ref={tableBodyRef} tabIndex={0} 
+            // onKeyDown={handleKeyDown} 
+            onMouseLeave={() => {
                 handleSetSelected(null)
                 setDir(null)
-            }} className="relative">
-                {category === "All" ? works?.filter((_, index)=> index < limit)?.map((work) => (
+            }} className="relative focus:outline-none">
+                {category === "All" ? works?.filter((_, index) => index < limit)?.map((work) => (
                     <Table_Row
                         key={work.client}
                         dir={dir}
@@ -49,7 +75,7 @@ const Work = ({category, limit}) => {
                         {work}
                     </Table_Row>
                 )) :
-                    works.filter((work)=> work.services.includes(category)).map((work)=> (
+                    works.filter((work) => work.services.includes(category)).map((work) => (
                         <Table_Row
                             key={work.client}
                             dir={dir}
@@ -79,6 +105,8 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         const newX = e.clientX - rect.left - 174.5;
         const newY = e.clientY - rect.top - 149;
 
+        console.log("child=>", e.currentTarget.getBoundingClientRect())
+
         mousePosition.x.set(newX);
         mousePosition.y.set(newY);
     };
@@ -86,17 +114,15 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
     return (
         <>
             <TableRow
-                tabIndex={0}
-                onClick={()=> navigate(`/projects/${works.find(work=> work.id === currentSlide).client}`)}
+                onClick={() => navigate(`/projects/${works.find(work => work.id === currentSlide).client}`)}
                 id={`overflow-hidden relative shift-tab-${children.id} content`}
                 onMouseMove={
                     (e) => {
                         handleMouseMove(e);
                     }
                 }
-                onKeyDown={(e) => {
-                    handleMouseMove(e)
-                }}
+                on
+
                 onMouseEnter={(e) => {
                     handleMouseMove(e);
                     handleSetSelected(children.id)
@@ -148,8 +174,8 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                     zIndex: 10000,
                 }}
                 className="absolute inset-0 w-[349px] h-[298px] overflow-hidden"
-                    whileHover={{ scale: 0.9 }}
-                >
+                whileHover={{ scale: 0.9 }}
+            >
                 <motion.div
                     initial={() => dir === "d" ? translations(currentSlide - 1) : dir === "u" ? translations(currentSlide + 1) : translations(currentSlide)}
                     animate={() => translations(currentSlide)}
@@ -160,7 +186,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                         duration: 0.7
                     }}
                     className={`relative flex flex-col`}>
-                    
+
                     {works.map((img, index) => (
                         <motion.img key={index}
                             style={{

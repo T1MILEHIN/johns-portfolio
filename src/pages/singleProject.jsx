@@ -9,11 +9,9 @@ import {
   TableBody,
   TableCell,
 } from "@/components/ui/table";
-
 import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
-// import transition from "../transition";
-import {withPageTransition} from "../transition"
+import { withPageTransition } from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
 import ReactPlayer from 'react-player';
 
@@ -21,7 +19,7 @@ const SingleProject = () => {
   const { project } = useParams();
   const navigate = useNavigate();
   const work = Works.find((work) => work?.client === project);
-  const nextWork = Math.floor(Math.random() * Works.length + 1);
+  const nextWork = Math.floor(Math.random() * (Works.filter((wrk)=> wrk.id !== work.id).length + 1));
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -41,9 +39,9 @@ const SingleProject = () => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.role}</TableCell>
-              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.credit}</TableCell>
-              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.location}</TableCell>
+              <TableCell className="text-xs md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.role}</TableCell>
+              <TableCell className="text-xs md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.credit}</TableCell>
+              <TableCell className="text-xs md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.location}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -85,7 +83,7 @@ const SingleProject = () => {
         </div>
       )}
       {(!work?.singleDetails?.absoluteVideo && !work?.singleDetails?.allImage) && 
-        <div className="border-2 border-red-500">
+        <div className="">
           <img src={work?.singleDetails?.laptopMockup[1]} alt="" />
         </div>
       }
@@ -94,9 +92,9 @@ const SingleProject = () => {
           <div className="relative"
             style={{ backgroundColor: work?.singleDetails?.videoBg }}
           >
-            <div className="overflow-hidden relative md:w-[677px] mx-auto">
+            <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
-              <div className="absolute top-[20%] left-[10%] w-[80%] h-[57%]">
+              <div className="px-4 md:px-0 absolute top-[20%] left-[10%] w-[80%] h-[57%]">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -128,7 +126,7 @@ const SingleProject = () => {
           </div>
 
           <div className={`pt-[300px]`}>
-            <img className={`${project === "Clearwage" ? "w-[30%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[3]} alt="" />
+            <img className={`${project === "Clearwork" ? "w-[30%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[3]} alt="" />
           </div>
           <div>
             <img className={`${project === "MYABFLEX" ? "w-[20%]" : "w-full"} mx-auto`} src={work?.singleDetails?.laptopMockup[2]} alt="" />
@@ -183,4 +181,4 @@ const SingleProject = () => {
   )
 }
 
-export default transition(SingleProject)
+export default withPageTransition(SingleProject, "")

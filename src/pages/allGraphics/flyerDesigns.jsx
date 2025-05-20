@@ -1,8 +1,8 @@
 import { Flyers } from "../../utils/flyers";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOutletContext } from "react-router-dom";
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const FlyerDesigns = () => {
     const { handleCategories, CATEGORY } = useOutletContext()
@@ -27,25 +27,25 @@ const FlyerDesigns = () => {
                     >
                         <div className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers?.home?.map((img, index) => (
-                                <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                                <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                             ))}
                         </div>
                         <hr />
                         <div className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers?.codar?.map((img, index) => (
-                                <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                                <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                             ))}
                         </div>
                         <hr />
                         <div className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers?.myPromoSphere?.map((img, index) => (
-                                <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                                <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                             ))}
                         </div>
                         <hr />
                         <div className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                             {Flyers?.kwe?.map((img, index) => (
-                                <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                                <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                             ))}
                         </div>
                         <hr />
@@ -61,7 +61,7 @@ const FlyerDesigns = () => {
                         transition={{ type: "spring", duration: 0.3 }}
                         className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.codar?.map((img, index) => (
-                            <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                            <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                         ))}
                     </motion.div>
                 }
@@ -75,7 +75,7 @@ const FlyerDesigns = () => {
                         transition={{ type: "spring", duration: 0.3 }}
                         className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.myPromoSphere?.map((img, index) => (
-                            <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                            <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                         ))}
                     </motion.div>
                 }
@@ -89,7 +89,7 @@ const FlyerDesigns = () => {
                         transition={{ type: "spring", duration: 0.3 }}
                         className="py-10 grid lg:gap-7 gap-5 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                         {Flyers?.kwe?.map((img, index) => (
-                            <LazyLoadImage effect="blur" key={index} src={img} className="w-full md:aspect-square md:object-cover" alt="" />
+                            <DirectionAwareHover key={index} imageUrl={img} className="w-full aspect-square" />
                         ))}
                     </motion.div>
                 }

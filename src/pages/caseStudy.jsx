@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import img from "../assets/images/hero-casestudy-img.png";
 import targerUser from "../assets/images/caseUser.png";
 import center from "../assets/images/clearwork/center.jpg";
@@ -7,6 +8,7 @@ import { fadeIn } from "./variant";
 import { ButtonShowcaseGrid } from "@/components/ButtonShowCaseGrid";
 import { TypographyShowcase } from "@/components/typographShowcase";
 import ColorShowcase from "@/components/colorShowcase";
+import { withPageTransition } from "../transition";
 
 
 const CaseStudy = () => {
@@ -316,4 +318,4 @@ const CaseStudy = () => {
     )
 }
 
-export default CaseStudy
+export default withPageTransition(CaseStudy, "Case Study");
