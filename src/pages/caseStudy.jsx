@@ -5,7 +5,7 @@ import center from "../assets/images/clearwork/center.jpg";
 import { Progress } from "@/components/ui/progress"
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";
-import { ButtonShowcaseGrid } from "@/components/ButtonShowCaseGrid";
+import { ButtonShowcaseGrid } from "@/components/buttonShowCaseGrid";
 import { TypographyShowcase } from "@/components/typographShowcase";
 import ColorShowcase from "@/components/colorShowcase";
 import { withPageTransition } from "../transition";
