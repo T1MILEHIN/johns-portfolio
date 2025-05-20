@@ -4,6 +4,9 @@ import center from "../assets/images/clearwork/clearworkCenter.png";
 import { Progress } from "@/components/ui/progress"
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";
+import { ButtonShowcaseGrid } from "@/components/ButtonShowCaseGrid";
+import { TypographyShowcase } from "@/components/typographShowcase";
+import ColorShowcase from "@/components/colorShowcase";
 
 
 const CaseStudy = () => {
@@ -26,12 +29,12 @@ const CaseStudy = () => {
                         initial="hidden" whileInView={"show"}
                         viewport={{ once: true, amount: 0.7 }}>A UX design Case Study</motion.p>
                 </div>
-                <motion.img variants={fadeIn("up", 0.5, 0.3)} 
-                initial="hidden" whileInView={"show"} 
-                viewport={{ once: true }} className="lg:w-[1000px]" src={img} alt="" />
+                <motion.img variants={fadeIn("up", 0.5, 0.3)}
+                    initial="hidden" whileInView={"show"}
+                    viewport={{ once: true }} className="lg:w-[1000px]" src={img} alt="" />
             </div>
 
-            <section className="container mx-auto px-4 bg-white">
+            <section className="container mx-auto px-4 bg-white md:mb-[250px]">
                 <div className="py-20">
                     <h1 className="text-right text-[64px] font-bold text-[#07499459]">01</h1>
                     <h2 className="text-caseStudyBlue text-[28px] my-10 font-bold">Project Overview</h2>
@@ -288,6 +291,23 @@ const CaseStudy = () => {
                     </div>
                     <p className="leading-[27px]">Based on our research findings, we began sketching and ideating potential solutions for the ClearWork platform. Our goal was to create a user-friendly and intuitive interface that directly addressed key pain points. During this phase, we explored various layouts, refined user flows, and developed mid-fidelity wireframes to ensure seamless navigation. Additionally, we established a cohesive style guide to maintain visual consistency and enhance usability across the platform.</p>
 
+                    <div className="space-y-8">
+                        <section>
+                            <h2 className="text-lg font-semibold text-gray-700 my-4">Components</h2>
+                            <ButtonShowcaseGrid />
+                        </section>
+                    </div>
+                </div>
+
+
+                <div className="py-20">
+                    <p className="text-caseStudyGray text-xl font-semibold mb-2">Typography</p>
+                    <TypographyShowcase />
+                </div>
+
+                <div  className="py-20">
+                    <p className="text-caseStudyGray text-xl font-semibold mb-2">Brand COlor</p>
+                    <ColorShowcase />
                 </div>
 
             </section>

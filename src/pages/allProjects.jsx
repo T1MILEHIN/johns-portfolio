@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
-import transition from "../transition"
+// import transition from "../transition"
+import {withPageTransition} from "../transition"
 import {
   Table,
   TableHead,
@@ -80,4 +81,4 @@ const AllProjects = () => {
   )
 }
 
-export default transition(AllProjects, "All Project");
+export default withPageTransition(AllProjects, "All Project");

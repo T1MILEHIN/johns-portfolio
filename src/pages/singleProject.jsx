@@ -12,7 +12,8 @@ import {
 
 import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
-import transition from "../transition";
+// import transition from "../transition";
+import {withPageTransition} from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
 import ReactPlayer from 'react-player';
 
@@ -40,9 +41,9 @@ const SingleProject = () => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.role}</TableCell>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.credit}</TableCell>
-              <TableCell className="md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.location}</TableCell>
+              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.role}</TableCell>
+              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.credit}</TableCell>
+              <TableCell className="text-sm md:text-[16px] leading-[19.2px] font-medium md:py-10 md:px-5">{work?.singleDetails?.location}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -83,8 +84,8 @@ const SingleProject = () => {
           </div>
         </div>
       )}
-      {(!work?.singleDetails?.absoluteImage && !work?.singleDetails?.allImage) && 
-        <div>
+      {(!work?.singleDetails?.absoluteVideo && !work?.singleDetails?.allImage) && 
+        <div className="border-2 border-red-500">
           <img src={work?.singleDetails?.laptopMockup[1]} alt="" />
         </div>
       }

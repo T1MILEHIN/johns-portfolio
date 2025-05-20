@@ -162,7 +162,7 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                     className={`relative flex flex-col`}>
                     
                     {works.map((img, index) => (
-                        <motion.img key={index} layout="fill"
+                        <motion.img key={index}
                             style={{
                                 backgroundColor: img.color
                             }}

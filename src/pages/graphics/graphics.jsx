@@ -2,7 +2,8 @@
 import Flyers from "./components/flyers";
 import LandingProfile from "../../components/landingProfile";
 import LaptopAnimation from "./components/laptopAnimation";
-import transition from "../../transition"
+// import transition from "../../transition"
+import { withPageTransition } from "../../transition";
 
 const Graphics = () => {
   return (
@@ -14,4 +15,4 @@ const Graphics = () => {
   )
 }
 
-export default transition(Graphics, "Logos and FLyers")
+export default withPageTransition(Graphics, "Logos and FLyers")

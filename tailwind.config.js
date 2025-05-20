@@ -25,6 +25,20 @@ export default {
 				navactive: "#0B0B0B",
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				"btn-blue": {
+					DEFAULT: "#0C4A88",
+					hover: "#1866B9",
+					pressed: "#0B3F74",
+					disabled: "#8494A7"
+				},
+				"btn-outline": {
+					DEFAULT: "#FFFFFF",
+					disabled: "#E8E8E8"
+				},
+				"btn-text": {
+					DEFAULT: "#FFFFFF",
+					disabled: "#B0B0B0"
+				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
@@ -69,7 +83,8 @@ export default {
 				stretchPro: ['stretchPro', 'sans-serif'],
 				specify_bold: ['specify-bold', 'sans-serif'],
 				specify_medium: ['specify-medium', 'sans-serif'],
-				specify_exp_med: ['specify-expMed', 'san-serif']
+				specify_exp_med: ['specify-expMed', 'san-serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
 		}
 	},

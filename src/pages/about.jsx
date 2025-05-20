@@ -3,7 +3,8 @@ import { useRef, useEffect } from "react"
 import img from "../assets/images/about.jpg"
 import profile_pic from "../assets/images/profile.png"
 import profile_pic2 from "../assets/images/mobilePic.png";
-import transition from "../transition"
+import { withPageTransition } from "../transition"
+
 import { motion, useScroll, useTransform } from "framer-motion"
 import { fadeIn } from "./variant";
 
@@ -70,7 +71,7 @@ const About = () => {
       </div>
 
 
-      <div className="md:p-20 p-4 relative bg-white">
+      <div className="md:pt-20 mb-28 p-4 relative bg-white">
         <h1 className="text-[30px] md:text-[55px] font-medium">Additional Skills</h1>
         <p className="text-[#2E2A2A] text-[15px] leading-[30px] md:leading-[20px]">In my 5years experience as a designer, I’ve been employed by different companies and worked together with various clients. Therefore, I’ve had the opportunity to explore more than one branch of design and built up a series of additional skills that I am now able to bring with me in a UX/UI role:</p>
         <ul className="py-5 list-disc list-inside text-[15px] leading-7">
@@ -83,4 +84,4 @@ const About = () => {
   )
 }
 
-export default transition(About, "About");
+export default withPageTransition(About, "About");

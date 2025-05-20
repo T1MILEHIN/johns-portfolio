@@ -10,7 +10,8 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import tesOne from "../assets/images/FOOTER.jpg";
-import transition from "../transition";
+// import transition from "../transition";
+import { withPageTransition } from "../transition"
 
 const Contact = () => {
     useEffect(()=> {
@@ -111,4 +112,4 @@ const Contact = () => {
     )
 }
 
-export default transition(Contact, "Contact");
+export default withPageTransition(Contact, "Contact");

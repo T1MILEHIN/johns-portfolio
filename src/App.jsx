@@ -26,6 +26,7 @@ function App() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
   const smoothY = useSpring(y, { stiffness: 300, damping: 100 });
   const radius = useTransform(scrollYProgress, [0, 1], [200, 0]);
   const smoothRadius = useSpring(radius, { stiffness: 250, damping: 90 });
@@ -37,7 +38,7 @@ function App() {
         smoothTouch: true
       }}>
         <NavBar />
-        <motion.div style={{ borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius }} className={`${(location.pathname === "/contact") ? "bg-darkbg" : location.pathname === "/about" ? "bg-white" : location.pathname === "/graphics" && "bg-bodybg"} relative z-[99] pb-20`}>
+        <motion.div style={{ borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius }} className={`${(location.pathname === "/") && "bg-bodybg"} ${(location.pathname === "/contact") ? "bg-darkbg" : location.pathname === "/about" ? "bg-white" : location.pathname === "/graphics" && "bg-bodybg"} relative z-[99] pb-20`}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path='/' element={<Home />}>
@@ -57,7 +58,7 @@ function App() {
             </Routes>
           </AnimatePresence >
         </motion.div>
-        <Footer footerRef={footerRef} smoothY={smoothY} />
+        <Footer footerRef={footerRef} smoothY={smoothY} opacity={opacity} />
       </ReactLenis>
     </>
   )

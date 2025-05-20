@@ -790,11 +790,61 @@ body {
 
 
 html, body {
-  /* overflow-y: scroll;
+  overflow-y: scroll;
   scrollbar-width: none;
-  -ms-overflow-style: none;  */
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
+}
+
+@layer components {
+  .bg-btn-blue {
+    background-color: #0C4A88;
+  }
+  .bg-btn-blue-hover {
+    background-color: #1866B9;
+  }
+  .bg-btn-blue-pressed {
+    background-color: #0B3F74;
+  }
+  .bg-btn-blue-disabled {
+    background-color: #8494A7;
+  }
+  .text-btn-blue {
+    color: #0C4A88;
+  }
+  .text-btn-blue-hover {
+    color: #1866B9;
+  }
+  .text-btn-blue-pressed {
+    color: #0B3F74;
+  }
+  .text-btn-blue-disabled {
+    color: #8494A7;
+  }
+  .border-btn-blue {
+    border-color: #0C4A88;
+  }
+  .border-btn-blue-hover {
+    border-color: #1866B9;
+  }
+  .border-btn-blue-pressed {
+    border-color: #0B3F74;
+  }
+  .border-btn-blue-disabled {
+    border-color: #8494A7;
+  }
+  .bg-btn-outline-disabled {
+    background-color: #E8E8E8;
+  }
+  .text-btn-text-disabled {
+    color: #B0B0B0;
+  }
 }

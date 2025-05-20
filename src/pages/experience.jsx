@@ -5,7 +5,8 @@ import codar from "../assets/images/EXP/codar.jpg";
 import kw from "../assets/images/EXP/kw.jpg";
 import clearwage from "../assets/images/EXP/clearwage.jpg";
 import promo from "../assets/images/EXP/promo.jpg";
-import transition from "../transition";
+// import transition from "../transition";
+import {withPageTransition} from "../transition"
 import { motion } from "framer-motion";
 import { fadeIn } from "./variant";
 import { useEffect } from "react";
@@ -157,4 +158,4 @@ const Experience = () => {
   );
 };
 
-export default transition(Experience, "Experience");
+export default withPageTransition(Experience, "Experience");

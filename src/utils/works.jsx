@@ -6,6 +6,7 @@ import img5 from "../assets/images/works-images/A.jpg"
 import img6 from "../assets/images/works-images/hgaLanding2.jpg"
 import img7 from "../assets/images/works-images/givingli.jpg"
 import img8 from "../assets/images/works-images/MYABFLEX.png";
+import img9 from "../assets/images/works-images/true.jpg";
 
 import cocacolaLanding from "../assets/images/all-single-products/cocacolaL.png"
 import cocacola1 from "../assets/images/all-single-products/cocacola1.png"
@@ -39,14 +40,14 @@ import true3 from "../assets/images/all-single-products/true3.jpg"
 
 export const Works = [
     {
-        client: "Clearwage",
+        client: "Clearwork",
         location: "United Kingdom",
         services: "Website and app design",
         component: img1,
         color: "#0000008f",
         singleDetails: {
             role: "Designer",
-            credit: "Clearwage Limited",
+            credit: "Clearwork Limited",
             location: "United Kingdom",
             laptopMockup: [
                 clearwageLanding,
@@ -263,25 +264,11 @@ export const Works = [
         component: img1,
         color: "#005d93"
     },
-    // {
-    //     client: "GadCare",
-    //     location: "Website design",
-    //     services: "Website design",
-    //     component: img2,
-    //     color: "green"
-    // },
-    {
-        client: "Bedmate",
-        location: "Practice",
-        services: "Website re-design",
-        component: img3,
-        color: "pink"
-    },
     {
         client: "Truecaller",
         location: "Practice",
         services: "App re-design",
-        component: img5,
+        component: img9,
         color: "blue",
         singleDetails: {
             role: "Designer",
