@@ -1,3 +1,4 @@
+import React from 'react';
 interface ButtonProps {
   variant: "primary" | "outline" | "danger";
   state: "default" | "hover" | "pressed" | "disabled";

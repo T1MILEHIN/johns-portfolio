@@ -6,7 +6,7 @@ import {
     TableFooter,
     TableRow,
 } from "@/components/ui/table";
-import software from '../../assets/images/softwares.png'
+import software from '../../assets/images/softwares.png';
 import Work from "./components/work";
 import WorkMobile from "./components/workMobile";
 import tesOne from "../../assets/images/test-one.png";
