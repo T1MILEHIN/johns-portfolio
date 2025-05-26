@@ -312,8 +312,15 @@ const Clearwork = () => {
                     <ColorShowcase />
                 </div>
 
-                
+                <div className="py-20">
+                    <h1 className="text-[64px] font-bold text-[#07499459] text-right">05</h1>
+                    <div className="flex flex-col gap-2 mb-20">
+                        <h2 className="text-caseStudyBlue text-[28px] font-bold">From Low-Fidelity to High-Fidelity Design</h2>
+                        <p className="text-base text-caseStudyGray">We began with low-fidelity wireframes to define user flows and structure key interactions, ensuring a seamless experience. Through iterations, we refined them into mid-fidelity designs, improving layout and usability. Finally, we introduced ClearWork’s branding in high-fidelity designs, creating a visually cohesive, user-friendly, and efficient platform for HR professionals.</p>
+                    </div>
 
+                    
+                </div>
             </section>
 
         </section>
