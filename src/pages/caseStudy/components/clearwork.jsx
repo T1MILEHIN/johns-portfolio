@@ -1,17 +1,17 @@
 /* eslint-disable react-refresh/only-export-components */
-import img from "../assets/images/hero-casestudy-img.png";
-import targerUser from "../assets/images/caseUser.png";
-import center from "../assets/images/clearwork/center.jpg";
+import img from "../../../assets/images/hero-casestudy-img.png";
+import targerUser from "../../../assets/images/caseUser.png";
+import center from "../../../assets/images/clearwork/center.jpg";
 import { Progress } from "@/components/ui/progress"
 import { motion } from "framer-motion";
-import { fadeIn } from "./variant";
+import { fadeIn } from "../../variant";
 import { ButtonShowcaseGrid } from "@/components/buttonShowCaseGrid";
 import { TypographyShowcase } from "@/components/typographShowcase";
 import ColorShowcase from "@/components/colorShowcase";
-import { withPageTransition } from "../transition";
+import { withPageTransition } from "../../../transition";
 
 
-const CaseStudy = () => {
+const Clearwork = () => {
     return (
         <section className="">
             <div className="min-h-screen bg-caseStudyBlue flex flex-col items-center justify-between text-center pt-28 md:pt-32 ">
@@ -318,4 +318,4 @@ const CaseStudy = () => {
     )
 }
 
-export default withPageTransition(CaseStudy, "Case Study");
+export default withPageTransition(Clearwork, "Clearwork");

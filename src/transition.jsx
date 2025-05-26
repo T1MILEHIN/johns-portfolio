@@ -10,7 +10,7 @@ export const PageTransition = ({ children, pageName }) => {
     <>
       {children}
       <motion.div
-        className="fixed inset-0 z-[999999] pointer-events-none"
+        className="fixed inset-0 z-[9999999999999999999999] pointer-events-none"
         initial={{ opacity: 0 }}
         exit={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -33,7 +33,7 @@ export const PageTransition = ({ children, pageName }) => {
 
       {/* Overlay that appears when entering a page */}
       <motion.div
-        className="fixed inset-0 z-[999999] pointer-events-none"
+        className="fixed inset-0 z-[99999999999999999999] pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}

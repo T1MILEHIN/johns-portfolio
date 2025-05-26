@@ -15,7 +15,8 @@ const AllDesigns = React.lazy(() => import("./pages/allGraphics/allGraphics"));
 const FlyerDesigns = React.lazy(() => import("./pages/allGraphics/flyerDesigns"));
 const LogoDesigns = React.lazy(() => import("./pages/allGraphics/logoDesigns"));
 const SingleProject = React.lazy(() => import("./pages/singleProject"));
-const CaseStudy = React.lazy(() => import("./pages/caseStudy"));
+const Clearwork = React.lazy(() => import("./pages/caseStudy/components/clearwork"));
+const CaseStudyPage = React.lazy(() => import("./pages/caseStudy/caseStudypage"));
 
 function App() {
   const location = useLocation();
@@ -48,7 +49,8 @@ function App() {
               <Route path='/experience' element={<Experience />} />
               <Route path='/contact' element={<Contact />} />
               <Route path='/allprojects' element={<AllProjects />} />
-              <Route path='/case-study' element={<CaseStudy />} />
+              <Route path='/case-study' element={<CaseStudyPage />} />
+              <Route path="/clearwork" element={<Clearwork />} />
               <Route path='/alldesigns' element={<AllDesigns />}>
                 <Route index element={<FlyerDesigns />} />
                 <Route path='logodesigns' element={<LogoDesigns />} />

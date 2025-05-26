@@ -5,6 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import HoverEffect from "../components/custom/hoverEffect"
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronUp } from "lucide-react";
+import {
+    DropdownMenu,
+    DropdownMenuItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 const menuContainerVariant = {
     initial: {
@@ -76,7 +84,17 @@ const LINKS = [
     },
     {
         name: "Projects",
-        url: "/allprojects"
+        url: "/allprojects",
+        dropDown: [
+            {
+                name: "UI/uX Design Projects",
+                url: "/allprojects"
+            },
+            {
+                name: "Graphics Design Projects",
+                url: "/alldesigns"
+            }
+        ]
     },
     {
         name: "Experience",
@@ -117,7 +135,7 @@ const NavBar = () => {
             }
             <AnimatePresence>
                 {(pathname === "/" || pathname === "/graphics") &&
-                    <motion.div className="" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
+                    <motion.div className="z-40" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200 } }} exit={{ opacity: 0, y: -100 }}>
                         <nav className="md:flex hidden items-center font-medium text-sm *:duration-300">
                             <NavLink to="/" className={({ isActive }) => isActive ? "rounded-[5px] after:origin-left after:ml-auto after:left-0 after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-navactive after:z-[-1] after:w-full text-white rounded-tl-[5px] rounded-bl-[5px]" : "backdrop-blur-sm after:origin-left after:duration-300 relative z-[1] overflow-hidden after:absolute after:bottom-0 after:top-0 after:right-0 after:bg-transparent after:w-0 bg-nav rounded-tl-[5px] rounded-bl-[5px] transition-all"}>
                                 <p className="px-6 py-3 uppercase w-[86px] font-medium text-[9.63px] grid place-content-center tracking-wider">UI/UX</p>
@@ -160,13 +178,53 @@ const NavBar = () => {
                     className="z-20 flex flex-col justify-between pt-20 pb-8 pr-8 lg:pl-20 pl-10 fixed top-0 bottom-0 right-0 md:w-1/2 w-full  bg-[#282828] text-white">
                     <motion.div>
                         <p className="p-4 text-[#4d4d4d] border-b border-[#727272]">Navigation</p>
-                        <motion.ul variants={menuContainerVariant} className="leading-[80px] text-4xl">
+                        <motion.ul variants={menuContainerVariant} className="relative leading-[80px] text-4xl">
                             {LINKS.map((link, index) => (
-                                <HoverEffect key={index} rotationRange={15} style={{ width: "fit-content" }}>
-                                    <motion.li className="hover:text-blue duration-300 w-fit" onClick={() => setIsActive(false)} custom={index} variants={liVariants}>
-                                        <NavLink className={({ isActive }) => isActive ? "text-blue" : "text-white"} to={link.url}>{link.name}</NavLink>
-                                    </motion.li>
-                                </HoverEffect>
+                                link.dropDown ? (
+                                    <DropdownMenu key={index} className="rounded-lg">
+                                        <DropdownMenuTrigger asChild>
+                                            <motion.li
+                                                className="flex gap-3 items-center hover:text-blue duration-300 w-fit cursor-pointer relative group data-[state=open]:text-blue"
+                                                custom={index}
+                                                variants={liVariants}
+                                            >
+                                                <HoverEffect rotationRange={15} style={{ width: "fit-content" }}>
+                                                    {link.name}
+                                                </HoverEffect>
+
+                                                <span className="transition-transform duration-300 group-data-[state=open]:rotate-180">
+                                                    <ChevronUp />
+                                                </span>
+                                            </motion.li>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent
+                                            align="start"
+                                            alignOffset={30}
+                                            side="right"
+                                            sideOffset={10}
+                                            className="divide-y divide-white relative bg-[#1e1e1e] border-none text-white rounded-xl shadow-lg z-[99999999999999999999999999999]">
+                                            {link.dropDown.map((item, i) => (
+                                                <DropdownMenuItem key={i} asChild className="">
+                                                    <NavLink
+                                                        to={item.url}
+                                                        onClick={() => setIsActive(false)}
+                                                        className="w-full block px-4 py-3"
+                                                    >
+                                                        <li className="hover:text-blue duration-150 list-none cursor-pointer">
+                                                            {item.name}
+                                                        </li>
+                                                    </NavLink>
+                                                </DropdownMenuItem>
+                                            ))}
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                ) : (
+                                    <HoverEffect key={index} rotationRange={15} style={{ width: "fit-content" }}>
+                                        <motion.li className="hover:text-blue duration-300 w-fit" onClick={() => setIsActive(false)} custom={index} variants={liVariants}>
+                                            <NavLink className={({ isActive }) => isActive ? "text-blue" : "text-white"} to={link.url}>{link.name}</NavLink>
+                                        </motion.li>
+                                    </HoverEffect>
+                                )
                             ))}
                         </motion.ul>
                     </motion.div>

@@ -5,6 +5,8 @@ import codar from "../assets/images/EXP/codar.jpg";
 import kw from "../assets/images/EXP/kw.jpg";
 import clearwage from "../assets/images/EXP/clearwage.jpg";
 import promo from "../assets/images/EXP/promo.jpg";
+import opti from "../assets/images/EXP/opti.jpg";
+
 // import transition from "../transition";
 import {withPageTransition} from "../transition"
 import { motion } from "framer-motion";
@@ -66,6 +68,15 @@ const EXP = [
     description:
       "Highly skilled Product Designer & Graphic Designer, crafting intuitive user experiences and visually stunning designs. Successfully designed innovative products for mypromosphere, showcasing expertise in UI/UX and visual storytelling.",
   },
+  {
+    id: 7,
+    image: opti,
+    date: "2024 - present",
+    job: "UI/UX DESIGNER ",
+    location: "OPTISOFT TECHNOLOGY, NIGERIA.",
+    description:
+      "UI/UX Designer at Optisoft Technology Nigeria, crafting user-centered designs, wireframes, prototypes, and high-fidelity designs for web and mobile apps",
+  },
 ];
 
 const Experience = () => {
@@ -92,7 +103,7 @@ const Experience = () => {
           <h1 className="my-12 font-specify_exp_med text-[20px] md:text-[40px] font-medium lg:w-804px md:my-5">
             Firms I worked with of recent
           </h1>
-          <div>
+          <div className="divide-y divide-black">
             {EXP.map((exp) => (
               <motion.div
                 key={exp.id}

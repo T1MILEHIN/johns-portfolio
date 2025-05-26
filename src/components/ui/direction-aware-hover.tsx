@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -86,10 +86,9 @@ export const DirectionAwareHover = ({
                         }}
                     >
                         <LazyLoadImage
-                            effect="blur"
                             alt="image"
                             className={cn(
-                                "h-full w-full object-cover scale-[1.15]",
+                                "h-full w-full object-contain scale-[1.1]",
                                 imageClassName
                             )}
                             src={imageUrl}
