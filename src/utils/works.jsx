@@ -2,7 +2,7 @@ import img1 from "../assets/images/works-images/F.jpg"
 import img2 from "../assets/images/works-images/minato.jpg"
 import img3 from "../assets/images/works-images/cocacola.jpg"
 import img4 from "../assets/images/works-images/coursemigo.jpg"
-import img5 from "../assets/images/works-images/A.jpg"
+// import img5 from "../assets/images/works-images/A.jpg"
 import img6 from "../assets/images/works-images/hgaLanding2.jpg"
 import img7 from "../assets/images/works-images/givingli.jpg"
 import img8 from "../assets/images/works-images/MYABFLEX.png";
