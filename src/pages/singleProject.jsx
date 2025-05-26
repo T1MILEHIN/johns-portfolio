@@ -19,7 +19,9 @@ const SingleProject = () => {
   const { project } = useParams();
   const navigate = useNavigate();
   const work = Works.find((work) => work?.client === project);
-  const nextWork = Math.floor(Math.random() * (Works.filter((wrk) => wrk.client !== work.client).length + 1));
+
+  const otherWorks = Works.filter((wrk) => wrk.client !== work?.client);
+  const nextWork = otherWorks[Math.floor(Math.random() * otherWorks.length)];
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -48,7 +50,7 @@ const SingleProject = () => {
       </div>
 
       <div className="relative lg:py-10 py-20">
-        <img className="block xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.landingImg} alt="" />
+        <img className="block w-full xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.landingImg} alt="" />
         <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
           <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
             <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
@@ -206,9 +208,9 @@ const SingleProject = () => {
       </div>
       <div className="bg-black px-4 md:px-32 pt-32">
         <div className="flex items-center justify-center">
-          <div onClick={() => navigate(`/projects/${Works[nextWork].client}`)} className="cursor-pointer flex flex-col gap-4 items-center">
+          <div onClick={() => navigate(`/projects/${nextWork.client}`)} className="origin-bottom cursor-pointer hover:scale-105 duration-200 flex flex-col gap-4 items-center">
             <h1 className="text-text_gray text-base font-medium">Next Project</h1>
-            <img src={Works[nextWork]?.component} className="w-full md:w-[539px] h-[347px] object-contain cursor-pointer" alt="" />
+            <img src={nextWork?.component} className="w-full md:w-[539px] h-[347px] object-contain cursor-pointer rounded-xl" alt="" />
           </div>
         </div>
         <div>
