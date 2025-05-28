@@ -49,8 +49,8 @@ const SingleProject = () => {
         </Table>
       </div>
 
-      <div className="relative lg:py-10 py-20">
-        <img className="block w-full xl:w-[1176px] h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.landingImg} alt="" />
+      <div className="relative lg:py-10 pt-20">
+        <img className="block w-full xl:w-[1176px] h-96 lg:h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.landingImg} alt="" />
         <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
           <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
             <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
@@ -68,7 +68,7 @@ const SingleProject = () => {
         ))
       )}
 
-      {work?.singleDetails.secondVideo && (
+      {work?.singleDetails?.secondVideo && (
         <div className="md:pt-10 flex flex-col">
           <div className="relative" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
             <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
@@ -86,7 +86,7 @@ const SingleProject = () => {
               </div>
             </div>
             {work?.singleDetails?.secondAbsoluteVideo && (
-              <div className="rounded-xl overflow-hidden absolute -bottom-24 lg:-bottom-[200px] left-1/2 -translate-x-1/2 shadow-2xl">
+              <div className=" lg:rounded-xl overflow-hidden absolute -bottom-[250px] lg:-bottom-[400px] left-0 right-0 lg:left-[15%] lg:right-[15%] shadow-2xl">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -102,14 +102,14 @@ const SingleProject = () => {
         </div>
       )}
 
-      {work?.singleDetails.secondImage && (
+      {work?.singleDetails?.secondImage && (
         <div className="md:pt-10 flex flex-col z-20">
           <div className="relative" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
             <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
               <img src={work?.singleDetails.secondImage} className="w-full" alt="" />
             </div>
             {work?.singleDetails?.imageAbsoluteVideo && (
-              <div className="z-[999999] rounded-xl overflow-hidden absolute -bottom-24 lg:-bottom-[250px] left-1/2 -translate-x-1/2 shadow-2xl">
+              <div className="z-[999999] lg:rounded-xl overflow-hidden absolute -bottom-[200px] lg:-bottom-[400px] left-0 right-0 lg:left-[15%] lg:right-[15%] shadow-2xl">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -127,7 +127,7 @@ const SingleProject = () => {
 
       {work?.singleDetails?.thirdLaptopVideo && (
         <div className="flex flex-col z-10">
-          <div className="pt-20 relative">
+          <div className="pt-48 relative">
             <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
               <div className="px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">
@@ -165,12 +165,12 @@ const SingleProject = () => {
       )}
 
       {work?.singleDetails?.lastImage && (
-        <img className={`${(work?.client === "Clearwork" || work?.client === "MYABFLEX") && "w-[30%] mx-auto pt-[250px]"}`} src={work?.singleDetails?.lastImage} alt="" />
+        <img className={`${(work?.client === "Clearwork" || work?.client === "MYABFLEX") && "w-[40%] mx-auto pt-[300px] lg:pt-[450px]"}`} src={work?.singleDetails?.lastImage} alt="" />
       )}
 
       {work?.singleDetails?.lastLaptopVideo && (
         <div className="flex flex-col z-10">
-          <div className="pt-20 relative">
+          <div className="pt-56 lg:pt-96 relative">
             <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
               <div className="px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">

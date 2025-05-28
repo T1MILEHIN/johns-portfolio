@@ -1,4 +1,3 @@
-import React from 'react'
 
 const PhoneDesignShowcase = () => {
   return (
@@ -6,4 +5,4 @@ const PhoneDesignShowcase = () => {
   )
 }
 
-export default PhoneDesignShowcase
+export default PhoneDesignShowcase;

@@ -83,9 +83,9 @@ export const DirectionAwareHover = ({
                         transition={{
                             duration: 0.2,
                             ease: "easeOut",
-                        }}
-                    >
+                        }}>
                         <LazyLoadImage
+                            visibleByDefault={true}
                             alt="image"
                             className={cn(
                                 "h-full w-full object-contain scale-[1.1]",

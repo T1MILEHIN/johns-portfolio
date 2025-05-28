@@ -256,14 +256,17 @@ export const Works = [
         location: "Practice",
         services: "Website re-design",
         component: img7,
-        color: "#005d93"
+        color: "#005d93",
+        singleDetails: {
+            landingImg: img7
+        }
     },
     {
         client: "Moises",
         location: "Practice",
         services: "App re-design",
         component: img1,
-        color: "#005d93"
+        color: "#005d93",
     },
     {
         client: "Truecaller",
