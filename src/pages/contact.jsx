@@ -94,17 +94,27 @@ const Contact = () => {
                 <div className="flex flex-col gap-4">
                     <h2 className="font-bold text-[#636363] text-[12px]">Contact Address</h2>
                     <ul className="leading-[40px] md:leading-[30px] text-xs md:text-[15px]">
-                        <li>oluwawolejohnbelovedayomide2@gmail.com </li>
-                        <li>+234 9063 606 002</li>
+                        <a href="mailto:oluwawolejohnbelovedayomide2@gmail.com">
+                            <li>oluwawolejohnbelovedayomide2@gmail.com </li>
+                        </a>
+                        <a href="https://wa.me/qr/OBVGBJ7ONGRZM1" target="_blank">
+                            <li>+234 9063 606 002</li>
+                        </a>
                         <li>Lagos, Nigeria</li>
                     </ul>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h1 className="font-bold text-[#636363] text-[12px]">SOCIALS</h1>
                     <ul className="leading-[30px] text-[13px]">
-                        <li>Instagram</li>
-                        <li>LinkedIn</li>
-                        <li>Behance</li>
+                        <a href="https://www.instagram.com/jayzle_ux/" target="_blank">
+                            <li>Instagram</li>
+                        </a>
+                        <a href="https://www.linkedin.com/in/oluwawole-johnbeloved-13ab14253/" target="_blank">
+                            <li>LinkedIn</li>
+                        </a>
+                        <a href="https://www.behance.net/oluwawojohnbel" target="_blank">
+                            <li>Behance</li>
+                        </a>
                     </ul>
                 </div>
             </div>

@@ -48,6 +48,7 @@ export const Works = [
         component: img1,
         color: "#0000008f",
         singleDetails: {
+            link: "https://www.figma.com/design/uArFb0TstCWeCKJ73BWVBS/Clearwage?node-id=930-129&t=gBQQjuzvQ0sKS7it-1",
             role: "Designer",
             credit: "Clearwork Limited",
             location: "United Kingdom",
@@ -89,6 +90,7 @@ export const Works = [
         component: img3,
         color: "red",
         singleDetails: {
+            link: "https://www.figma.com/design/MWaWlQaVMSdnOUNPKytqyY/Cocacola-redesign-project?node-id=0-1&p=f&t=3AOWUUkltZ0fpi4p-11",
             role: "Designer",
             credit: "Cocacola company",
             location: "Practice Project",
@@ -148,6 +150,7 @@ export const Works = [
         component: abbiLanding,
         color: "#FFF",
         singleDetails: {
+            link: "https://www.figma.com/design/lwxs7Kw8x2HIMuuvm0suJh/Abbi's-place?node-id=0-1&p=f&t=fvMG7RWaAABKLgyP-11",
             role: "Design Lead",
             credit: "Abbi’s Place",
             location: "Nigeria",
@@ -179,6 +182,7 @@ export const Works = [
         component: img8,
         color: "#0083FD",
         singleDetails: {
+            link: "https://www.figma.com/design/MPX0SHqGnVkgY925J4FT8T/AB-MF-app?node-id=69-472&t=CWkhK8WN25vN3ss5-1",
             role: "Co-Designer",
             credit: "AB Microfinance Bank",
             location: "Nigeria",
@@ -186,6 +190,7 @@ export const Works = [
             fullSecondImage: abflex2,
             thirdVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/qis4xwxwe4ojv7ow8slm",
             lastImage: abflex3,
+            lastPhoneVideo: true,
         }
     },
     {
@@ -258,6 +263,7 @@ export const Works = [
         component: img7,
         color: "#005d93",
         singleDetails: {
+            link: "https://www.figma.com/design/fJ2feSug5iqfhPY0wWHpjd/Codaryaba?node-id=0-1&t=3hT68HewFVrDNgzt-1",
             landingImg: img7
         }
     },
@@ -275,6 +281,7 @@ export const Works = [
         component: img9,
         color: "white",
         singleDetails: {
+        link: "https://www.figma.com/design/8BmI5kJDxPn6FyOX5Cu1yL/Truecaller?node-id=0-1&p=f&t=W30Kq0nDlkaH8ajD-11 -11",
             role: "Designer",
             credit: "Minato Limited",
             location: "United Kingdom",

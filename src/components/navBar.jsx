@@ -103,7 +103,6 @@ const LINKS = [
 
 const NavBar = () => {
     const { pathname } = useLocation()
-    const { project } = useParams()
     const [isActive, setIsActive] = useState(false);
     const [subNavIsActive, setSubNavIsActive] = useState(false);
     const isMobile = useIsMobile();
@@ -252,14 +251,13 @@ const NavBar = () => {
                         {/* SUB MENU EXIT BUTTON */}
                         <div className={`absolute md:left-10 left-5 md:top-8 top-5 lg:w-20 w-14 aspect-square rounded-full grid place-content-center`}>
                             <HoverEffect rotationRange={20}>
-                                <motion.label className={`${isActive ? "bg-blue" : "bg-[#4F4F4F]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
+                                <motion.label className={`${isActive ? "rest-blue" : "text-[#4F4F4F]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
                                     <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
                                         <input onChange={handleSubToggle} checked={subNavIsActive} type="checkbox" id="subcheckbox" />
                                         <label
                                             htmlFor="subcheckbox"
                                             className="toggle">
-                                            <div className="bar bar--top"></div>
-                                            <div className="bar bar--bottom"></div>
+                                            <p>Back</p>
                                         </label>
                                     </HoverEffect>
                                 </motion.label>

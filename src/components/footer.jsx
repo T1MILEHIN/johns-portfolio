@@ -26,17 +26,27 @@ const Footer = ({ footerRef, smoothY }) => {
                     <hr className="z-[2] w-full"></hr>
                 </div>
                 <div className="flex md:flex-row flex-col gap-4 mt-20 px-2 md:px-0">
-                    <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[10.78px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
-                    <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[12.57px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">+234 9063 606 002</Button>
+                    <a href="mailto:oluwawolejohnbelovedayomide2@gmail.com">
+                        <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[10.78px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
+                    </a>
+                    <a href="https://wa.me/qr/OBVGBJ7ONGRZM1" target="_blank">
+                        <Button className="blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[12.57px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">+234 9063 606 002</Button>
+                    </a>
                 </div>
                 <div>
                     <div className="px-2 md:pt-20 md:pb-10 pt-10 pb-5">
                         <h1 className="text-sm font-bold text-[#636363] my-2">SOCIALS</h1>
                         <div className="flex lg:flex-row flex-col md:gap-0 gap-10 justify-between">
                             <ul className="flex md:gap-10 gap-4">
-                                <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Instagram</li>
-                                <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">LinkedIn</li>
-                                <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Behance</li>
+                                <a href="https://www.instagram.com/jayzle_ux/" target="_blank">
+                                    <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Instagram</li>
+                                </a>
+                                <a href="https://www.linkedin.com/in/oluwawole-johnbeloved-13ab14253/" target="_blank">
+                                    <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">LinkedIn</li>
+                                </a>
+                                <a href="https://www.behance.net/oluwawojohnbel" target="_blank">
+                                    <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Behance</li>
+                                </a>
                             </ul>
                             <ul>
                                 <li className="content-center text-sm md:text-base font-medium text-[#636363]">{new Date().getFullYear()} Jayzleux. All rights reserved.</li>

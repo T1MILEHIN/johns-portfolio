@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
   Table,
   TableHead,
@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
+import iphone from "../assets/images/iphone.jpg";
 import { withPageTransition } from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
 import ReactPlayer from 'react-player';
@@ -51,6 +52,17 @@ const SingleProject = () => {
 
       <div className="relative lg:py-10 pt-20">
         <img className="block w-full xl:w-[1176px] h-96 lg:h-80 xl:h-auto mx-auto object-cover" src={work?.singleDetails?.landingImg} alt="" />
+        {work?.singleDetails.link ? 
+        <Link to={work?.singleDetails.link} className="absolute lg:top-0 top-10 lg:right-32 right-10">
+          <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+            <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
+              <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
+                <div className="button text-xs">Design File</div>
+              </HoverEffect>
+            </button>
+          </HoverEffect>
+        </Link>
+        :
         <div className="absolute lg:top-0 top-10 lg:right-32 right-10">
           <HoverEffect Z={20} rotationRange={10} style={{ width: "fit-content" }}>
             <button className="lg:size-28 size-20 grid place-content-center p-4 rounded-[20px] z-10 bg-blue text-white font-normal">
@@ -60,6 +72,7 @@ const SingleProject = () => {
             </button>
           </HoverEffect>
         </div>
+        }
       </div>
 
       {work?.singleDetails?.allImage && (
@@ -70,10 +83,10 @@ const SingleProject = () => {
 
       {work?.singleDetails?.secondVideo && (
         <div className="md:pt-10 flex flex-col">
-          <div className="relative" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
-            <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
-              <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
-              <div className="px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">
+          <div className="relative md:py-[300px] py-[150px]" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
+            <div className="px-4 md:px-0 overflow-hidden relative w-full lg:w-[1061px] mx-auto">
+              <img src={laptop} className="w-full" alt="" />
+              <div className="z-[999999] rounded-2xl overflow-hidden px-4 md:px-0 absolute top-[10px] md:top-[15px] lg:top-[15px] left-[9%] right-[9%]">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -103,13 +116,13 @@ const SingleProject = () => {
       )}
 
       {work?.singleDetails?.secondImage && (
-        <div className="md:pt-10 flex flex-col z-20">
+        <div className="md:pt-10 flex flex-col z-20 border-2">
           <div className="relative" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
-            <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
+            <div className="px-4 md:px-0 overflow-hidden relative w-full xl:w-[1077px] mx-auto">
               <img src={work?.singleDetails.secondImage} className="w-full" alt="" />
             </div>
             {work?.singleDetails?.imageAbsoluteVideo && (
-              <div className="z-[999999] lg:rounded-xl overflow-hidden absolute -bottom-[200px] lg:-bottom-[400px] left-0 right-0 lg:left-[15%] lg:right-[15%] shadow-2xl">
+              <div className="z-[999999] lg:rounded-xl overflow-hidden absolute -bottom-[200px] lg:-bottom-[350px] left-0 right-0 lg:left-[15%] lg:right-[15%] shadow-2xl">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -127,10 +140,10 @@ const SingleProject = () => {
 
       {work?.singleDetails?.thirdLaptopVideo && (
         <div className="flex flex-col z-10">
-          <div className="pt-48 relative">
-            <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
-              <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
-              <div className="px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">
+          <div className="pt-[500px] pb-20 relative">
+            <div className="px-4 md:px-0 overflow-hidden relative w-full lg:w-[1061px] mx-auto">
+              <img src={laptop} className="" alt="" />
+              <div className="rounded-2xl overflow-hidden px-4 md:px-0 absolute top-[10px] md:top-[15px] lg:top-[15px] left-[9%] right-[9%]">
                 <ReactPlayer
                   className=""
                   playing={true}
@@ -165,7 +178,10 @@ const SingleProject = () => {
       )}
 
       {work?.singleDetails?.lastImage && (
-        <img className={`${(work?.client === "Clearwork" || work?.client === "MYABFLEX") && "w-[40%] mx-auto pt-[300px] lg:pt-[450px]"}`} src={work?.singleDetails?.lastImage} alt="" />
+        <img className={`
+          ${(work?.client === "Clearwork" || work?.client === "MYABFLEX") && "mx-auto pt-[300px] lg:pt-[450px]"} 
+          ${work?.client === "Clearwork" && "w-[40%]"} ${work?.client === "MYABFLEX" && "w-[20%]"}
+          `} src={work?.singleDetails?.lastImage} alt="" />
       )}
 
       {work?.singleDetails?.lastLaptopVideo && (
@@ -188,6 +204,14 @@ const SingleProject = () => {
           </div>
         </div>
       )}
+
+      {/* {work?.singleDetails?.lastPhoneVideo && (
+        <div className="lg:w-[308px]">
+          <img src={iphone} alt="" />
+          <div></div>
+        </div>
+      )} */}
+
       <div className="py-20 md:px-20 px-4 flex flex-col gap-8">
         {work?.singleDetails?.overview &&
           <div className="flex flex-col gap-6">
