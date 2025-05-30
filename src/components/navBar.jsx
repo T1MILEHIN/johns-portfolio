@@ -246,10 +246,10 @@ const NavBar = () => {
                     initial="initial"
                     animate={subNavIsActive ? "animate" : "exit"}
                     exit="exit"
-                    className={`${isMobile ? "z-50" : "z-10"} flex flex-col justify-between pt-20 pb-8 pr-8 lg:pl-20 pl-10 fixed top-0 bottom-0 left-0 md:w-1/2 w-full  bg-[#4F4F4F] text-white`}>
+                    className={`${isMobile ? "z-50" : "z-10"} flex flex-col justify-between pt-20 pb-8 pr-8 lg:pl-10 pl-10 fixed top-0 bottom-0 md:left-[25%] right-0 md:w-1/2 w-full bg-[#4F4F4F] text-white`}>
                     <motion.div>
                         {/* SUB MENU EXIT BUTTON */}
-                        <div className={`absolute md:left-10 left-5 md:top-8 top-5 lg:w-20 w-14 aspect-square rounded-full grid place-content-center`}>
+                        <div className={`absolute md:left-5 left-5 md:top-8 top-5 lg:w-20 w-14 aspect-square rounded-full grid place-content-center`}>
                             <HoverEffect rotationRange={20}>
                                 <motion.label className={`${isActive ? "rest-blue" : "text-[#4F4F4F]"} overflow-hidden blue_hover z-40 grid place-content-center lg:w-20 lg:h-20 w-14 h-14 rounded-full cursor-pointer`} onClick={() => setIsActive(!isActive)}>
                                     <HoverEffect Z={50} rotationRange={10} style={{ width: "fit-content" }}>
@@ -263,8 +263,8 @@ const NavBar = () => {
                                 </motion.label>
                             </HoverEffect>
                         </div>
-                        <p className="md:text-xl py-4 px-7 text-[#E0E0E0] border-b border-[#727272]">Projects</p>
-                        <motion.ul variants={menuContainerVariant} className="relative leading-[80px] text-[30px] md:text-[36px]">
+                        <p className="md:text-xl py-4 px-3 text-[#E0E0E0] border-b border-[#727272]">Projects</p>
+                        <motion.ul variants={menuContainerVariant} className="relative leading-[80px] text-[16px] md:text-[20px]">
                             {LINKS.find(link => link.name === "Projects")?.dropDown.map((item, index) => (
                                 <HoverEffect key={index} rotationRange={10} style={{ width: "fit-content" }}>
                                     <motion.li

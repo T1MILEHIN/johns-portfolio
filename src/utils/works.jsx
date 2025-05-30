@@ -99,8 +99,8 @@ export const Works = [
             videoBg: "#D9D9D9",
             imageAbsoluteVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/q1kh4undr266srtvbyiw",
             thirdLaptopVideo : "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/mx3t9umsyxr8gksnrhpo",
-            lastImage: cocacola4,
-            
+            lastPhoneVideoBg: "black",
+            lastPhoneVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/i5w99gmewyf8kwae6fs7",
             video: "https://res.cloudinary.com/dqrhl6zcc/video/upload/v1740059997/JOHN%27s%20PORT/wbebebhda9chizpusyks.mp4",
             overview: "The Coca-Cola website redesign aims to enhance user experience through modern navigation, interactive elements, and mobile responsiveness while maintaining the iconic brand identity. Focused on accessibility, the project will engage diverse audiences and promote brand storytelling effectively.",
         }
@@ -189,8 +189,19 @@ export const Works = [
             landingImg: abflexLanding,
             fullSecondImage: abflex2,
             thirdVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/qis4xwxwe4ojv7ow8slm",
-            lastImage: abflex3,
-            lastPhoneVideo: true,
+            lastPhoneVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/saq4os2nhdwqkljmzhen",
+            lastPhoneVideoBg: "white",
+
+
+            overview: "AB Microfinance Bank requires a mobile app (My ABFlex) to provide customers with convenient access to banking services, promote financial inclusion, and enhance customer experience. The app will enable customers to manage their accounts, conduct transactions, and access financial services remotely, reducing the need for physical branch visits. By leveraging mobile technology, the bank aims to increase customer engagement, improve operational efficiency, and expand its reach to underserved communities. The app will be designed to be user-friendly, secure, and accessible, catering to a diverse customer base.",
+            objectives: [
+                "AB Microfinance Bank: requires a mobile app (My ABFlex) to provide customers with convenient access to banking services, promote financial inclusion, and enhance customer experience. The app will enable customers to manage their accounts, conduct transactions, and access financial services remotely, reducing the need for physical branch visits. By leveraging mobile technology, the bank aims to increase customer engagement, improve operational efficiency, and expand its reach to underserved communities. The app will be designed to be user-friendly, secure, and accessible, catering to a diverse customer base.",
+                "Financial Inclusion: Expand the bank's reach and promote financial inclusion by offering a user-friendly digital platform for underserved communities.",
+                "Customer Experience: Enhance customer satisfaction and loyalty by offering a seamless, intuitive, and secure mobile banking experience.",
+                "Increased Customer Engagement: Foster regular app usage and engagement through features like account monitoring, transaction history, and personalized notifications.",
+                "Operational Efficiency: Streamline banking processes, reduce costs, and improve efficiency by automating transactions and minimizing manual interventions.",
+                "Data-Driven Insights: Collect and analyze user data to inform business decisions, improve services, and tailor marketing strategies.",
+            ]
         }
     },
     {

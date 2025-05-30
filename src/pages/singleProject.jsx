@@ -11,9 +11,16 @@ import {
 } from "@/components/ui/table";
 import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
-import iphone from "../assets/images/iphone.jpg";
+import iphone from "../assets/images/iphone16.png";
 import { withPageTransition } from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
+import {
+    AndroidMockup,
+    AndroidTabMockup,
+    IPhoneMockup,
+    IPadMockup
+}
+from "react-device-mockup"
 import ReactPlayer from 'react-player';
 
 const SingleProject = () => {
@@ -205,14 +212,25 @@ const SingleProject = () => {
         </div>
       )}
 
-      {/* {work?.singleDetails?.lastPhoneVideo && (
-        <div className="lg:w-[308px]">
-          <img src={iphone} alt="" />
-          <div></div>
-        </div>
-      )} */}
+      <div className="py-32" style={{backgroundColor: work?.singleDetails?.lastPhoneVideoBg}}>
+        {work?.singleDetails?.lastPhoneVideo && (
+          <div className="w-[250px] mx-auto">
+            <AndroidMockup screenWidth={250} className="mx-auto" frameColor={work?.singleDetails?.lastPhoneVideoBg === "black" ? "#ebebeb" : "#000"} className="mx-auto">
+              <ReactPlayer 
+                className=""
+                playing={true}
+                loop={true}
+                muted={true}
+                url={work?.singleDetails?.lastPhoneVideo}
+                width="100vw"
+                height="100%"
+              />
+            </AndroidMockup>
+          </div>
+        )}
+      </div>
 
-      <div className="py-20 md:px-20 px-4 flex flex-col gap-8">
+      <div className={`py-20 md:px-20 px-4 flex flex-col gap-8`}>
         {work?.singleDetails?.overview &&
           <div className="flex flex-col gap-6">
             <h1 className="font-specify_exp_med text-[20px] md:text-[40px] leading-[52px] font-bold">Project OverView</h1>
