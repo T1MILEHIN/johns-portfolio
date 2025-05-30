@@ -222,7 +222,7 @@ const SingleProject = () => {
                 loop={true}
                 muted={true}
                 url={work?.singleDetails?.lastPhoneVideo}
-                width="100vw"
+                width="100%"
                 height="100%"
               />
             </AndroidMockup>

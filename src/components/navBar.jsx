@@ -82,7 +82,7 @@ const LINKS = [
         url: "/allprojects",
         dropDown: [
             {
-                name: "UI/uX Design Projects",
+                name: "UI/UX Design Projects",
                 url: "/allprojects"
             },
             {
