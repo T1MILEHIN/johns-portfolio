@@ -11,14 +11,10 @@ import {
 } from "@/components/ui/table";
 import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
-import iphone from "../assets/images/iphone16.png";
 import { withPageTransition } from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
 import {
     AndroidMockup,
-    AndroidTabMockup,
-    IPhoneMockup,
-    IPadMockup
 }
 from "react-device-mockup"
 import ReactPlayer from 'react-player';
@@ -211,11 +207,10 @@ const SingleProject = () => {
           </div>
         </div>
       )}
-
       <div className="py-32" style={{backgroundColor: work?.singleDetails?.lastPhoneVideoBg}}>
         {work?.singleDetails?.lastPhoneVideo && (
           <div className="w-[250px] mx-auto">
-            <AndroidMockup screenWidth={250} className="mx-auto" frameColor={work?.singleDetails?.lastPhoneVideoBg === "black" ? "#ebebeb" : "#000"} className="mx-auto">
+            <AndroidMockup screenWidth={250} className="mx-auto" frameColor={work?.singleDetails?.lastPhoneVideoBg === "black" ? "#ebebeb" : "#000"}>
               <ReactPlayer 
                 className=""
                 playing={true}

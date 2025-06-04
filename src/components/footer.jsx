@@ -47,6 +47,9 @@ const Footer = ({ footerRef, smoothY }) => {
                                 <a href="https://www.behance.net/oluwawojohnbel" target="_blank">
                                     <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Behance</li>
                                 </a>
+                                <a href="https://www.youtube.com/@jayzleux" target="_blank">
+                                    <li className="text-sm md:text-xs relative after:absolute after:bg-blue after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:opacity-0 hover:after:opacity-100 after:duration-300 cursor-pointer">Youtube</li>
+                                </a>
                             </ul>
                             <ul>
                                 <li className="content-center text-sm md:text-base font-medium text-[#636363]">{new Date().getFullYear()} Jayzleux. All rights reserved.</li>
