@@ -13,10 +13,7 @@ import { Works } from "../utils/works";
 import laptop from "../assets/images/laptop.png";
 import { withPageTransition } from "../transition"
 import HoverEffect from "../components/custom/hoverEffect";
-import {
-    AndroidMockup,
-}
-from "react-device-mockup"
+import { AndroidMockup } from "react-device-mockup"
 import ReactPlayer from 'react-player';
 
 const SingleProject = () => {

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { motion, useInView, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import PropTypes from 'prop-types';
 import { Works } from "../../../utils/works";
 import HoverEffect from "../../../components/custom/hoverEffect";
@@ -32,7 +32,7 @@ const Work = ({ category, limit }) => {
 
     return (
         <AnimatePresence>
-            <TableBody ref={tableBodyRef} tabIndex={0} 
+            <TableBody ref={tableBodyRef}
             onMouseLeave={() => {
                 handleSetSelected(null)
                 setDir(null)
@@ -79,8 +79,6 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
         const newX = e.clientX - rect.left - 174.5;
         const newY = e.clientY - rect.top - 149;
 
-        console.log("child=>", e.currentTarget.getBoundingClientRect())
-
         mousePosition.x.set(newX);
         mousePosition.y.set(newY);
     };
@@ -88,6 +86,7 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
     return (
         <>
             <TableRow
+                tabIndex={0}
                 onClick={() => navigate(`/projects/${works.find(work => work.id === currentSlide).client}`)}
                 id={`overflow-hidden relative shift-tab-${children.id} content`}
                 onMouseMove={
@@ -95,8 +94,7 @@ const Table_Row = ({ children, currentSlide, setCurrentSlide, dir, handleSetSele
                         handleMouseMove(e);
                     }
                 }
-                on
-
+                onFocus={(()=> console.log(children.id))}
                 onMouseEnter={(e) => {
                     handleMouseMove(e);
                     handleSetSelected(children.id)

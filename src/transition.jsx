@@ -10,7 +10,7 @@ export const PageTransition = ({ children, pageName }) => {
     <>
       {children}
       <motion.div
-        className="z-[999999999] fixed inset-0 pointer-events-none"
+        className="z-[999999999] fixed inset-0 pointer-events-none border-2"
         initial={{ opacity: 0 }}
         exit={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
