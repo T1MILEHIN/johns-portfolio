@@ -363,14 +363,14 @@ const Clearwork = () => {
 
                     <div className="flex justify-center items-center gap-4 my-10 [perspective:1200px]">
                         {/* Left Phone */}
-                        <div className="w-[250px] -rotate-12">
-                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={250} frameColor={'#000'}>
+                        <div className="w-[150px] -rotate-12">
+                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={150} frameColor={'#000'}>
                                 <img src={image7} alt="Screen 1" />
                             </IPhoneMockup>
                         </div>
                         {/* Right Phone */}
-                        <div className="w-[250px] rotate-12">
-                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={250} frameColor={'#000'}>
+                        <div className="w-[150px] rotate-12">
+                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={150} frameColor={'#000'}>
                                 <img src={image8} alt="Screen 2" />
                             </IPhoneMockup>
                         </div>
