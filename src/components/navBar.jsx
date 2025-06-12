@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import logo from "../assets/images/johnLogoLight.png";
 import darklogo from "../assets/images/johnLogoDark.png";
 import { Link, NavLink } from "react-router-dom";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import HoverEffect from "../components/custom/hoverEffect"
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronDown } from "lucide-react";

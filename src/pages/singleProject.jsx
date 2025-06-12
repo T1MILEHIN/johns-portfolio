@@ -207,7 +207,7 @@ const SingleProject = () => {
       <div className="py-32" style={{backgroundColor: work?.singleDetails?.lastPhoneVideoBg}}>
         {work?.singleDetails?.lastPhoneVideo && (
           <div className="w-[250px] mx-auto">
-            <AndroidMockup screenWidth={250} className="mx-auto" frameColor={work?.singleDetails?.lastPhoneVideoBg === "black" ? "#ebebeb" : "#000"}>
+            <AndroidMockup hideStatusBar={true} hideNavBar={true} screenWidth={250} className="mx-auto" frameColor={work?.singleDetails?.lastPhoneVideoBg === "black" ? "#ebebeb" : "#000"}>
               <ReactPlayer 
                 className=""
                 playing={true}

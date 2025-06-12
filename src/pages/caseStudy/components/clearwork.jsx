@@ -2,6 +2,18 @@
 import img from "../../../assets/images/hero-casestudy-img.png";
 import targerUser from "../../../assets/images/caseUser.png";
 import center from "../../../assets/images/clearwork/center.jpg";
+import image1 from "../../../assets/images/clearwork/image1.jpg";
+import image2 from "../../../assets/images/clearwork/image2.jpg";
+import image3 from "../../../assets/images/clearwork/image3.jpg";
+import image4 from "../../../assets/images/clearwork/image4.jpg";
+import image5 from "../../../assets/images/clearwork/image5.jpg";
+import image6 from "../../../assets/images/clearwork/image6.jpg";
+import image7 from "../../../assets/images/clearwork/image7.jpg";
+import image8 from "../../../assets/images/clearwork/image8.jpg";
+import image9 from "../../../assets/images/clearwork/image9.jpg";
+import image10 from "../../../assets/images/clearwork/image10.jpg";
+import image11 from "../../../assets/images/clearwork/image11.jpg";
+import image12 from "../../../assets/images/clearwork/image12.jpg";
 import { Progress } from "@/components/ui/progress"
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variant";
@@ -9,9 +21,14 @@ import { ButtonShowcaseGrid } from "@/components/buttonShowCaseGrid";
 import { TypographyShowcase } from "@/components/typographShowcase";
 import ColorShowcase from "@/components/colorShowcase";
 import { withPageTransition } from "../../../transition";
+import Description from "./clearwork/description";
+import ShowCase from "./clearwork/showCase";
 
+import { IPhoneMockup } from "react-device-mockup"
 
 const Clearwork = () => {
+    const images1 = [image1, image2, image3, image4, image5, image6];
+    const images2 = [image7, image8, image9, image10, image11, image12];
     return (
         <section className="">
             <div className="min-h-screen bg-caseStudyBlue flex flex-col items-center justify-between text-center pt-28 md:pt-32 ">
@@ -284,7 +301,6 @@ const Clearwork = () => {
                     </div>
                 </div>
 
-
                 <div className="py-20">
                     <h1 className="text-[64px] font-bold text-[#07499459]">04</h1>
                     <div className="flex flex-col items-center gap-2 my-8">
@@ -307,7 +323,7 @@ const Clearwork = () => {
                     <TypographyShowcase />
                 </div>
 
-                <div  className="py-20">
+                <div className="py-20">
                     <p className="text-caseStudyGray text-xl font-semibold mb-2">Brand COlor</p>
                     <ColorShowcase />
                 </div>
@@ -319,7 +335,50 @@ const Clearwork = () => {
                         <p className="text-base text-caseStudyGray">We began with low-fidelity wireframes to define user flows and structure key interactions, ensuring a seamless experience. Through iterations, we refined them into mid-fidelity designs, improving layout and usability. Finally, we introduced ClearWork’s branding in high-fidelity designs, creating a visually cohesive, user-friendly, and efficient platform for HR professionals.</p>
                     </div>
 
-                    
+
+                    <ShowCase images={images1} />
+                </div>
+
+                <div className="">
+                    <div className="flex flex-col items-center gap-2 mb-20">
+                        <h2 className="text-caseStudyBlue text-[28px] font-bold">ClearWork in Action</h2>
+                        <p className="text-base text-caseStudyGray">final design</p>
+                    </div>
+                    <Description />
+                </div>
+
+                <div className="py-20">
+                    <ShowCase images={images2} />
+                </div>
+
+                <div className="py-20">
+                    <h1 className="text-[64px] font-bold text-[#07499459] text-right">06</h1>
+                    <div className="flex flex-col gap-2 mb-20">
+                        <h2 className="text-caseStudyBlue text-[28px] font-bold">Conclusion</h2>
+                        <p className="text-base text-caseStudyGray">ClearWork was designed to simplify HR processes, making time tracking, payroll management, and employee support more efficient. Through research-driven design, we created an intuitive platform that enhances productivity for both HR managers and employees. By refining user flows, implementing key features, and ensuring a seamless experience, ClearWork bridges the gap between traditional HR challenges and modern digital solutions.</p>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div className="flex justify-center items-center gap-4 my-10 [perspective:1200px]">
+                        {/* Left Phone */}
+                        <div className="w-[250px] -rotate-12">
+                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={250} frameColor={'#000'}>
+                                <img src={image7} alt="Screen 1" />
+                            </IPhoneMockup>
+                        </div>
+                        {/* Right Phone */}
+                        <div className="w-[250px] rotate-12">
+                            <IPhoneMockup cl hideStatusBar={true} hideNavBar={true} screenWidth={250} frameColor={'#000'}>
+                                <img src={image8} alt="Screen 2" />
+                            </IPhoneMockup>
+                        </div>
+                    </div>
+
+                    <div className="text-center mt-32">
+                        <button className="rounded-[50px] font-bold text-2xl mx-auto duration-200 bg-blue/50 hover:bg-blue lg:w-[400px] px-16 py-5">Download Vercel App</button>
+                    </div>
                 </div>
             </section>
 
