@@ -189,7 +189,7 @@ const SingleProject = () => {
           <div className="pt-56 lg:pt-96 relative">
             <div className="px-4 md:px-0 overflow-hidden relative md:w-[677px] mx-auto">
               <img src={laptop} className="py-20 md:py-[200px] lg:py-[300px]" alt="" />
-              <div className="px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">
+              <div className="rounded-2xl px-4 md:px-0 absolute top-[9%] left-[10%] w-[80%] h-[80%]">
                 <ReactPlayer
                   className=""
                   playing={true}
