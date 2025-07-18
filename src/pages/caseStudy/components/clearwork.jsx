@@ -2,6 +2,8 @@
 import img from "../../../assets/images/hero-casestudy-img.png";
 import targerUser from "../../../assets/images/caseUser.png";
 import center from "../../../assets/images/clearwork/center.jpg";
+import work from "../../../assets/images/clearwork/work.png";
+import bam from "../../../assets/images/clearwork/bam.png";
 import image1 from "../../../assets/images/clearwork/image1.jpg";
 import image2 from "../../../assets/images/clearwork/image2.jpg";
 import image3 from "../../../assets/images/clearwork/image3.jpg";
@@ -265,37 +267,35 @@ const Clearwork = () => {
                     <h2 className="text-xl font-semibold my-6">Competitors Analysis</h2>
                     <div className="flex md:flex-row flex-col gap-10">
                         <div className="flex-1 p-4 border-2 border-dashed rounded-2xl">
-                            <img className="w-32 mx-auto" src={center} alt="" />
+                            <img className="w-32 mx-auto" src={bam} alt="" />
                             <h3 className="font-bold text-lg">Strength</h3>
-                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[180%]">
+                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[33px]">
                                 <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
+                                <li>Strong automation for time tracking and payroll.</li>
+                                <li>Built-in tax compliance features tailored for various regions.</li>
+                                <li>Employee self-service portal for easy access to HR information.</li>
                             </ul>
                             <h3 className="font-bold text-lg">Weakness</h3>
-                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[180%]">
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
+                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[33px]">
+                                <li>Limited customization options for businesses with unique HR needs.s</li>
+                                <li>Higher pricing compared to some competitors.</li>
+                                <li>Growth-related services like training and performance tracking are not as robust.</li>
                             </ul>
                         </div>
                         <div className="flex-1 p-4 border-2 border-dashed rounded-2xl">
-                            <img className="w-32 mx-auto" src={center} alt="" />
+                            <img className="size-32 object-contain mx-auto" src={work} alt="" />
                             <h3 className="font-bold text-lg">Strength</h3>
-                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[180%]">
-                                <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
-                                <li>User-friendly interface with a clean design</li>
+                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[33px]">
+                                <li>Advanced payroll and benefits management with compliance tracking.</li>
+                                <li>Strong analytics and reporting features for data-driven decision-making.</li>
+                                <li>Scalable solution that grows with business needs.</li>
+                                <li>Comprehensive employee development tools, including learning management.</li>
                             </ul>
                             <h3 className="font-bold text-lg">Weakness</h3>
-                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[180%]">
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
-                                <li>Limited Customization options for business with unique HR needs</li>
+                            <ul className="text-sm text-caseStudyGray list-disc list-inside leading-[33px]">
+                                <li>Steep learning curve due to complex features.</li>
+                                <li>Expensive pricing, making it less accessible for smaller businesses.</li>
+                                <li>Requires significant setup and customization, which may be time-consuming.</li>
                             </ul>
                         </div>
                     </div>

@@ -85,6 +85,8 @@ export default {
 				specify_medium: ['specify-medium', 'sans-serif'],
 				specify_exp_med: ['specify-expMed', 'san-serif'],
 				sans: ['Inter', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				applied_sans: ['Applied Sans', 'sans-serif'],
 			},
 		}
 	},

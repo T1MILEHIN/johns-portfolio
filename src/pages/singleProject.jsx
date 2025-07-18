@@ -85,8 +85,8 @@ const SingleProject = () => {
         <div className="md:pt-10 flex flex-col">
           <div className="relative md:py-[300px] py-[150px]" style={{ backgroundColor: work?.singleDetails?.videoBg }}>
             <div className="px-4 md:px-0 overflow-hidden relative w-full lg:w-[1061px] mx-auto">
-              <img src={laptop} className="w-full" alt="" />
-              <div className="z-[999999] rounded-2xl overflow-hidden px-4 md:px-0 absolute top-[10px] md:top-[15px] lg:top-[15px] left-[9%] right-[9%]">
+              <img src={laptop} className="" alt="" />
+              <div className="rounded-2xl overflow-hidden px-4 md:px-0 absolute top-[10px] md:top-[15px] lg:top-[15px] left-[9%] right-[9%]">
                 <ReactPlayer
                   className=""
                   playing={true}

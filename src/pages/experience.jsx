@@ -87,9 +87,9 @@ const Experience = () => {
   return (
     <div>
       <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
-        <div className="md:px-20">
-          <h1 className="font-specify_exp_med md:text-[64px] leading-[70px] lg:leading-[93.6px] text-[42px] lg:text-[72px] w-full xl:w-[1050px] tracking-tighter">
-            <span className="font-black">5</span>
+        <div className="md:px-20 py-10">
+          <h1 className="text-[65.51px] md:text-[64px] leading-[83.2px] font-specify_exp_med w-full xl:w-[1050px]">
+            <span className="font-bold">5 </span>
             Years Background Experience in Designing
           </h1>
         </div>
@@ -107,10 +107,10 @@ const Experience = () => {
             {EXP.map((exp) => (
               <motion.div
                 key={exp.id}
-                className="pb-20 md:pb-0 md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border-b-[#636363]"
+                className="pt-10 pb-20 md:pb-0 md:pt-20 md:px-20 flex md:flex-row flex-col md:items-center gap-10 border-b-[#636363]"
               >
                 <div className="flex-1 flex flex-col gap-4">
-                  <div className="font-bold text-[15px] flex flex-col">
+                  <div className="font-bold text-[15px] flex flex-col gap-3">
                     <motion.p
                       variants={fadeIn("right", 0.1, 0.3)}
                       initial="hidden"
@@ -144,11 +144,9 @@ const Experience = () => {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.7 }}
-                    className="text-lg leading-[28px]  md:w-[464px] md:leading-7"
+                    className="montserrat text-lg leading-[28px]  md:w-[464px] md:leading-7 font-normal"
                   >
-                    As a UI/UX intern in Colorfi, i assists in user interface
-                    and experience design, contributing to projects, learning
-                    design principles, and gaining practical experience.
+                    {exp.description}
                   </motion.p>
                 </div>
                 <motion.img

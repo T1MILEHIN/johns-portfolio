@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 export const DirectionAwareHover = ({
@@ -85,13 +85,14 @@ export const DirectionAwareHover = ({
                             ease: "easeOut",
                         }}>
                         <LazyLoadImage
+                            src={imageUrl}
+                            effects="blur"
                             visibleByDefault={true}
                             alt="image"
                             className={cn(
                                 "h-full w-full object-contain scale-[1.1]",
                                 imageClassName
                             )}
-                            src={imageUrl}
                         />
                     </motion.div>
                     <motion.div

@@ -117,7 +117,8 @@ export const Works = [
             location: "United Kingdom",
             landingImg: coursemigoLanding,
 
-            secondVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/qvfaf1cmkhs006hw5zsj",
+            // secondVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/qvfaf1cmkhs006hw5zsj",
+            secondVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/ffauxbighqtlki5vszyi",
             videoBg: "#DDE8FF",
             secondAbsoluteVideo: "https://res.cloudinary.com/dqrhl6zcc/video/upload/f_auto:video,q_auto/v1/JOHN's%20PORT/qvfaf1cmkhs006hw5zsj",
             

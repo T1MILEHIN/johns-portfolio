@@ -35,7 +35,7 @@ const Landing = () => {
                 <div className="">
                     <div className="flex lg:flex-row flex-col md:gap-14 gap-20 lg:items-center overflow-hidden">
                         <motion.div variants={fadeIn("right", 0.2, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }} className="leading-[30px] text-base lg:w-[617px]">
-                            <TextGenerateEffect duration={1} filter={false} words={words} />
+                            <TextGenerateEffect duration={0.5} filter={false} words={words} />
                         </motion.div>
                         <motion.div variants={fadeIn("left", 0.3, 0.4)} initial="hidden" whileInView={"show"} viewport={{ once: true, amount: 0.7 }}>
                             <h3 className="font-medium">Creating user-friendly experiences that spark joy</h3>
