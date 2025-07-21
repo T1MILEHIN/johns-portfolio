@@ -43,7 +43,7 @@ const Loader = () => {
     <div className={`fixed inset-0 z-[99999999999999999999999999] flex flex-col bg-loader-background transition-opacity duration-500 ${isComplete ? 'opacity-0 pointer-events-none' : 'opacity-100 z-50'
       }`}>
       {/* Progress Bar */}
-      <div className="h-10 w-full bg-loader-background">
+      <div className="h-6 w-full bg-loader-background">
         <div
           className="h-full bg-loader-progress transition-all duration-200 ease-out"
           style={{ width: `${progress}%` }}

@@ -17,7 +17,7 @@ const Contact = () => {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div className="pt-32 flex flex-wrap md:flex-nowrap md:px-20 lg:pt-36 md:gap-32 px-4 bg-darkbg text-white">
+        <div className="relative z-30 pt-32 flex flex-wrap md:flex-nowrap md:px-20 lg:pt-36 md:gap-32 px-4 bg-darkbg text-white">
             <div className="lg:flex-[2] flex-1 w-full">
                 <div className="">
                     <h1 className="font-specify_exp_med font-semibold text-[42px] md:text-[64px] md:w-[564px] w-full text-text_gray">Let&apos;s Work Together</h1>

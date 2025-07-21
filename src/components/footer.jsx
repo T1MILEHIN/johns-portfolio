@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Footer = ({ footerRef, smoothY }) => {
     const { pathname } = useLocation();
     return (
-        <div className={`-z-10 relative ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
+        <div className={`${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
             <motion.footer ref={footerRef} style={{y: smoothY}} className={`md:px-32 px-4 pt-16 ${pathname === "/alldesigns/logodesigns" ? "bg-bodybg text-darkbg border-darkbg" : "bg-darkbg text-text_gray border-text_gray"}`}>
                 <div className="md:pt-20 p-2">
                     <div className="flex  items-end lg:gap-20 gap-3">
@@ -26,10 +26,10 @@ const Footer = ({ footerRef, smoothY }) => {
                     <hr className="z-[2] w-full"></hr>
                 </div>
                 <div className="flex md:flex-row flex-col gap-4 mt-20 px-2 md:px-0">
-                    <a href="mailto:oluwawolejohnbelovedayomide2@gmail.com" className="lg:flex-auto">
+                    <a href="mailto:oluwawolejohnbelovedayomide2@gmail.com" className="">
                         <Button className="w-full lg:w-fit blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[10.78px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">oluwawolejohnbelovedayomide2@gmail.com</Button>
                     </a>
-                    <a href="https://wa.me/qr/OBVGBJ7ONGRZM1" target="_blank" className="lg:flex-auto">
+                    <a href="https://wa.me/qr/OBVGBJ7ONGRZM1" target="_blank" className="">
                         <Button className="w-full lg:w-fit blue_footer_hover duration-300 hover:border-blue border text-xs md:text-[12.57px] bg-transparent rounded-[45px] py-10 md:py-7 md:px-6">+234 9063 606 002</Button>
                     </a>
                 </div>

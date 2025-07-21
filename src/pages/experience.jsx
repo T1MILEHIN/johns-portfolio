@@ -86,7 +86,7 @@ const Experience = () => {
   
   return (
     <div>
-      <div className="md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
+      <div className="relative z-30 md:px-20 md:pb-40 pt-40 p-4 bg-bodybg">
         <div className="md:px-20 py-10">
           <h1 className="text-[65.51px] md:text-[64px] leading-[83.2px] font-specify_exp_med w-full xl:w-[1050px]">
             <span className="font-bold">5 </span>

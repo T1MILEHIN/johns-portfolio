@@ -12,7 +12,7 @@ import { CaseStudy } from '../../utils/caseStudy';
 
 const CaseStudyPage = () => {
   return (
-    <div className="md:pt-32 pt-36 md:px-20 px-4 bg-bodybg">
+    <div className="relative z-30 md:pt-32 pt-36 md:px-20 px-4 bg-bodybg">
       <div className="">
         <h1 className="font-bold text-[42px] md:text-[64px] leading-[50px] md:leading-[83.2px] font-specify_exp_med py-10">Case Study</h1>
         <hr className="w-full border-[#636363]" />

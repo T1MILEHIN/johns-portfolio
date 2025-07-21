@@ -4,7 +4,7 @@ import { withPageTransition } from "../transition"
 
 const Home = () => {
     return (
-        <div className='relative'>
+        <div className='relative z-20'>
             <Outlet />
         </div>
     )

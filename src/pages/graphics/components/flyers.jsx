@@ -23,7 +23,7 @@ const FlyersDisplay = () => {
     const images = Flyers.home
     return (
         <div
-            className="md:p-20 p-4 py-20">
+            className="md:p-20 p-4 py-20 bg-white">
             <h1 className="md:text-center mx-auto lg:w-[1023px] font-mediumn font-bold">GRAPHICS DESIGN</h1>
             <motion.div 
                 initial="hidden"

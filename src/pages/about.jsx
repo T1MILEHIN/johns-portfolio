@@ -22,7 +22,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className="relative">
+    <div className="relative z-30">
       <div className="lg:px-20 min-h-screen flex justify-center items-end">
         <div className="overflow-hidden" ref={aboutRef}>
           <img className="md:block hidden w-full md:w-[700px] lg:w-[600px] mx-auto object-cover" src={profile_pic} alt="" />
