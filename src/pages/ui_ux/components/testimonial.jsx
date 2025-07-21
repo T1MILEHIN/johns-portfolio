@@ -44,7 +44,7 @@ const Testimonial = () => {
             <div className="text-center py-10">
                 <h1 className="font-bold uppercase text-2xl md:text-3xl">Testimonials</h1>
             </div>
-            <div className="relative md:hidden block py-10 md:px-0 px-16">
+            <div className="relative md:hidden block py-10 md:px-0 l:px-16 px-4">
                 <Swiper
                     autoplay={{
                         delay: 2500,
