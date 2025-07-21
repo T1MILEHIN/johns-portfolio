@@ -9,8 +9,16 @@
   /* border: 1px solid; */
 }
 
+@layer base {
+  :root {
+    --loader-background: 220 13% 9%;
+    --loader-text: 0 0% 98%;
+    --loader-progress: 217 91% 60%;
+  }
+}
+
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 .applied-sans {
@@ -74,6 +82,10 @@ html {
 @font-face {
   font-family: 'specify-bold';
   src: url('./assets/fonts/specify/SpecifyPERSONAL-NormBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'specify-extraExpanded';
+  src: url('./assets/fonts/specify/SpecifyPERSONAL-ExExpBlack.ttf') format('truetype');
 }
 
 body {

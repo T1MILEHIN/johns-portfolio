@@ -57,9 +57,9 @@ const AllProjects = () => {
                 </HoverEffect>
               </Button>
             </HoverEffect>
-            <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 py-6 px-10 shadow-none">Case Studies</Button>
+            {/* <Button className="hover:bg-black hover:text-white border border-text_gray text-black text-[13.03px] bg-transparent rounded-[37.22px] md:py-7 py-6 px-10 shadow-none">Case Studies</Button> */}
           </div>
-          <div className="py-10 md:block hidden">
+          <div className="py-10 lg:pb-48 md:block hidden">
             <Table className="overflow-hidden">
               <TableHeader>
                 <TableRow className="border-b border-[#636363]">

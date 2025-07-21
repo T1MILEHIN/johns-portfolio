@@ -40,11 +40,11 @@ const testimonials = [
 const Testimonial = () => {
     const testimonialRef = useRef(null)
     return (
-        <div className="relative p-4 overflow-hidden z-40">
+        <div className="relative p-4 overflow-hidden bg-white">
             <div className="text-center py-10">
                 <h1 className="font-bold uppercase text-2xl md:text-3xl">Testimonials</h1>
             </div>
-            <div className="relative md:hidden block py-10">
+            <div className="relative md:hidden block py-10 md:px-0 px-16">
                 <Swiper
                     autoplay={{
                         delay: 2500,

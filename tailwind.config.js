@@ -76,6 +76,11 @@ export default {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
+				},
+				loader: {
+					background: 'hsl(var(--loader-background))',
+					text: 'hsl(var(--loader-text))',
+					progress: 'hsl(var(--loader-progress))'
 				}
 			},
 			fontFamily: {
@@ -84,6 +89,7 @@ export default {
 				specify_bold: ['specify-bold', 'sans-serif'],
 				specify_medium: ['specify-medium', 'sans-serif'],
 				specify_exp_med: ['specify-expMed', 'san-serif'],
+				specify_extra_expand_black: ['specify-extraExpanded', 'san-serif'],
 				sans: ['Inter', 'sans-serif'],
 				montserrat: ['Montserrat', 'sans-serif'],
 				applied_sans: ['Applied Sans', 'sans-serif'],

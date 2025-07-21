@@ -17,9 +17,11 @@ const AllGraphics = () => {
             setSearchParams({ CATEGORY: "All" });
         }
     };
+    
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+    }, [])
+
     return (
         <>
             <div className={`${pathname === "/alldesigns/logodesigns" ? "bg-black text-bodybg" : "bg-white"} pt-32 px-4 md:px-20`}>

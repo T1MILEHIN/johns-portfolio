@@ -16,7 +16,7 @@ const CaseStudyPage = () => {
       <div className="">
         <h1 className="font-bold text-[42px] md:text-[64px] leading-[50px] md:leading-[83.2px] font-specify_exp_med py-10">Case Study</h1>
         <hr className="w-full border-[#636363]" />
-        <div className='py-20 flex'>
+        <div className='pt-20 pb-48 flex'>
           {CaseStudy?.map((cs, index)=> (
           <Card key={index} className="shadow-none lg:w-[500px] bg-white rounded">
             <CardHeader>

@@ -17,9 +17,7 @@ import Testimonial from "./components/testimonial";
 import HoverEffect from "../../components/custom/hoverEffect";
 import { Parallax } from 'react-scroll-parallax';
 import { Link } from "react-router-dom";
-
 import { fadeIn } from "../variant";
-
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const words = `Hi, i'm Johnbeloved, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences`

@@ -26,9 +26,9 @@ function App() {
     offset: ["start end", "end end"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
   const smoothY = useSpring(y, { stiffness: 300, damping: 100 });
-  const radius = useTransform(scrollYProgress, [0, 1], [200, 0]);
+  const radius = useTransform(scrollYProgress, [0, 1], [500, 0]);
   const smoothRadius = useSpring(radius, { stiffness: 250, damping: 90 });
   return (
     <>
@@ -38,28 +38,30 @@ function App() {
         smoothTouch: true
       }}>
         <NavBar />
-        <motion.div style={{ borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius }} className={`${(location.pathname === "/") && "bg-bodybg"} ${(location.pathname === "/contact") ? "bg-darkbg" : location.pathname === "/about" ? "bg-white" : location.pathname === "/graphics" && "bg-bodybg"} relative z-[99] pb-20`}>
-          <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-              <Route path='/' element={<Home />}>
-                <Route index element={<Landing />} />
-                <Route path='/graphics' element={<Graphics />} />
-              </Route>
-              <Route path='/about' element={<About />} />
-              <Route path='/experience' element={<Experience />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/allprojects' element={<AllProjects />} />
-              <Route path='/case-study' element={<CaseStudyPage />} />
-              <Route path="/clearwork" element={<Clearwork />} />
-              <Route path='/alldesigns' element={<AllDesigns />}>
-                <Route index element={<FlyerDesigns />} />
-                <Route path='logodesigns' element={<LogoDesigns />} />
-              </Route>
-              <Route path='/projects/:project' element={<SingleProject />} />
-            </Routes>
-          </AnimatePresence >
-        </motion.div>
-        <Footer footerRef={footerRef} smoothY={smoothY} />
+        <div className={``}>
+          <motion.div style={{ borderBottomRightRadius: smoothRadius, borderBottomLeftRadius: smoothRadius }} className={`${(location.pathname === "/") && ""} ${(location.pathname === "/contact") ? "bg-darkbg" : location.pathname === "/about" ? "bg-white" : location.pathname === "/graphics" && "bg-bodybg"} ${location.pathname === "/alldesigns/logodesigns" && "bg-black"} relative overflow-hidden`}>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route path='/' element={<Home />}>
+                  <Route index element={<Landing />}/>
+                  <Route path='/graphics' element={<Graphics />} />
+                </Route>
+                <Route path='/about' element={<About />} />
+                <Route path='/experience' element={<Experience />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/allprojects' element={<AllProjects />} />
+                <Route path='/case-study' element={<CaseStudyPage />} />
+                <Route path="/clearwork" element={<Clearwork />} />
+                <Route path='/alldesigns' element={<AllDesigns />}>
+                  <Route index element={<FlyerDesigns />} />
+                  <Route path='logodesigns' element={<LogoDesigns />} />
+                </Route>
+                <Route path='/projects/:project' element={<SingleProject />} />
+              </Routes>
+            </AnimatePresence >
+          </motion.div>
+        </div>
+        {(!location.pathname.startsWith("/projects") && location.pathname !== "/clearwork") && <Footer footerRef={footerRef} smoothY={smoothY} />}
       </ReactLenis>
     </>
   )

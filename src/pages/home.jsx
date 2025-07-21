@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Outlet } from 'react-router-dom';
-import {withPageTransition} from "../transition"
+import { withPageTransition } from "../transition"
 
 const Home = () => {
     return (

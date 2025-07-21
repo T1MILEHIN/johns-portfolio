@@ -209,7 +209,8 @@ export const Works = [
         client: "SEEG Daily",
         location: "United States",
         services: "Web design",
-        component: img3,
+        component: seeegLanding,
+        // component: img3,
         color: "#131927",
         singleDetails: {
             role: "Designer",
