@@ -19,6 +19,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { Link } from "react-router-dom";
 import { fadeIn } from "../variant";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import ReactPlayer from 'react-player'
 
 const words = `Hi, i'm Johnbeloved, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences`
 
@@ -106,6 +107,19 @@ const Landing = () => {
                 </div>
             </div>
             <Testimonial />
+
+            <div className="bg-white lg:pt-20 lg:pb-56">
+                <h1 className="text-center font-bold text-2xl md:text-3xl my-10">MY UI/UX TUTORIALS</h1>
+                <div className="">
+                    <ReactPlayer
+                        className='react-player'
+                        url='https://www.youtube.com/watch?si=AFF4y0vIFeGIWYWj&v=bAXwbnLLVSQ&feature=youtu.be'
+                        width='100%'
+                        height='600px'
+                        controls={true}
+                    />
+                </div>
+            </div>
         </>
     )
 }

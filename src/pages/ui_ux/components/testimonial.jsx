@@ -40,7 +40,7 @@ const testimonials = [
 const Testimonial = () => {
     const testimonialRef = useRef(null)
     return (
-        <div className="relative p-4 overflow-hidden bg-white">
+        <div className="relative z-30 p-4 overflow-hidden bg-white">
             <div className="text-center py-10">
                 <h1 className="font-bold uppercase text-2xl md:text-3xl">Testimonials</h1>
             </div>
