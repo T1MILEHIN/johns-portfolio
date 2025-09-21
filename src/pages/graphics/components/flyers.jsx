@@ -3,6 +3,7 @@ import { useMemo, useState, useCallback } from "react";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { Flyers } from "../../../utils/flyers";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,12 +31,12 @@ const imageVariants = {
             stiffness: 300, 
             damping: 25,
             duration: 0.6,
-            delay: (i % 5) * 0.1 // Stagger within each row
+            delay: (i % 5) * 0.1 
         } 
     })
 };
 
-// Optimized Image Component with lazy loading and error handling
+
 const OptimizedImage = ({ src, index, alt = "Graphics design" }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
@@ -213,6 +214,19 @@ const FlyersDisplay = () => {
             <ViewMoreButton />
         </section>
     );
+};
+
+OptimizedImage.propTypes = {
+    src: PropTypes.any,
+    index: PropTypes.any,
+    alt: PropTypes.any,
+};
+
+GridRow.propTypes = {
+    images: PropTypes.any,
+    startIndex: PropTypes.any,
+    endIndex: PropTypes.any,
+    rowIndex: PropTypes.any,
 };
 
 export default FlyersDisplay;
