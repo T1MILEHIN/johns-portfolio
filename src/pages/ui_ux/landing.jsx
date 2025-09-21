@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import { fadeIn } from "../variant";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import ReactPlayer from 'react-player'
+import CarouselLogo from "./components/carousel";
 
 const words = `Hi, i'm Johnbeloved, a passionate Product designer dedicated to crafting user-centered solutions that drive engagement and success. With a keen eye for detail and a passion for innovation, I create intuitive interfaces that simplify complex interactions and elevate brand experiences`
 
@@ -54,6 +55,17 @@ const Landing = () => {
                     </Parallax>
                 </div>
                 <hr className="border-[#636363] md:block hidden" />
+
+                <div className="lg:py-28 py-10 p-2">
+                    <h1 className="font-bold uppercase">Brands i’ve been working with recently</h1>
+
+
+                    <div className="lg:py-20 py-10">
+                        <CarouselLogo />
+                    </div>
+
+                </div>
+
                 <div className="sm:p-2 lg:py-28 py-10 p-2 flex flex-col md:gap-48 gap-6 overflow-hidden">
                     <h1 className="md:mx-auto md:w-[1023px] font-medium">RECENT WORKS</h1>
                     <div className="md:block hidden">
