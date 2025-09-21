@@ -154,7 +154,6 @@ const Table_Row = ({
     setSelected, 
     setFocusedIndex,
     isKeyboardNavigation,
-    setIsKeyboardNavigation
 }) => {
     const navigate = useNavigate();
     const rowRef = useRef(null);

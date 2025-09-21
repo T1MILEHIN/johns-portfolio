@@ -57,7 +57,6 @@ const ScrollSlide = () => {
         >
             <div className="sticky top-0 overflow-hidden flex items-center h-screen w-full">
                 <div className="flex flex-col gap-5 w-full px-4">
-                    {/* First row - moves left */}
                     <motion.div
                         style={{ x: smoothX }}
                         className="flex gap-5 will-change-transform"
@@ -96,22 +95,6 @@ const ScrollSlide = () => {
                         ))}
                     </motion.div>
                 </div>
-            </div>
-
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-                <motion.div
-                    className="w-1 h-16 bg-gray-400 rounded-full overflow-hidden"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                >
-                    <motion.div
-                        className="w-full bg-blue-500 rounded-full"
-                        style={{
-                            height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-                        }}
-                    />
-                </motion.div>
             </div>
         </section>
     );
