@@ -34,7 +34,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                     {images.map((image, index) => index < 5 && (
                         <motion.div custom={index} key={index} variants={imageVariants}>
-                            <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
+                            <img key={index} src={image} className="w-full aspect-square" />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -48,7 +48,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => (index > 4 && index < 10) && (
                     <motion.div custom={index} key={index} variants={imageVariants}>
-                        <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
+                        <img key={index} src={image} className="w-full aspect-square" />
                     </motion.div>
                 ))}
                 </motion.div>
@@ -62,7 +62,7 @@ const FlyersDisplay = () => {
                 <motion.div className="grid gap-3 lg:grid-cols-5 md:grid-cols-2 grid-cols-1">
                 {images.map((image, index) => index > 9 && index < 15 && (
                     <motion.div custom={index} key={index} variants={imageVariants}>
-                        <DirectionAwareHover key={index} imageUrl={image} className="w-full aspect-square" />
+                        <img key={index} src={image} className="w-full aspect-square" />
                     </motion.div>
                 ))}
                 </motion.div>
