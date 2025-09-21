@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import PropTypes from 'prop-types';
@@ -14,8 +14,9 @@ const Work = ({ category, limit }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [dir, setDir] = useState(null);
     const [focusedIndex, setFocusedIndex] = useState(-1);
+    const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
 
-    const handleSetSelected = (val) => {
+    const handleSetSelected = useCallback((val) => {
         if (typeof val === "number" && typeof selected === "number") {
             const direction = selected > val ? "u" : "d";
             setDir(direction);
@@ -31,7 +32,7 @@ const Work = ({ category, limit }) => {
             setDir(null);
         }
         setSelected(val);
-    };
+    }, [selected]);
 
     // Filter works based on category
     const filteredWorks = category === "All"
@@ -39,9 +40,10 @@ const Work = ({ category, limit }) => {
         : works.filter((work) => work.services.includes(category));
 
     // Handle keyboard navigation
-    const handleKeyDown = (e) => {
+    const handleKeyDown = useCallback((e) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             e.preventDefault();
+            setIsKeyboardNavigation(true);
 
             const currentIndex = focusedIndex;
             let newIndex;
@@ -62,21 +64,37 @@ const Work = ({ category, limit }) => {
                 const element = document.getElementById(`shift-tab-${newWork.id}`);
                 if (element) {
                     element.focus();
+                    // Smooth scroll to element
+                    element.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
                 }
             }
         }
-    };
+    }, [focusedIndex, filteredWorks, handleSetSelected, setCurrentSlide]);
 
     useEffect(() => {
-        if (tableBodyRef.current) {
-            tableBodyRef.current.addEventListener('keydown', handleKeyDown);
+        const tableBodyNode = tableBodyRef.current;
+        if (tableBodyNode) {
+            tableBodyNode.addEventListener('keydown', handleKeyDown);
             return () => {
-                if (tableBodyRef.current) {
-                    tableBodyRef.current.removeEventListener('keydown', handleKeyDown);
-                }
+                tableBodyNode.removeEventListener('keydown', handleKeyDown);
             };
         }
-    }, [focusedIndex, filteredWorks]);
+    }, [focusedIndex, filteredWorks, handleKeyDown]);
+
+    // Reset keyboard navigation flag on mouse movement
+    useEffect(() => {
+        const handleMouseMove = () => {
+            if (isKeyboardNavigation) {
+                setIsKeyboardNavigation(false);
+            }
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, [isKeyboardNavigation]);
 
     return (
         <AnimatePresence>
@@ -84,9 +102,11 @@ const Work = ({ category, limit }) => {
                 ref={tableBodyRef}
                 tabIndex={0}
                 onMouseLeave={() => {
-                    handleSetSelected(null);
-                    setDir(null);
-                    setFocusedIndex(-1);
+                    if (!isKeyboardNavigation) {
+                        handleSetSelected(null);
+                        setDir(null);
+                        setFocusedIndex(-1);
+                    }
                 }}
                 onFocus={() => {
                     // Set focus to first item if none selected
@@ -95,6 +115,7 @@ const Work = ({ category, limit }) => {
                         const firstWork = filteredWorks[0];
                         handleSetSelected(firstWork.id);
                         setCurrentSlide(firstWork.id);
+                        setIsKeyboardNavigation(true);
                     }
                 }}
                 className="relative focus:outline-none"
@@ -111,6 +132,8 @@ const Work = ({ category, limit }) => {
                         handleSetSelected={handleSetSelected}
                         focusedIndex={focusedIndex}
                         setFocusedIndex={setFocusedIndex}
+                        isKeyboardNavigation={isKeyboardNavigation}
+                        setIsKeyboardNavigation={setIsKeyboardNavigation}
                     >
                         {work}
                     </Table_Row>
@@ -120,27 +143,51 @@ const Work = ({ category, limit }) => {
     );
 };
 
-const Table_Row = ({ children, index, currentSlide, setCurrentSlide, dir, handleSetSelected, selected, setSelected, focusedIndex, setFocusedIndex }) => {
+const Table_Row = ({ 
+    children, 
+    index, 
+    currentSlide, 
+    setCurrentSlide, 
+    dir, 
+    handleSetSelected, 
+    selected, 
+    setSelected, 
+    setFocusedIndex,
+    isKeyboardNavigation,
+    setIsKeyboardNavigation
+}) => {
     const navigate = useNavigate();
     const rowRef = useRef(null);
-    const mousePosition = {
-        x: useMotionValue(0),
-        y: useMotionValue(0),
-    };
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const lastMousePosition = useRef({ x: 0, y: 0 });
+    
+    const mousePosition = useMemo(() => ({
+        x,
+        y,
+    }), [x, y]);
 
-    const updateMousePosition = (clientX, clientY) => {
+    const updateMousePosition = useCallback((clientX, clientY, smooth = true) => {
         if (rowRef.current) {
             const rect = rowRef.current.getBoundingClientRect();
             const newX = clientX - rect.left - 174.5;
             const newY = clientY - rect.top - 149;
 
-            mousePosition.x.set(newX);
-            mousePosition.y.set(newY);
+            lastMousePosition.current = { x: clientX, y: clientY };
+
+            if (smooth) {
+                mousePosition.x.set(newX);
+                mousePosition.y.set(newY);
+            } else {
+                // For immediate updates without spring animation
+                mousePosition.x.jump?.(newX) || mousePosition.x.set(newX);
+                mousePosition.y.jump?.(newY) || mousePosition.y.set(newY);
+            }
         }
-    };
+    }, [rowRef, mousePosition]);
 
     // Center the hover content when using keyboard navigation
-    const centerHoverContent = () => {
+    const centerHoverContent = useCallback(() => {
         if (rowRef.current) {
             const rect = rowRef.current.getBoundingClientRect();
             const centerX = rect.width / 2 - 174.5;
@@ -149,47 +196,95 @@ const Table_Row = ({ children, index, currentSlide, setCurrentSlide, dir, handle
             mousePosition.x.set(centerX);
             mousePosition.y.set(centerY);
         }
-    };
+    }, [rowRef, mousePosition]);
 
-    const handleMouseMove = (e) => {
-        updateMousePosition(e.clientX, e.clientY);
-    };
+    const handleMouseMove = useCallback((e) => {
+        if (!isKeyboardNavigation) {
+            updateMousePosition(e.clientX, e.clientY);
+        }
+    }, [updateMousePosition, isKeyboardNavigation]);
 
     const handleFocus = () => {
         setFocusedIndex(index);
         handleSetSelected(children.id);
         setCurrentSlide(children.id);
-        setTimeout(centerHoverContent, 0);
-    };
-
-    const handleScroll = () => {
-        if (selected === children.id && rowRef.current) {
-            const rect = rowRef.current.getBoundingClientRect();
-            const currentX = mousePosition.x.get() + rect.left + 174.5;
-            const currentY = mousePosition.y.get() + rect.top + 149;
-            updateMousePosition(currentX, currentY);
+        
+        if (isKeyboardNavigation) {
+            // Small delay to ensure the element is properly focused
+            setTimeout(centerHoverContent, 50);
         }
     };
 
-    // Add scroll listener when this row is selected
+    // Enhanced scroll handler for smooth following
+    const handleScroll = useCallback(() => {
+        if (selected === children.id && rowRef.current) {
+            if (isKeyboardNavigation) {
+                // For keyboard navigation, keep content centered
+                centerHoverContent();
+            } else {
+                // For mouse navigation, update position based on last known mouse position
+                const rect = rowRef.current.getBoundingClientRect();
+                const newX = lastMousePosition.current.x - rect.left - 174.5;
+                const newY = lastMousePosition.current.y - rect.top - 149;
+                
+                // Use spring animation for smooth following during scroll
+                mousePosition.x.set(newX);
+                mousePosition.y.set(newY);
+            }
+        }
+    }, [selected, children.id, rowRef, mousePosition, centerHoverContent, isKeyboardNavigation]);
+
+    // Enhanced scroll and mouse tracking
     useEffect(() => {
         if (selected === children.id) {
             const handleGlobalMouseMove = (e) => {
-                updateMousePosition(e.clientX, e.clientY);
+                if (!isKeyboardNavigation) {
+                    updateMousePosition(e.clientX, e.clientY);
+                }
             };
 
-            window.addEventListener('mousemove', handleGlobalMouseMove);
-            window.addEventListener('scroll', handleScroll, true); // Use capture phase
+            // Use both scroll and wheel events for better trackpad support
+            const handleWheel = () => {
+                if (!isKeyboardNavigation) {
+                    // During wheel/trackpad scroll, update position smoothly
+                    requestAnimationFrame(() => {
+                        handleScroll();
+                    });
+                }
+            };
+
+            const handleScrollThrottled = () => {
+                // Throttle scroll updates for performance
+                requestAnimationFrame(handleScroll);
+            };
+
+            window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true });
+            window.addEventListener('scroll', handleScrollThrottled, { passive: true, capture: true });
+            window.addEventListener('wheel', handleWheel, { passive: true });
+            
+            // Also listen for resize events
+            window.addEventListener('resize', handleScrollThrottled, { passive: true });
 
             return () => {
                 window.removeEventListener('mousemove', handleGlobalMouseMove);
-                window.removeEventListener('scroll', handleScroll, true);
+                window.removeEventListener('scroll', handleScrollThrottled, { capture: true });
+                window.removeEventListener('wheel', handleWheel);
+                window.removeEventListener('resize', handleScrollThrottled);
             };
         }
-    }, [selected, children.id]);
+    }, [selected, children.id, handleScroll, updateMousePosition, isKeyboardNavigation]);
 
     const handleClick = () => {
         navigate(`/projects/${children.client}`);
+    };
+
+    const handleMouseEnter = (e) => {
+        if (!isKeyboardNavigation) {
+            updateMousePosition(e.clientX, e.clientY);
+            handleSetSelected(children.id);
+            setCurrentSlide(children.id);
+            setFocusedIndex(index);
+        }
     };
 
     return (
@@ -200,15 +295,8 @@ const Table_Row = ({ children, index, currentSlide, setCurrentSlide, dir, handle
             id={`shift-tab-${children.id}`}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
-            onMouseEnter={(e) => {
-                updateMousePosition(e.clientX, e.clientY);
-                handleSetSelected(children.id);
-                setCurrentSlide(children.id);
-                setFocusedIndex(index);
-            }}
-            className={`w-full relative border-b border-[#636363] duration-300 cursor-pointer hover:bg-gray-50/5 focus:bg-gray-50/10 focus:outline-none ${selected === children.id && "text-video_bg"
-                }`}
-        >
+            onMouseEnter={handleMouseEnter}
+            className={`w-full relative border-b border-[#636363] duration-300 cursor-pointer hover:bg-gray-50/5 focus:bg-gray-50/10 focus:outline-none ${selected === children.id && "text-video_bg"}`}>
             <TableCell className="py-10 md:py-16 text-3xl lg:text-5xl font-medium">
                 {children.client}
             </TableCell>
@@ -227,6 +315,7 @@ const Table_Row = ({ children, index, currentSlide, setCurrentSlide, dir, handle
                             currentSlide={currentSlide}
                             setSelected={setSelected}
                             mousePosition={mousePosition}
+                            isKeyboardNavigation={isKeyboardNavigation}
                         />
                     </TableCell>
                 </AnimatePresence>
@@ -235,11 +324,16 @@ const Table_Row = ({ children, index, currentSlide, setCurrentSlide, dir, handle
     );
 };
 
-const Content = ({ dir, mousePosition, currentSlide }) => {
+const Content = ({ dir, mousePosition, currentSlide, isKeyboardNavigation }) => {
     const contentRef = useRef(null);
 
-    const springX = useSpring(mousePosition.x, { stiffness: 300, damping: 20 });
-    const springY = useSpring(mousePosition.y, { stiffness: 300, damping: 20 });
+    // Adjust spring settings for different navigation modes
+    const springConfig = isKeyboardNavigation 
+        ? { stiffness: 400, damping: 25 } // Snappier for keyboard
+        : { stiffness: 300, damping: 20 }; // Smoother for mouse
+
+    const springX = useSpring(mousePosition.x, springConfig);
+    const springY = useSpring(mousePosition.y, springConfig);
 
     const translations = (slideIndex) => {
         return { y: slideIndex * -298 };
@@ -255,14 +349,17 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                     left: 0,
                     x: springX,
                     y: springY,
-                    pointerEvents: "auto",
+                    pointerEvents: "none",
                     zIndex: 10000,
                 }}
                 className="w-[349px] h-[298px] overflow-hidden"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
+                transition={{ 
+                    duration: isKeyboardNavigation ? 0.15 : 0.2,
+                    ease: "easeOut"
+                }}
             >
                 <motion.div
                     initial={() => {
@@ -297,11 +394,9 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
                         <button
                             className="w-20 h-20 grid place-content-center cursor-pointer p-4 rounded-[20px] z-10 bg-darkbg text-white font-bold transition-transform hover:scale-110"
                             onClick={(e) => {
-                                e.stopPropagation(); // Prevent triggering the row click
-                                // Add specific button action here if needed
-                            }}
-                        >
-                            <HoverEffect Z={50} rotationRange={20} style={{ width: "fit-content" }}>
+                                e.stopPropagation();
+                            }}>
+                            <HoverEffect Z={20} rotationRange={20} style={{ width: "fit-content" }}>
                                 <div className="button">view</div>
                             </HoverEffect>
                         </button>
@@ -312,7 +407,6 @@ const Content = ({ dir, mousePosition, currentSlide }) => {
     );
 };
 
-// PropTypes
 Table_Row.propTypes = {
     currentSlide: PropTypes.number,
     setCurrentSlide: PropTypes.func.isRequired,
@@ -324,6 +418,8 @@ Table_Row.propTypes = {
     index: PropTypes.number.isRequired,
     focusedIndex: PropTypes.number,
     setFocusedIndex: PropTypes.func.isRequired,
+    isKeyboardNavigation: PropTypes.bool,
+    setIsKeyboardNavigation: PropTypes.func,
 };
 
 Work.propTypes = {
@@ -336,6 +432,7 @@ Content.propTypes = {
     dir: PropTypes.string,
     mousePosition: PropTypes.object.isRequired,
     setSelected: PropTypes.func,
+    isKeyboardNavigation: PropTypes.bool,
 };
 
 export default Work;

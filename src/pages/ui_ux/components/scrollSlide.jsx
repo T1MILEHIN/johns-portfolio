@@ -46,7 +46,7 @@ const ScrollSlide = () => {
     const smoothXReverse = useSpring(xReverse, springConfig);
 
     // Split videos into two rows
-    const firstRowVideos = videos.slice(0, 5);
+    const firstRowVideos = videos.slice(0, 7);
     const secondRowVideos = videos.slice(5);
 
     return (
@@ -77,7 +77,6 @@ const ScrollSlide = () => {
                         ))}
                     </motion.div>
 
-                    {/* Second row - moves right */}
                     <motion.div
                         style={{ x: smoothXReverse }}
                         className="flex gap-5 will-change-transform"
@@ -99,7 +98,6 @@ const ScrollSlide = () => {
                 </div>
             </div>
 
-            {/* Optional scroll indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
                 <motion.div
                     className="w-1 h-16 bg-gray-400 rounded-full overflow-hidden"

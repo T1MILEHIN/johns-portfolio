@@ -2,13 +2,11 @@ import { Flyers } from "../../utils/flyers";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOutletContext } from "react-router-dom";
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const FlyerDesigns = () => {
     const { handleCategories, CATEGORY } = useOutletContext()
     return (
         <div className="py-10 flex flex-col gap-10 w-full">
-
             <div className="flex flex-wrap items-center gap-4 md:gap-[18.61px] w-full">
                 <Button onClick={(e) => handleCategories(e, "All")} className={`${CATEGORY === "All" ? "bg-black text-white" : "bg-white"} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-[25px] px-10 shadow-none`}>All</Button>
                 <Button onClick={(e) => handleCategories(e, "Codar Design")} className={`${CATEGORY === "Codar Design" ? "bg-black text-white" : "bg-white"} border hover:bg-black hover:text-white border-text_gray text-[13.03px] rounded-[37.22px] md:py-7 py-[25px] px-10 shadow-none`}>Codar Design</Button>

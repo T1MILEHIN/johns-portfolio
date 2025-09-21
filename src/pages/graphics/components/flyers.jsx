@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import HoverEffect from "../../../components/custom/hoverEffect";
 import { Flyers } from "../../../utils/flyers";
 import { Link } from "react-router-dom";
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const containerVariants = {
     hidden: { opacity: 0 },
