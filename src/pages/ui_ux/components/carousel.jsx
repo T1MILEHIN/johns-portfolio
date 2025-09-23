@@ -27,12 +27,13 @@ const CarouselLogo = () => {
                     Autoplay({
                         delay: 4000,
                     }),
+                    
                 ]}
                 className="w-full items-center">
                 <CarouselContent>
                     {images.map((img, index) => (
-                        <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/6">
-                            <img src={img} className="size-20 object-contain" alt="" />
+                        <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                            <img src={img} className="size-32 object-contain" alt="" />
                         </CarouselItem>
                     ))}
                 </CarouselContent>
