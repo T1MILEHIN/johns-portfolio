@@ -13,7 +13,7 @@ const Graphics = () => {
   return (
     <>
       <LandingProfile />
-      <div className="lg:p-20 py-10 px-4">
+      <div className="lg:p-20 py-10 px-4 bg-white min-h-screen">
         <div className="lg:py-28 py-10 p-2">
           <h1 className="font-bold uppercase">Brands i’ve been working with recently</h1>
           <div className="lg:py-20 py-10">
@@ -27,4 +27,4 @@ const Graphics = () => {
   )
 }
 
-export default withPageTransition(Graphics, "Logos and Flyers");
+export default withPageTransition(Graphics, "Graphics");

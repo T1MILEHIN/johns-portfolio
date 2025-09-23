@@ -166,7 +166,7 @@ const LaptopAnimation = () => {
     }, [sections]);
 
     return (
-        <div className="p-4 md:p-10 flex flex-col gap-20">
+        <div className="p-4 md:p-20 flex flex-col gap-20">
             <motion.h1 
                 className="mx-auto lg:w-[1023px] font-medium text-2xl md:text-4xl lg:text-5xl text-center"
                 initial={{ opacity: 0, y: -20 }}
